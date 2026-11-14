@@ -149,6 +149,37 @@ Please follow these instructions:
 [/site]
 
 
+.. _ekf-magnetometer-fusion-mode:
+
+EKF Magnetometer Fusion Mode
+============================
+
+:ref:`EK3_MAG_CAL<EK3_MAG_CAL>` sets when EKF3 uses full 3-axis magnetometer fusion and when it uses simple heading fusion. 3-axis fusion also estimates the earth magnetic field and the vehicle's own (body-fixed) field, so it can correct for small compass offset errors. Use it only where the external magnetic field is stable. Heading fusion does not learn the magnetic field, but it also makes compass calibration and alignment errors harder for the EKF to detect.
+
++-------+------------------------------------+---------------------------------------------------------------------------------------------+
+| Value | Name                               | Behaviour                                                                                   |
++=======+====================================+=============================================================================================+
+| 0     | When flying                        | Heading fusion on the ground, 3-axis fusion in flight (Plane default)                       |
++-------+------------------------------------+---------------------------------------------------------------------------------------------+
+| 1     | When manoeuvring                   | 3-axis fusion only when manoeuvring                                                         |
++-------+------------------------------------+---------------------------------------------------------------------------------------------+
+| 2     | Never                              | Heading fusion at all times. Recommended if the external field varies (Rover default)       |
++-------+------------------------------------+---------------------------------------------------------------------------------------------+
+| 3     | After first climb yaw reset        | Heading fusion on the ground, 3-axis fusion after the first in-air yaw and field reset      |
+|       |                                    | (Copter default)                                                                            |
++-------+------------------------------------+---------------------------------------------------------------------------------------------+
+| 4     | Always                             | 3-axis fusion at all times, including on the ground and during takeoff                      |
++-------+------------------------------------+---------------------------------------------------------------------------------------------+
+| 7     | On ground and after first climb    | 3-axis fusion on the ground, held off during the initial climb, then resumed after the      |
+|       | yaw reset                          | first in-air yaw and field reset (4.8 and later)                                            |
++-------+------------------------------------+---------------------------------------------------------------------------------------------+
+
+Values 5 and 6 are deprecated; use :ref:`EK3_SRC1_YAW<EK3_SRC1_YAW>` to select an external yaw source instead.
+
+Value 7 is for vehicles whose compass sits close to the motors or power wiring. On the ground, the EKF learns the field before takeoff, so it can adapt when a battery swap changes the vehicle's magnetic signature. Value 3 cannot do this. Learning stops during the initial climb, when motor current interference is usually strongest and would corrupt the learned offsets; value 4 keeps learning through it. Once the first in-air yaw and field reset completes, 3-axis learning resumes. :ref:`EK3_MAG_CAL<EK3_MAG_CAL>` requires a reboot to take effect.
+
+While the vehicle is disarmed and stationary on the ground, value 7 also anchors the EKF yaw to the measured compass heading. A stationary vehicle gives 3-axis fusion no way to separate a yaw error from the learned body field, so without this the EKF yaw could slowly drift away from the compass heading and cause an "EKF3 Yaw inconsistent" pre-arm failure. The anchor is released as soon as the vehicle moves. Any part of the vehicle's own field at right angles to the horizontal earth field cannot be separated from yaw by a heading measurement, so it shows up as a heading offset rather than being learned. The XKFS log message ``MAG_FUSION`` field shows 3 while the yaw is anchored.
+
 .. _automatic-compass-offset-calibration:
 
 Automatic Offset Calibration
