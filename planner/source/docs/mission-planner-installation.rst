@@ -73,8 +73,37 @@ QGroundControl and :ref:`MAVProxy <mavproxy:home>` also run on macOS (see :ref:`
 Mission Planner on Linux
 ========================
 
-It is possible to run most Windows based programs on many Linux Distributions using MONO. Mission Planner does run under MONO but will have occasional issues and/or crashes. QGC and MAVProxy are alternatives that run stably in Linux, but if Mission Planner is really desired, you can follow these steps:
+Mission Planner does run on Linux, but will have occasional issues and/or crashes, and not all functions are available. QGC and MAVProxy are alternatives that run stably in Linux, but if Mission Planner is really desired, there are two ways to run it.
 
+Linux development build
+-----------------------
+
+A Linux build of Mission Planner for x86_64 PCs is available. It needs the Mono runtime, but no SDK or compiler. On Ubuntu 22.04/24.04 or Debian:
+
+- Download ``MissionPlanner-linux-x86_64.tar.gz`` and its ``.sha256`` file from the `Linux development release <https://github.com/ArduPilot/MissionPlanner/releases/tag/linux-latest>`__.
+- Install the runtime packages, check the download, extract it and run it:
+
+    ::
+
+       sudo apt update
+       sudo apt install mono-runtime ca-certificates-mono libgdiplus fonts-dejavu-core \
+         libmono-system-windows-forms4.0-cil libmono-system-web-extensions4.0-cil \
+         libmono-system-management4.0-cil libmono-system-servicemodel4.0a-cil \
+         libmono-system-data-entity4.0-cil libmono-system-net-http4.0-cil \
+         libgl1 libgl1-mesa-dri
+       sha256sum -c MissionPlanner-linux-x86_64.tar.gz.sha256
+       tar -xzf MissionPlanner-linux-x86_64.tar.gz
+       ./MissionPlanner-linux-x86_64/run.sh
+
+- To connect over USB or serial, your user needs access to the port, which usually means being in the ``dialout`` group (``sudo usermod -aG dialout $USER``, then log out and back in).
+- To update, download and extract a new archive.
+
+Other distributions need the equivalent Mono 6.8 or later packages. See the `Mission Planner Linux README <https://github.com/ArduPilot/MissionPlanner/blob/master/Linux/README.md>`__ for details and for building it from source.
+
+Windows version under Mono
+--------------------------
+
+The Windows version of Mission Planner can also be run using Mono:
 
 - Download and install the latest version of MONO from `here <https://www.mono-project.com/download/stable/>`__
 - Download Mission Planner as a zip file from `here <https://firmware.ardupilot.org/Tools/MissionPlanner/MissionPlanner-latest.zip>`__ and  unzip to a directory.
