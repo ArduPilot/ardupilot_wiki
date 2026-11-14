@@ -81,7 +81,7 @@ Providing Distance Sensor messages to ArduPilot
 ===============================================
 
 For developers of new "proximity" sensors (i.e. sensors that can somehow provide the distance to nearby objects) the easiest method to get your distance measurements into ardupilot is to send `DISTANCE_SENSOR <https://mavlink.io/en/messages/common.html#DISTANCE_SENSOR>`__ message for each direction the sensor is capable of.
-The system id of the message should match the system id of the vehicle (default is "1" but can be changed using the SYSID_THISMAV parameter).
+The system id of the message should match the system id of the vehicle (default is "1" but can be changed using the MAV_SYSID parameter).
 The component id can be anything but MAV_COMP_ID_PATHPLANNER (195) or MAV_COMP_ID_PERIPHERAL (158) are probably good choices.
 
 These messages should be sent at between 10hz and 50hz (the faster the better).  The fields should be filled in as shown below:
