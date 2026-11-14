@@ -50,6 +50,14 @@ Recommended steps for tuning this controller are:
 - The :ref:`D gain <ATC_SPEED_D>` is meant to stabilize the output by fighting against short-term changes in speed.  This can be left at zero.
 - The :ref:`FF gain <ATC_SPEED_FF>` should be left at zero because the :ref:`CRUISE_THROTTLE <CRUISE_THROTTLE>` and :ref:`CRUISE_SPEED <CRUISE_SPEED>` are used to calculate a base throttle output which removes the need for feed-forward.
 
+Optionally, tune the slope (attitude-based) feed forward. :ref:`ATC_SPEED_PIT_FF <ATC_SPEED_PIT_FF>` adds throttle output in proportion to the sine of the pitch angle to counteract gravity when climbing or descending. This is separate from :ref:`ATC_SPEED_FF <ATC_SPEED_FF>`, which should still be left at zero.
+
+.. note:: If the vehicle is primarily driven on flat ground, or is a boat or balance bot, leave :ref:`ATC_SPEED_PIT_FF <ATC_SPEED_PIT_FF>` at its default of 0. The speed controller I-term will continue to compensate for slopes. Set :ref:`CRUISE_THROTTLE <CRUISE_THROTTLE>` and :ref:`CRUISE_SPEED <CRUISE_SPEED>` on flat ground before tuning this parameter.
+
+- Drive straight up and down a fairly constant slope at a steady speed.
+- In the log, compare PIDA.I with ATT.Pitch. Set :ref:`ATC_SPEED_PIT_FF <ATC_SPEED_PIT_FF>` to the same sign PIDA.I has when ATT.Pitch is positive (typically positive, adding throttle when climbing). A starting value is PIDA.I divided by sin(ATT.Pitch); for example, PIDA.I of 0.05 at 10 degrees of pitch gives about 0.29.
+- Adjust until PIDA.I no longer tracks ATT.Pitch. Load changes such as grass height or loose soil also move PIDA.I, so look for the trend with pitch rather than expecting PIDA.I to stay at zero.
+
 Acceleration Limit
 --------------------
 
