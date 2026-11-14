@@ -4,80 +4,58 @@
 Setting up the Build Environment (MacOSX)
 =========================================
 
-This article shows how to manually setup a minimal build environment on MacOS (ver 10.6 onwards).
+This article shows how to set up a build environment on macOS. It is written for Apple Silicon Macs; Intel Macs can only use it if Homebrew is already installed (see below).
 
-..  youtube:: wLK2wLwEXm4
-    :width: 100%
+The setup is done by the `install-prereqs-mac.sh <https://github.com/ArduPilot/ardupilot/blob/master/Tools/environment_install/install-prereqs-mac.sh>`__ script in the ArduPilot repository. If you prefer to set up the environment by hand, read the script and follow the steps it takes.
 
+Install Xcode Command Line Tools
+--------------------------------
 
-There is a `pre-built script  <https://github.com/ArduPilot/ardupilot/blob/master/Tools/environment_install/install-prereqs-mac.sh>`__ that will install these pre-requisites.
-
-How to use it, cd to your ardupilot directory, and execute:
+These provide git and the compilers. Open a terminal and run:
 
 ::
 
-    sh ./Tools/environment_install/install-prereqs-mac.sh
+    xcode-select --install
 
+Clone ArduPilot repository
+--------------------------
 
-Setup steps
------------
+.. include:: git-clone.rst
+    :start-after: inclusion-marker-do-not-remove
+    :end-before: Cloning with the GitHub GUI (Windows or MAC)
 
-#. MacOS will alert you when you enter a command in the terminal that requires Xcode Command Line Tools. You can also install Xcode Command Line Tools manually
+Run the install script
+----------------------
 
-   ::
-   
-       xcode-select --install
+On Apple Silicon Macs:
 
-#. Install `Homebrew <http://brew.sh>`__ for MacOS (Homebrew is a respected package manager for MacOS)
+- install `Homebrew <https://brew.sh>`__ first and run the ``eval "$(/opt/homebrew/bin/brew shellenv)"`` step it prints at the end, otherwise the script stops with ``brew: command not found``
+- if you will build firmware for autopilots, install Rosetta 2, which the ARM toolchain needs: ``softwareupdate --install-rosetta``
 
-   ::
-   
-      /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
- 
-#. Install the following packages using brew
+On Intel Macs, Homebrew's installer no longer supports Intel processors and stops with "Homebrew on macOS is only supported on Apple Silicon processors!". The script therefore only works on an Intel Mac where Homebrew is already installed.
 
-   ::
+Do not run the script with ``sudo``. From your ardupilot directory, run:
 
-       brew update
-       brew install gcc-arm-none-eabi genromfs python3
+::
 
-#. Install the latest version of awk using brew (make sure
-   **/usr/local/bin** takes precedence in your path):
+    Tools/environment_install/install-prereqs-mac.sh -y
 
-   ::
+The script:
 
-       brew install gawk
+- installs `Homebrew <https://brew.sh>`__ if it is not already installed (Apple Silicon only), then uses it to install gawk, coreutils, wget and ccache
+- optionally installs Python 3.10 using `pyenv <https://github.com/pyenv/pyenv>`__. This is recommended if your system Python is causing build errors
+- optionally installs the ARM toolchain, which is needed to build firmware for autopilots but not for SITL
+- installs the Python packages needed to build ArduPilot and run MAVProxy and SITL
+- adds the toolchain, the ArduPilot tools and ccache to your PATH in ``~/.zshrc`` (or ``~/.bash_profile`` if you use bash)
+- updates the git submodules
 
-#. Install *empy* and *pyserial* using the following commands:
+``-y`` answers yes to every question. Without it the script asks before installing pyenv, before installing the ARM toolchain, and before each change to your PATH. It will ask for your password when installing the ARM toolchain.
 
-   ::
-
-       python3 -m pip install empy pyserial
-       
-   ::
-   
-       ** Starting with MacOS Mojave (10.14.x) you might want to install the SDK headers
-       
-       open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
-
-
-#. Follow the :ref:`MAVProxy documentation <mavproxy:mavproxy-downloadinstallmac>` if you plan to use the simulator.
+When it finishes, close and reopen the terminal (or run ``source ~/.zshrc``, or ``source ~/.bash_profile`` if you use bash) so the PATH changes take effect.
 
 Now you should be able to build with waf as described in `BUILD.md <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__.
 
-Additional Steps for macOS mojave
----------------------------------
-Due to some changes binutils installed via brew have stopped working for macOS mojave leading to crashing builds. So if installed, remove via following command:
-
-::
-
-    brew uninstall binutils
-
-Also you will need to install the c++ include headers to /usr/include to do that. Run the following in commandline and follow the installation routine:
-
-::
-
-    open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
+Follow the :ref:`MAVProxy documentation <mavproxy:mavproxy-downloadinstallmac>` if you plan to use the simulator.
 
 Cleaning
 --------
@@ -90,5 +68,3 @@ If there have been updates to some git submodules you may need to do a full clea
 
 Commands `clean` and `distclean` can be used to clean the objects produced by the build.
 `clean` keeps the configure information, cleaning only the objects for the current board. `distclean` cleans everything for every board, including the saved configure information.
-
-Follow the instructions for `build <https://github.com/ArduPilot/ardupilot/blob/master/BUILD.md>`__ .
