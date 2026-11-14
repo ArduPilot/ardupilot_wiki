@@ -72,6 +72,8 @@ New Features
 - STM32H7 firmware built with --enable-USB-debug can be debugged with GDB over USB without a debug probe, see https://github.com/ArduPilot/ardupilot_wiki/pull/8156
 - SERIAL_PASS1 and SERIAL_PASS2 can now pass through to networking, DroneCAN serial and scripting serial ports, see https://github.com/ArduPilot/ardupilot_wiki/pull/8258
 - Serial passthrough to an RC input port (e.g. to flash an ELRS receiver) no longer has its port settings changed by RC input while active, see https://github.com/ArduPilot/ardupilot_wiki/pull/8276
+- VTX control over MSP for HDZero and ELRS backpack, new VTX_TYPES to choose which protocol controls the VTX, and MSP_OPTIONS ForceVTXHighPower bit, see https://github.com/ArduPilot/ardupilot_wiki/pull/8292
+- Lua scripts can write their own text and symbols to the OSD using the new osd scripting binding, see https://github.com/ArduPilot/ardupilot_wiki/pull/8294
 
 [site wiki="plane"]
 - Rangefinder engagement distance, see https://github.com/ArduPilot/ardupilot_wiki/pull/7559
@@ -88,6 +90,8 @@ New Features
 - MAV_CMD_DO_SET_ROI_WPNEXT_OFFSET mission command (point gimbal at next waypoint with an offset), see https://github.com/ArduPilot/ardupilot_wiki/pull/7920
 - Simple/Super Simple mode fix: rotation now correctly applied in more flight modes, including Drift mode and during Precision Landing reposition, see https://github.com/ArduPilot/ardupilot_wiki/pull/7967
 - Tradheli: DDFP tail rotor moved to the RSC controller with independent H_TAIL_RAMP_TIME, see https://github.com/ArduPilot/ardupilot_wiki/pull/7979
+- Throttle used for barometer thrust compensation is now low-pass filtered, cutoff set by BARO_THST_FILT, see https://github.com/ArduPilot/ardupilot_wiki/pull/8295
+- With fast rate enabled, the rate target is now smoothly interpolated between main loop updates, allowing higher ATC_RAT_xxx_FLTT, see https://github.com/ArduPilot/ardupilot_wiki/pull/8296
 - Flip mode rotation rate is now set by FLIP_RATE, with the flip timeout derived from it, see https://github.com/ArduPilot/ardupilot_wiki/pull/8049
 - Follow: changing FOLL_SYSID now discards the previous lead vehicle's state, and FOLL_SYSID = 0 no longer adopts the first vehicle seen, see https://github.com/ArduPilot/ardupilot_wiki/pull/8061
 - Battery failsafe no longer disarms a landed vehicle when the failsafe action is 0 (Warn Only), so a vehicle that was force-armed with a low battery stays armed, see https://github.com/ArduPilot/ardupilot_wiki/pull/8118
