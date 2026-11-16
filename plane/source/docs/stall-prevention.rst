@@ -32,7 +32,11 @@ parameter is set to 1 then two things are done:
    margin above the stall speed to turn at the demanded bank angle. If
    you don't then the turn will be limited to the safe limit, but it
    will always allow a bank of at least 25 degrees (to ensure you can
-   still manoeuvre if your airspeed estimate is badly off).
+   still manoeuvre if your airspeed estimate is badly off). If
+   :ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>` bit 16 is set, an airspeed sensor
+   is in use and :ref:`AIRSPEED_STALL<AIRSPEED_STALL>` is set, this 25
+   degree minimum is not applied and the bank can be limited down to
+   :ref:`LEVEL_ROLL_LIMIT<LEVEL_ROLL_LIMIT>`.
 -  when in auto-throttle modes the autopilot will also raise the minimum
    airspeed in the :ref:`TECS system <tecs-total-energy-control-system-for-speed-height-tuning-guide>`
    to the level at which the current demanded bank angle can be safely
@@ -71,8 +75,9 @@ prevention code:
 In each of these modes the aircraft is either calculating a desired bank
 angle for the navigation code, or the user is inputting a desired bank
 angle via the aileron stick. In both cases the stall prevention code
-will limit the bank angle based on the amount of margin between
-``AIRSPEED_MIN`` and the current airspeed.
+will limit the bank angle based on the amount of margin between the
+stall speed (:ref:`AIRSPEED_STALL<AIRSPEED_STALL>`, or
+:ref:`AIRSPEED_MIN<AIRSPEED_MIN>` if it is 0) and the current airspeed.
 
 The following modes are affected by the automatic speed increase in TECS
 when the bank angle is limited by stall prevention:
