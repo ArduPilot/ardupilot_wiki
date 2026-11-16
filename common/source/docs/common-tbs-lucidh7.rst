@@ -99,8 +99,8 @@ to use DShot. Channels 1-10 support bi-directional dshot.
 Battery Monitoring
 ==================
 The board has a built-in voltage sensor and external current sensor input. The current
-sensor can read up to 130 Amps. The voltage sensor can handle up to 6S
-LiPo batteries.
+sensor can read up to 130 Amps; its analog signal is input directly to the ADC.
+The voltage sensor can handle up to 6S LiPo batteries.
 
 The correct battery setting parameters are:
 
