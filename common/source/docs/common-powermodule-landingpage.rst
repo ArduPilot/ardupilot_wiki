@@ -65,6 +65,18 @@ Battery Tag data can be accessed easily via either examining the tag's DroneCAN 
 
 A `Scripting applet <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/applets/BatteryTag.lua>`__ can also be used.
 
+DroneCAN Battery Management System (BMS)
+========================================
+
+AP_Periph has basic support for a battery management system (BMS) built around the `Texas Instruments BQ76952 <https://www.ti.com/product/BQ76952>`__ battery monitor, connected via I2C. The BMS reports the battery's voltage, current and individual cell voltages to the autopilot over DroneCAN. Set :ref:`BATT_MONITOR<BATT_MONITOR>` = 8 (DroneCAN) on the autopilot to use it.
+
+The BMS has a button and 8 LEDs:
+
+- a short press of the button shows the battery's state of charge on the LEDs
+- holding the button for over a second powers the vehicle on or off. The LEDs light one by one while the button is held, and releasing it before the sequence completes cancels the power on or off.
+
+VimDrones' L431-based BMS hardware uses the `VM-L431-BMS AP_Periph firmware <https://firmware.ardupilot.org/AP_Periph/latest/VM-L431-BMS/>`__. It defaults to a static DroneCAN node ID of 32 rather than dynamic node allocation, so it can operate without an autopilot. Firmware updating process is explained :ref:`HERE <planner:dronecan-firmware-flashing>`.
+
 
 I2C Power Monitor
 =================
