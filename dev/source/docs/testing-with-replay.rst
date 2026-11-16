@@ -70,14 +70,14 @@ Checking that new code has no effect on the EKF
 When modifying the EKF code it can be useful to confirm your changes have no impact on the EKF's estimates in some situations.  This can be done by following the procedure below:
 
 - Start SITL with a vehicle of your choice, using "master"
-- Set these parameters and optionally some sensor position parameters (i.e GPS_POS_X,Y,Z) to non-zero values
+- Set these parameters and optionally some sensor position parameters (i.e :ref:`GPS1_POS_X<copter:GPS1_POS_X>`, :ref:`GPS1_POS_Y<copter:GPS1_POS_Y>`, :ref:`GPS1_POS_Z<copter:GPS1_POS_Z>` and the matching :ref:`SIM_GPS1_POS_Y<copter:SIM_GPS1_POS_Y>`) to non-zero values
 
 .. code-block:: bash
 
     param set LOG_DISARMED 1
     param set LOG_REPLAY 1
-    param set GPS_POS1_Y 0.1
-    param set SIM_GPS_POS1_Y 0.1
+    param set GPS1_POS_Y 0.1
+    param set SIM_GPS1_POS_Y 0.1
 
 - Fly the vehicle for a short flight which includes fast forward flight and turns
 - Land the vehicle and download the onboard log (i.e. 00000001.BIN)
