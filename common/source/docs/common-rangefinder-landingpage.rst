@@ -71,6 +71,7 @@ Unidirectional Rangefinders
     Benewake TF02-Pro / TF03 / TFS20-L / TF-Luna / TF-Nova / TF350 <common-benewake-tf02-lidar>
     Benewake TFmini / TFmini Plus <common-benewake-tfmini-lidar>
     CORVON CV08 / CV50 <common-corvon-cv08-cv50>
+    DTS6012M Lidar <common-rangefinder-dts6012m>
     Garmin Lidar-Lite <common-rangefinder-lidarlite>
     GY-US42 Sonar <common-rangefinder-gy-us42>
     Hexsoon 24G Radar <common-rangefinder-hexsoon-24g>
