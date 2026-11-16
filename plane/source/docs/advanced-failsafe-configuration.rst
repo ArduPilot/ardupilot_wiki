@@ -298,7 +298,7 @@ testing you would use:
 
 The key parameters for failsafe testing in SITL are:
 
--  Test GPS failure: param set SIM_GPS_DISABLE 1
+-  Test GPS failure: param set :ref:`SIM_GPS1_ENABLE<SIM_GPS1_ENABLE>` 0
 -  Test RC failure: param set SIM_RC_FAIL 1
 -  Test comms failure: set heartbeat 0
 -  Test fence failure: switch to CRUISE mode and fly across boundary
