@@ -33,7 +33,7 @@ QuadPlanes are often affected by vibration and tuning the various software filte
 Roll/Pitch tuning
 =================
 
-The ``Q_A_RAT_RLL_x`` and ``Q_A_RAT_PIT_x`` Roll/Pitch Rate parameters which convert the desired rotation rate into a motor output are the most important. If not a tailsitter, then the ``Q_A_RAT_PIT_FF`` will be zero and corrections are dominated by P/I/D. In tailsitters, then the FF terms dominate (Pitch axis only) and P/D are primarily for disturbance correction. For tuning tailsitter pitch axis, see :ref:`pitch-yaw-tuning`.
+The ``Q_A_RAT_RLL_x`` and ``Q_A_RAT_PIT_x`` Roll/Pitch Rate parameters which convert the desired rotation rate into a motor output are the most important. If not a tailsitter, then the :ref:`Q_A_RAT_PIT_FF<Q_A_RAT_PIT_FF>` will be zero and corrections are dominated by P/I/D. In tailsitters, then the FF terms dominate (Pitch axis only) and P/D are primarily for disturbance correction. For tuning tailsitter pitch axis, see :ref:`pitch-yaw-tuning`.
 
 The :ref:`Q_A_ANG_RLL_P<Q_A_ANG_RLL_P>` and :ref:`Q_A_ANG_PIT_P<Q_A_ANG_PIT_P>` Roll/Pitch P converts the desired angle into a desired rotation rate which is then fed to the Rate controller.
 
@@ -52,7 +52,7 @@ Alternatively you may wish to try automatically tuning the rate parameters using
 Yaw Tuning
 ==========
 
-The Angle Yaw and Rate Yaw parameters control the yaw response. With QuadPlanes, these often need tuning to get the desired YAW response, since configurations vary widely. In non-tailsitters, then the ``Q_A_RAT_YAW_FF`` will be zero and corrections are dominated by P/I/D. But in tailsitters, the FF term dominates and P/D are primarily for disturbance correction. For tuning a tailsitter yaw axis, see :ref:`pitch-yaw-tuning`.
+The Angle Yaw and Rate Yaw parameters control the yaw response. With QuadPlanes, these often need tuning to get the desired YAW response, since configurations vary widely. In non-tailsitters, then the :ref:`Q_A_RAT_YAW_FF<Q_A_RAT_YAW_FF>` will be zero and corrections are dominated by P/I/D. But in tailsitters, the FF term dominates and P/D are primarily for disturbance correction. For tuning a tailsitter yaw axis, see :ref:`pitch-yaw-tuning`.
 
 Similar to roll and pitch, if either :ref:`Q_A_RAT_YAW_P<Q_A_RAT_YAW_P>` or :ref:`Q_A_ANG_YAW_P<Q_A_ANG_YAW_P>` is too high the QuadPlane's heading will oscillate. If they are too low, the QuadPlane may be unable to maintain its heading.
 

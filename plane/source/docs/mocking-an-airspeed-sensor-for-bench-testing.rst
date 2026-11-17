@@ -41,7 +41,7 @@ Pixhawk Configuration and Settings
 Once the DF 13 cable is connected to the potentiometer, plug it into the
 :ref:`ADC 6.6v port <common-pixhawk-overview_pixhawk_analog_input_pins>`.
 Open your Ground Control Station (GCS) of choice, and change the
-``ARSPD_PIN`` parameter to Pin "**15"** as shown below.
+:ref:`ARSPD_PIN<ARSPD_PIN>` parameter to Pin "**15"** as shown below.
 
 .. image:: ../images/AirspeedMP.png
     :target: ../_images/AirspeedMP.png
@@ -53,7 +53,7 @@ initialization is complete. Adjust the pot to set your desired speed.
 .. note::
 
    If you are using an I2C airspeed sensor - *remember to re-enable it!*
-   Set the ``ARSPD_PIN``
+   Set the :ref:`ARSPD_PIN<ARSPD_PIN>`
    parameter to 65, and cycle the autopilot power to ensure the I2C airspeed
    properly initializes. Check you get the normal 1-3 m/s noise on the
    airspeed display.

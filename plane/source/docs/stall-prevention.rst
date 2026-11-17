@@ -122,13 +122,13 @@ pitch is added in FBWA and AUTOTUNE modes based on the throttle
 position. The amount of down pitch added is based on the
 :ref:`STAB_PITCH_DOWN <STAB_PITCH_DOWN>`
 parameter, which defaults to 2 degrees. At zero throttle this full down
-pitch is added. If throttle is above ``TRIM_THROTTLE`` then no down
+pitch is added. If throttle is above :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` then no down
 pitch is added. Between those two values the down pitch is added in
 proportion to the throttle.
 
 This has the effect of slightly lowering the nose when you lower
 throttle in FBWA and AUTOTUNE modes, which makes the plane gain a bit of
 speed, and thus makes it less likely to stall. The value you need for
-``STAB_PITCH_DOWN`` depends on how much drag your plane has. A very
+:ref:`STAB_PITCH_DOWN<STAB_PITCH_DOWN>` depends on how much drag your plane has. A very
 sleek model will need a smaller value. A high drag model will need a
 larger value.

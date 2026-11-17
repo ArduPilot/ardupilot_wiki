@@ -12,8 +12,8 @@ right itself will make these maneuvers difficult. For people wanting the
 plane to mostly fly itself, with the pilot just telling it where to fly,
 you are better off using the :ref:`FLY BY WIRE_A (FBWA) <fbwa-mode>` mode.
 
-In stabilize mode the throttle is limited by the ``THR_MIN`` and
-``THR_MAX`` settings.
+In stabilize mode the throttle is limited by the :ref:`THR_MIN<THR_MIN>` and
+:ref:`THR_MAX<THR_MAX>` settings.
 
 .. note::
 

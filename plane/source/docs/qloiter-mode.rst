@@ -59,7 +59,7 @@ Common Problems
    against these which means the pilot should always be ready to
    take-over manual control.  Beyond that ensuring a good GPS HDOP
    before take-off is always good and it may help to reduce the
-   ``EK2_GLITCH_RAD`` and/or ``EK3_GLITCH_RAD`` parameters (see :ref:`GPS glitch wiki page <copter:gps-failsafe-glitch-protection>`
+   :ref:`EK2_GLITCH_RAD<EK2_GLITCH_RAD>` and/or :ref:`EK3_GLITCH_RAD<EK3_GLITCH_RAD>` parameters (see :ref:`GPS glitch wiki page <copter:gps-failsafe-glitch-protection>`
    for details) to tighten up on the glitch detection.
 #. QuadPlane slowly descends or climbs until the pilot retakes control in
    stabilize.  Normally this is caused by not having the throttle stick
