@@ -7,7 +7,7 @@ DataFlash Logs
     module dataflash_logger
     
 This module allows dataflash logs to be streamed in realtime from the autopilot. It requires the
-``LOG_BACKEND_TYPE`` parameter to include the "MAVLink" backend.
+:ref:`LOG_BACKEND_TYPE<copter:LOG_BACKEND_TYPE>` parameter to include the "MAVLink" backend.
 
 The logs will be downloaded to the vehicle logging folder.
 
