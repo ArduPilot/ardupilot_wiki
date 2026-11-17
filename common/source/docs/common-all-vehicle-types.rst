@@ -4,20 +4,53 @@
 Vehicle Types Supported by ArduPilot
 ====================================
 
-Overview
-========
+This showcase enumerates the wide variety of vehicle architectures and airframes supported
+by ArduPilot. Thanks to ArduPilot's modular and highly configurable control architecture,
+a single flight-control software ecosystem can control everything from common consumer multirotors
+to experimental hybrid aircraft, ground rovers, boats, submarines, and antenna trackers.
 
-ArduPilot is capable of controlling many vehicles.
+.. tip::
 
-This document attempts to enumerate these options.  It is a work in progress and is nowhere near complete.
+   **New to ArduPilot?**
+   If you are building or configuring your first vehicle, you do not need to choose among all 46
+   configurations shown below. Start with the dedicated documentation and setup guides
+   for the core vehicle platforms:
 
-
-Supported Vehicles
-==================
+   - **Multirotors (Quadcopter, Hexacopter, etc.)**: See the `Copter Documentation <https://ardupilot.org/copter>`__ and :ref:`Choosing a Multicopter Frame <copter:choosing-a-frame>`.
+   - **Fixed-Wing Aircraft**: See the `Plane Documentation <https://ardupilot.org/plane>`__.
+   - **Ground Vehicles & Watercraft**: See the `Rover Documentation <https://ardupilot.org/rover>`__.
+   - **Submarines**: See the `Sub Documentation <https://ardupilot.org/sub>`__.
 
 .. note::
 
-   R/W is "Real World"
+   - **Sim**: Availability of software simulation (e.g., SITL, Gazebo, RealFlight)
+   - **R/W**: "Real World" verified (has been physically built and operated)
+   - **Code**: Firmware codebase required (download from `firmware.ardupilot.org <https://firmware.ardupilot.org>`__)
+   - **Info**: Links to development discussions, build logs, or setup documentation
+   - This showcase is an ongoing compilation and continues to expand as new configurations are created.
+
+
+Vehicle Categories
+==================
+
+- :ref:`Multirotors (Copter) <common-all-vehicle-types-multirotors>` (14 configurations)
+- :ref:`Helicopters (Copter) <common-all-vehicle-types-helicopters>` (3 configurations)
+- :ref:`Conventional Fixed-Wing (Plane) <common-all-vehicle-types-fixed-wing>` (4 configurations)
+- :ref:`VTOL & QuadPlanes (Plane) <common-all-vehicle-types-vtol-quadplanes>` (11 configurations)
+- :ref:`Specialty & Experimental Aircraft (Plane) <common-all-vehicle-types-specialty-aircraft>` (2 configurations)
+- :ref:`Ground Vehicles & Watercraft (Rover) <common-all-vehicle-types-ground-water>` (9 configurations)
+- :ref:`Underwater Vehicles (Sub) <common-all-vehicle-types-sub>` (1 configuration)
+- :ref:`Specialized Systems (Tracker & Blimp) <common-all-vehicle-types-specialized-systems>` (2 configurations)
+
+
+.. _common-all-vehicle-types-multirotors:
+
+Multirotors (Copter Firmware)
+=============================
+
+Multirotors use one or more thrust-producing rotors arranged around a frame. Attitude and
+position are typically controlled by modulating motor speeds, tilting rotors, actuating control vanes,
+or varying blade pitch. All vehicles in this section run the **Copter** firmware.
 
 +-----------------------------------------------------------------------------------------------------------+
 + **QuadCopter (X, Plus, H, V)**                                                                            +
@@ -42,7 +75,7 @@ Supported Vehicles
 +------+-------------------------------------------------+                                                  +
 + Code | Copter                                          +                                                  +
 +------+-------------------------------------------------+                                                  +
-+ Info |                                                 +                                                  +  
++ Info |                                                 +                                                  +
 +------+-------------------------------------------------+--------------------------------------------------+
 + **Dodeca-HexaCopter**                                                                                     +
 +------+----------------------------------------------------------------------------------------------------+
@@ -66,7 +99,7 @@ Supported Vehicles
 +------+-------------------------------------------------+                                                  +
 + Code | Copter                                          +                                                  +
 +------+-------------------------------------------------+                                                  +
-+ Info |                                                 +                                                  +  
++ Info |                                                 +                                                  +
 +------+-------------------------------------------------+--------------------------------------------------+
 + **QuadX8**                                                                                                +
 +------+----------------------------------------------------------------------------------------------------+
@@ -78,7 +111,7 @@ Supported Vehicles
 +------+-------------------------------------------------+                                                  +
 + Code | Copter                                          +                                                  +
 +------+-------------------------------------------------+                                                  +
-+ Info |                                                 +                                                  +  
++ Info |                                                 +                                                  +
 +------+-------------------------------------------------+--------------------------------------------------+
 + **Y6**                                                                                                    +
 +------+----------------------------------------------------------------------------------------------------+
@@ -90,7 +123,7 @@ Supported Vehicles
 +------+-------------------------------------------------+                                                  +
 + Code | Copter                                          +                                                  +
 +------+-------------------------------------------------+                                                  +
-+ Info |                                                 +                                                  +  
++ Info |                                                 +                                                  +
 +------+-------------------------------------------------+--------------------------------------------------+
 + **TriCopter**                                                                                             +
 +------+----------------------------------------------------------------------------------------------------+
@@ -130,7 +163,7 @@ Supported Vehicles
 +------+-------------------------------------------------+--------------------------------------------------+
 + **SingleCopter**                                                                                          +
 +------+----------------------------------------------------------------------------------------------------+
-+ Desc |                                                                                                    +
++ Desc | Single main lift rotor with vectored control vanes                                                 +
 +------+-------------------------------------------------+--------------------------------------------------+
 + Sim  | Yes                                             + .. vimeo:: 77850133                              +
 +------+-------------------------------------------------+     :width: 400                                  +
@@ -142,7 +175,7 @@ Supported Vehicles
 +------+-------------------------------------------------+--------------------------------------------------+
 + **CoaxCopter**                                                                                            +
 +------+----------------------------------------------------------------------------------------------------+
-+ Desc |                                                                                                    +
++ Desc | Coaxial counter-rotating motors with vectored control vanes                                        +
 +------+-------------------------------------------------+--------------------------------------------------+
 + Sim  | Yes                                             +  .. youtube::  N12Yw3eWPWo                       +
 +------+-------------------------------------------------+     :width: 100%                                 +
@@ -187,14 +220,26 @@ Supported Vehicles
 + Code | Copter                                          +                                                  +
 +------+-------------------------------------------------+--------------------------------------------------+
 + Info | https://discuss.ardupilot.org/t/collective-pitch-quad-support/21678                                +
-+------+----------------------------------------------------------------------------------------------------+
++------+-------------------------------------------------+--------------------------------------------------+
+
+
+.. _common-all-vehicle-types-helicopters:
+
+Helicopters (Copter Firmware)
+=============================
+
+Traditional helicopters use cyclic and collective blade pitch control. Tandem and inter-meshing
+(synchropter) helicopters use counter-rotating dual rotor discs. All vehicles in this section run the
+**Copter** (Traditional Helicopter) firmware.
+
++-----------------------------------------------------------------------------------------------------------+
 + **Helicopter**                                                                                            +
 +------+----------------------------------------------------------------------------------------------------+
 + Desc | Traditional Helicopter                                                                             +
 +------+-------------------------------------------------+--------------------------------------------------+
 + Sim  | Yes                                             +  .. youtube:: 54_YDwJmcfg                        +
 +------+-------------------------------------------------+     :width: 100%                                 +
-+ R/W  | Yes                                             +                                                  + 
++ R/W  | Yes                                             +                                                  +
 +------+-------------------------------------------------+                                                  +
 + Code | Copter                                          +                                                  +
 +------+-------------------------------------------------+                                                  +
@@ -206,7 +251,7 @@ Supported Vehicles
 +------+-------------------------------------------------+--------------------------------------------------+
 + Sim  | Yes                                             +  .. youtube:: FRwll__O84k                        +
 +------+-------------------------------------------------+     :width: 100%                                 +
-+ R/W  | Yes                                             +                                                  +  
++ R/W  | Yes                                             +                                                  +
 +------+-------------------------------------------------+                                                  +
 + Code | Copter                                          +                                                  +
 +------+-------------------------------------------------+                                                  +
@@ -224,6 +269,17 @@ Supported Vehicles
 +------+-------------------------------------------------+                                                  +
 + Info |                                                 +                                                  +
 +------+-------------------------------------------------+--------------------------------------------------+
+
+
+.. _common-all-vehicle-types-fixed-wing:
+
+Conventional Fixed-Wing (Plane Firmware)
+========================================
+
+Fixed-wing aircraft rely on aerodynamic lift generated by airflow over wings, delivering higher cruise
+speeds and longer mission ranges than rotary-wing vehicles. All vehicles in this section run the **Plane** firmware.
+
++-----------------------------------------------------------------------------------------------------------+
 + **AETR Plane - Tractor**                                                                                  +
 +------+----------------------------------------------------------------------------------------------------+
 + Desc | Traditional Aeleron/Elevator/Throttle/Rudder Tractor                                               +
@@ -272,6 +328,18 @@ Supported Vehicles
 +------+-------------------------------------------------+                                                  +
 + Info |                                                 +                                                  +
 +------+-------------------------------------------------+--------------------------------------------------+
+
+
+.. _common-all-vehicle-types-vtol-quadplanes:
+
+VTOL & QuadPlanes (Plane Firmware)
+==================================
+
+Hybrid Vertical Takeoff and Landing (VTOL) aircraft combine the vertical takeoff/hover capabilities of a
+multicopter with the forward flight efficiency and range of a fixed-wing airplane. All aircraft in this
+section run the **Plane** firmware with QuadPlane options enabled.
+
++-----------------------------------------------------------------------------------------------------------+
 + **QuadPlane X4 Elevon Pusher**                                                                            +
 +------+----------------------------------------------------------------------------------------------------+
 + Desc | Four fixed lifting motors; elevon+rudder control surfaces                                          +
@@ -326,7 +394,7 @@ Supported Vehicles
 +------+-------------------------------------------------+--------------------------------------------------+
 + Sim  | Yes                                             +  .. youtube:: yqGWQrjZTBc                        +
 +------+-------------------------------------------------+     :width: 100%                                 +
-+ R/W  | Yes                                             +                                                  +  
++ R/W  | Yes                                             +                                                  +
 +------+-------------------------------------------------+                                                  +
 + Code | Plane                                           +                                                  +
 +------+-------------------------------------------------+                                                  +
@@ -338,7 +406,7 @@ Supported Vehicles
 +------+-------------------------------------------------+--------------------------------------------------+
 + Sim  | Yes                                             +  .. youtube:: ulHYegkfSEE                        +
 +------+-------------------------------------------------+     :width: 100%                                 +
-+ R/W  | Yes                                             +                                                  +  
++ R/W  | Yes                                             +                                                  +
 +------+-------------------------------------------------+                                                  +
 + Code | Plane                                           +                                                  +
 +------+-------------------------------------------------+                                                  +
@@ -408,6 +476,17 @@ Supported Vehicles
 +------+-------------------------------------------------+                                                  +
 + Info | Tri/Hex/Octo also supported                     + .. youtube:: TtF8WSfgQhI                         +
 +------+-------------------------------------------------+--------------------------------------------------+
+
+
+.. _common-all-vehicle-types-specialty-aircraft:
+
+Specialty & Experimental Aircraft (Plane Firmware)
+==================================================
+
+ArduPilot supports unconventional flight systems, including rotorcraft with an unpowered, autorotating rotor (gyrocopters)
+and biomimetic flapping-wing fliers (ornithopters). These vehicles run specialized configurations of the **Plane** firmware.
+
++-----------------------------------------------------------------------------------------------------------+
 + **GyroCopter**                                                                                            +
 +------+----------------------------------------------------------------------------------------------------+
 + Desc | Unpowered main rotor disc (tilts laterally), pusher prop, rudder and elevator                      +
@@ -420,7 +499,7 @@ Supported Vehicles
 +------+-------------------------------------------------+                                                  +
 + Info |                                                 +                                                  +
 +------+-------------------------------------------------+--------------------------------------------------+
-| **Ornithopter**                                                                                           +
++ **Ornithopter**                                                                                           +
 +------+----------------------------------------------------------------------------------------------------+
 + Desc | Ornithopter - flapping wings +rudder                                                               +
 +------+-------------------------------------------------+--------------------------------------------------+
@@ -432,6 +511,18 @@ Supported Vehicles
 +------+-------------------------------------------------+                                                  +
 + Info |                                                 +                                                  +
 +------+-------------------------------------------------+--------------------------------------------------+
+
+
+.. _common-all-vehicle-types-ground-water:
+
+Ground Vehicles & Watercraft (Rover Firmware)
+=============================================
+
+ArduPilot powers a diverse range of unmanned ground vehicles (UGVs) and unmanned surface vessels (USVs),
+including wheeled rovers, tracked skid-steer vehicles, robotic walkers, motorboats, and autonomous sailboats.
+All vehicles in this section run the **Rover** firmware.
+
++-----------------------------------------------------------------------------------------------------------+
 + **Ackerman Steering Rover**                                                                               +
 +------+----------------------------------------------------------------------------------------------------+
 + Desc | Pivoting steering wheels                                                                           +
@@ -485,7 +576,7 @@ Supported Vehicles
 + Desc | Vectored thrust fan                                                                                +
 +------+-------------------------------------------------+--------------------------------------------------+
 + Sim  | Yes                                             + .. youtube:: s4qaEjSPRcU                         +
-+------+-------------------------------------------------+                                                  +
++------+-------------------------------------------------+     :width: 100%                                 +
 + R/W  | Yes                                             +                                                  +
 +------+-------------------------------------------------+                                                  +
 + Code | Rover                                           +                                                  +
@@ -540,6 +631,17 @@ Supported Vehicles
 +------+-------------------------------------------------+                                                  +
 + Info |                                                 +                                                  +
 +------+-------------------------------------------------+--------------------------------------------------+
+
+
+.. _common-all-vehicle-types-sub:
+
+Underwater Vehicles (Sub Firmware)
+==================================
+
+ArduPilot supports autonomous and remotely operated underwater vehicles (ROVs) operating in 6-DOF
+hydrodynamic environments with multi-thruster vectored configurations. Underwater vehicles run the **Sub** firmware.
+
++-----------------------------------------------------------------------------------------------------------+
 + **Vectored Sub**                                                                                          +
 +------+----------------------------------------------------------------------------------------------------+
 + Desc | Thrusters with 6-DOF                                                                               +
@@ -552,6 +654,16 @@ Supported Vehicles
 +------+-------------------------------------------------+                                                  +
 + Info |                                                 +                                                  +
 +------+-------------------------------------------------+--------------------------------------------------+
+
+
+.. _common-all-vehicle-types-specialized-systems:
+
+Specialized Systems (Tracker & Blimp Firmware)
+==============================================
+
+In addition to traditional vehicles, ArduPilot includes dedicated firmware for tracking systems and lighter-than-air vehicles.
+
++-----------------------------------------------------------------------------------------------------------+
 + **AntennaTracker**                                                                                        +
 +------+----------------------------------------------------------------------------------------------------+
 + Desc | Pan/Tilt PWM-driven continuous actuators                                                           +
