@@ -51,7 +51,7 @@ The "security attack surface" is the set of access points that a malicious actor
    * - I2C / SPI
      - Used for IMU and some `peripherals <https://ardupilot.org/copter/docs/common-optional-hardware.html>`__ including compass and lidar
    * - RC Receiver Input
-     - Used for pilot control of the vehicle in manual `flight modes <https://ardupilot.org/copter/docs/flight-modes.html>`__, `flight mode selection <https://ardupilot.org/copter/docs/common-rc-transmitter-flight-mode-configuration.html>`__ and `auxiliary switch functions <https://ardupilot.org/copter/docs/common-auxiliary-functions.html>`__.  Check the attack surface of the pilot's transmitter and the RC receiver on the vehicle.  Use the ``RC_PROTOCOLS`` parameter to enable only the protocols being used.
+     - Used for pilot control of the vehicle in manual `flight modes <https://ardupilot.org/copter/docs/flight-modes.html>`__, `flight mode selection <https://ardupilot.org/copter/docs/common-rc-transmitter-flight-mode-configuration.html>`__ and `auxiliary switch functions <https://ardupilot.org/copter/docs/common-auxiliary-functions.html>`__.  Check the attack surface of the pilot's transmitter and the RC receiver on the vehicle.  Use the :ref:`RC_PROTOCOLS<copter:RC_PROTOCOLS>` parameter to enable only the protocols being used.
    * - SD Card
      - Accessed physically or via :ref:`MAVFtp <mavlink-mavftp>`.  Used for `log files <https://ardupilot.org/copter/docs/common-logs.html>`__, `rally points <https://ardupilot.org/copter/docs/common-rally-points.html>`__, `terrain data storage <https://ardupilot.org/plane/docs/common-terrain-following.html>`__, `Lua scripts <https://ardupilot.org/copter/docs/common-lua-scripts.html>`__ and (optionally) `firmware installation <https://ardupilot.org/copter/docs/common-install-sdcard.html>`__.  Physically secure the SD card, enable :ref:`MAVLink2 Signing <common-MAVLink2-signing>` and check the attack surfaces of the telemetry connections.  Include :ref:`Lua scripts directly in the firmware <common-oem-customizations>`
    * - Serial Ports
@@ -65,7 +65,7 @@ A key design goal of ArduPilot is that receiving corrupted or malformed data on 
 
 Some ArduPilot configurations support an IP server (ie HTTP) running directly on the autopilot (for example via :ref:`AP_Networking <copter:common-network>`).  Any such interface will advise the user that a server is active and display the address and port on which it is listening.  Users are responsible for ensuring that vehicle-side IP interfaces are accessible only to trusted network participants.
 
-We disable floating point exceptions in the ArduPilot firmware, meaning that a lot of floating point operations which would result in a Floating Point Exception now simply don't.  By default we do NOT disable floating point exceptions in SITL, allowing errors in Ground Control Stations to be picked up in SITL rather than when someone is flying a real vehicle.  To more-closely approximate what happens on our embedded platforms, you can use the ``SIM_FLOAT_EXCEPT`` parameter to disable floating point exceptions in ArduPilot SITL.  This may help find real problems when trying to use fuzzers to find problems with the ArduPilot codebase.
+We disable floating point exceptions in the ArduPilot firmware, meaning that a lot of floating point operations which would result in a Floating Point Exception now simply don't.  By default we do NOT disable floating point exceptions in SITL, allowing errors in Ground Control Stations to be picked up in SITL rather than when someone is flying a real vehicle.  To more-closely approximate what happens on our embedded platforms, you can use the :ref:`SIM_FLOAT_EXCEPT<copter:SIM_FLOAT_EXCEPT>` parameter to disable floating point exceptions in ArduPilot SITL.  This may help find real problems when trying to use fuzzers to find problems with the ArduPilot codebase.
 
 Lua Scripts
 -----------
@@ -96,11 +96,11 @@ Disable Driver Auto Detection
 
 Some drivers auto-detect the sensor being used.  Similar to feature reduction, disabling auto-detection can reduce the attack surface by limiting the code that interacts with the hardware.  Examples include:
 
-- ``BARO_PROBE_EXT``
-- ``COMPASS_DISBLMSK``
-- ``GPS1_TYPE``, ``GPS2_TYPE``
-- ``NTF_LED_TYPES``
-- ``RC_PROTOCOLS``
+- :ref:`BARO_PROBE_EXT<copter:BARO_PROBE_EXT>`
+- :ref:`COMPASS_DISBLMSK<copter:COMPASS_DISBLMSK>`
+- :ref:`GPS1_TYPE<copter:GPS1_TYPE>`, :ref:`GPS2_TYPE<copter:GPS2_TYPE>`
+- :ref:`NTF_LED_TYPES<copter:NTF_LED_TYPES>`
+- :ref:`RC_PROTOCOLS<copter:RC_PROTOCOLS>`
 
 Pre-arm Checks Customisation
 ----------------------------

@@ -161,7 +161,7 @@ As a reference the diagram below provides a high level view of Rover's architect
 
 #. Add the new mode to the ``ROVER_MODE`` enum in `mavlink/ardupilotmega.xml <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/ardupilotmega.xml>`__ and submit a PR to `pymavlink <https://github.com/ArduPilot/pymavlink>`__ adding it to the ``mode_mapping_rover`` table in `mavutil.py <https://github.com/ArduPilot/pymavlink/blob/master/mavutil.py>`__. MAVProxy does not use the ``AVAILABLE_MODES`` message and takes its mode names from this table, so the new mode will appear as unknown in MAVProxy until it is updated.
 
-   `QGroundControl <https://github.com/mavlink/qgroundcontrol>`__ requests the list of modes from the vehicle with ``AVAILABLE_MODES``, so it shows the new mode by name once it has been added to ``send_available_mode()`` as above. Its hard-coded list of Rover modes in ``ArduRoverFirmwarePlugin`` is only a fallback for older firmware, so adding the new mode there is optional. Mission Planner takes its list of modes from the ``MODE1`` parameter metadata, so it needs no changes beyond the ``@Values`` update above.
+   `QGroundControl <https://github.com/mavlink/qgroundcontrol>`__ requests the list of modes from the vehicle with ``AVAILABLE_MODES``, so it shows the new mode by name once it has been added to ``send_available_mode()`` as above. Its hard-coded list of Rover modes in ``ArduRoverFirmwarePlugin`` is only a fallback for older firmware, so adding the new mode there is optional. Mission Planner takes its list of modes from the :ref:`MODE1<rover:MODE1>` parameter metadata, so it needs no changes beyond the ``@Values`` update above.
 
 **As a side note, Rover has 3 high level controllers:**
 

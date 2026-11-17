@@ -338,7 +338,7 @@ Specify the schema and filename on the ``sim_vehicle.py`` command-line.  The fol
 
 .. note::
 
-   Your ``SERIAL5_PROTOCOL`` must be set appropriately for this data to be read.
+   Your :ref:`SERIAL5_PROTOCOL<copter:SERIAL5_PROTOCOL>` must be set appropriately for this data to be read.
 
 .. note::
 

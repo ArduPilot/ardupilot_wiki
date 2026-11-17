@@ -288,7 +288,7 @@ set the value to one:
 
 When we fly outside the radius the mode changes to RTL (return to land).
 If for some reason we travel further out by the value of
-``FENCE_MARGIN``, then the vehicle will simply land.
+:ref:`FENCE_MARGIN<copter:FENCE_MARGIN>`, then the vehicle will simply land.
 
 Testing the vehicle
 ===================

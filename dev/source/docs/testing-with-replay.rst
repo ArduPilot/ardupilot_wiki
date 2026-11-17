@@ -13,7 +13,7 @@ be analyzed using that branch's code instead of the code used while generating t
 
 .. note:: The log structure of the firmware used to create the log and the branch to be tested with it must be the same.
 
-.. note:: In order to use Replay the log must be generated with `LOG_REPLAY` set to 1. And it is preferred to also have `LOG_DISARMED` also set to 1, to obtain the most information in the log.
+.. note:: In order to use Replay the log must be generated with :ref:`LOG_REPLAY<copter:LOG_REPLAY>` set to 1. And it is preferred to also have :ref:`LOG_DISARMED<copter:LOG_DISARMED>` also set to 1, to obtain the most information in the log.
 
 .. image:: ../images/Replay_EKFVsINAV.png
     :target: ../_images/Replay_EKFVsINAV.png

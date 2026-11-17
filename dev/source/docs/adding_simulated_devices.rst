@@ -187,7 +187,7 @@ You can add an RPM sensor like this:
 
    param set RPM2_TYPE 10
 
-the rpm sensor(s) can be associated with any motor output using the ``SIM_VIB_MOT_MASK`` parameter. For example, to associate an RPM sensor to the SITL plane model's forward motor, which is default assigned to output 3, set the third bit in ``SIM_VIB_MOT_MASK`` parameter(value = 4).
+the rpm sensor(s) can be associated with any motor output using the :ref:`SIM_VIB_MOT_MASK<copter:SIM_VIB_MOT_MASK>` parameter. For example, to associate an RPM sensor to the SITL plane model's forward motor, which is default assigned to output 3, set the third bit in :ref:`SIM_VIB_MOT_MASK<copter:SIM_VIB_MOT_MASK>` parameter(value = 4).
 
 The RPM can be displayed using:
 
@@ -378,7 +378,7 @@ then another sim is started for the "slave" autopilot using:
 
    ./Tools/autotest/sim_vehicle.py -v ArduCopter  -f json:0.0.0.0 -I1
 
-you can then switch between whose outputs are being used by the simulation physics with the ``SIM_JSON_MASTER`` parameter  ie O or 1.
+you can then switch between whose outputs are being used by the simulation physics with the :ref:`SIM_JSON_MASTER<copter:SIM_JSON_MASTER>` parameter  ie O or 1.
 
 The second simulation could be running code from a different branch on the same computer.
 
