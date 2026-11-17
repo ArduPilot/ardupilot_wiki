@@ -176,6 +176,18 @@ The parameter defaults can be defined by creating a defaults.parm file in the sa
 
 Here is `how it was done for the skyviper <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/skyviper-v2450/defaults.parm>`__
 
+Notes on the safety switch input
+--------------------------------
+A safety switch button is connected to the pin given the ``SAFETY_IN`` label in the hwdef.dat file. By default the input is active-high: a high level means the button is pressed.
+
+Some boards use an active-low button with a pull-up resistor, so a low level means the button is pressed. For these boards (firmware 4.8 and later), add this line to the hwdef.dat file:
+
+- ``define HAL_SAFETY_IN_ACTIVE_LOW 1``
+
+Only the button input polarity changes. Safety state handling, the safety LED and IOMCU behavior are not affected.
+
+The define does not change the pin's pull resistor setting. An active-low ``SAFETY_IN`` line should not use the ``PULLDOWN`` found in most existing hwdef files; use ``PULLUP``, or ``FLOATING`` if an external pull-up resistor is fitted.
+
 
 
 .. toctree::
