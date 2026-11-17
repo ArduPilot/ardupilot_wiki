@@ -99,12 +99,17 @@ or use ``SIM_RC_FAIL=2`` which sets all channels at neutral  (1500us) and the th
 Testing the effects of vibration
 --------------------------------
 
-To test the vehicle's reaction to vibration, use ``SIM_ACC_RND``. The
-example below adds 3 m/s/s acceleration noise:
+To test the vehicle's reaction to vibration, set a vibration source and its amplitude.
+:ref:`SIM_VIB_MOT_MAX<copter:SIM_VIB_MOT_MAX>` adds vibration at the simulated motor frequency
+(:ref:`SIM_VIB_FREQ_X<copter:SIM_VIB_FREQ_X>`, ``_Y`` and ``_Z`` add a fixed frequency on each axis instead),
+and :ref:`SIM_ACC1_RND<copter:SIM_ACC1_RND>` sets the vibration amplitude on the first accelerometer.
+Vibration is only applied while the throttle is above :ref:`SIM_INS_THR_MIN<copter:SIM_INS_THR_MIN>`.
+The example below adds motor vibration with a maximum frequency of 250 Hz:
 
 ::
 
-    param set SIM_ACC_RND 3
+    param set SIM_VIB_MOT_MAX 250
+    param set SIM_ACC1_RND 3
 
 Testing the effects of wind
 ---------------------------
