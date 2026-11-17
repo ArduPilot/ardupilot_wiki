@@ -173,7 +173,7 @@ Connecting power monitor to alternative pins
 The power monitor is generally plugged into the default port on the
 autopilot (ie. Pixhawk). If you wish to change where the power
 monitor is plugged into the controller, the pins used can be modified
-using the ``BATT_VOLT_PIN`` and ``BATT_CURR_PIN`` parameters.
+using the :ref:`BATT_VOLT_PIN<BATT_VOLT_PIN__AP_BattMonitor_Analog>` and :ref:`BATT_CURR_PIN<BATT_CURR_PIN__AP_BattMonitor_Analog>` parameters.
 
 The list of available analog input pins that can be used are listed on
 the Hardware Options page for the :ref:`Pixhawk <common-pixhawk-overview_pixhawk_analog_input_pins>`  board or its board description linked from the :ref:`common-autopilots` page

@@ -791,7 +791,7 @@ location value for the parameter will be used.
 The mission will not proceed past this command while in AUTO mode. In
 order to break out of this command you need to change the mode (i.e. to
 MANUAL). If there are subsequent commands then you can continue the
-mission at the next command, if the Copter ``MIS_RESTART`` parameter is
+mission at the next command, if the :ref:`MIS_RESTART<MIS_RESTART>` parameter is
 set to resume, by switching back to AUTO mode (otherwise the mission
 will restart).
 
@@ -864,7 +864,7 @@ direction for the loiter.
 The mission will not proceed past this command while in AUTO mode. In
 order to break out of this command you need to change the mode (i.e. to
 MANUAL). If there are subsequent commands then you can continue the
-mission at the next command, if the Copter ``MIS_RESTART`` parameter is
+mission at the next command, if the :ref:`MIS_RESTART<MIS_RESTART>` parameter is
 set to resume, by switching back to AUTO mode (otherwise the mission
 will restart).
 
@@ -1202,7 +1202,7 @@ number of seconds — where loiter means "circle the waypoint". The timer
 starts when the waypoint is reached; when it expires the waypoint is
 complete. If zero is specified for a latitude/longitude/altitude
 parameter then the current location value for the parameter will be
-used.  The loiter radius is set by the ``WP_LOITER_RAD`` parameter.  The sign
+used.  The loiter radius is set by the :ref:`WP_LOITER_RAD<WP_LOITER_RAD>` parameter.  The sign
 of ``param3`` selects the direction (positive is clockwise and negative is
 counter-clockwise), but Plane ignores its magnitude because the mission item
 does not store a separate radius.  Once the time has elapsed, Plane continues
@@ -3444,7 +3444,7 @@ value and a specified PWM value, for a given number of cycles and with a
 set period.
 
 The mid-position value is specified in the ``RCn_TRIM`` parameter for
-the channel (``RC8_TRIM`` in the screenshot below). The default value is
+the channel ([site wiki="copter,plane,rover,sub"]:ref:`RC8_TRIM<RC8_TRIM>`[/site][site wiki="dev,planner"]:ref:`RC8_TRIM<copter:RC8_TRIM>`[/site] in the screenshot below). The default value is
 1500..
 
 **Command parameters**
@@ -3524,7 +3524,7 @@ sequence of mission items that represents a landing starts. It may also
 be sent via a ``COMMAND_LONG`` to trigger a landing, in which case the
 nearest (geographically) landing sequence in the mission will be used.
 
-If ``RTL_AUTOLAND`` is set to 2, the plane will jump to the nearest 
+If :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` is set to 2, the plane will jump to the nearest 
 ``DO_LAND_START`` in the mission table when RTL is initialized. 
 
 .. note::

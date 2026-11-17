@@ -142,7 +142,7 @@ To calibrate the sensor using Log file data please follow these steps:
        :target: ../_images/OF-roll-calibration.png
     
 #. If ``OF.flowX`` is larger or smaller than ``OF.bodyX``, then it can
-   be adjusted by changing the ``FLOW_FXSCALER`` parameter
+   be adjusted by changing the :ref:`FLOW_FXSCALER<FLOW_FXSCALER>` parameter
 #. IF ``OF.bodyX`` is uncorrelated or opposite sign to ``IMU.GyrX``,
    the :ref:`FLOW_ORIENT_YAW <copter:FLOW_ORIENT_YAW>` parameter is probably set incorrectly or
    you do not have the flow sensor pointing downwards
@@ -153,7 +153,7 @@ To calibrate the sensor using Log file data please follow these steps:
        :target: ../_images/OF-pitch-calibration.png
    
 #. If ``OF.flowY`` is larger or smaller than ``OF.bodyY``, then it can
-   be adjusted by changing the ``FLOW_FYSCALER`` parameter
+   be adjusted by changing the :ref:`FLOW_FYSCALER<FLOW_FYSCALER>` parameter
 #. IF ``OF.bodyY`` is uncorrelated or opposite sign to ``IMU.GyrY``,
    the :ref:`FLOW_ORIENT_YAW <copter:FLOW_ORIENT_YAW>` parameter is probably set incorrectly or
    you do not have the flow sensor pointing downwards

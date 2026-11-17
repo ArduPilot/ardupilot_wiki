@@ -26,7 +26,7 @@ I2C Airspeed Sensor
 Attach to the I2C bus pinned out from the DroneCAN Adapter.
 
 - set :ref:`ARSPD_TYPE<ARSPD_TYPE>` =8 (DroneCAN)
-- set the DroneCAN's ``ARSPD_TYPE`` parameter to match the type of airspeed sensor connected.
+- set the DroneCAN's :ref:`ARSPD_TYPE<dev:ARSPD_TYPE>` parameter to match the type of airspeed sensor connected.
 
 Rangefinder Setup
 =================

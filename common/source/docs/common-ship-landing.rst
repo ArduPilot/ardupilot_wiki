@@ -10,7 +10,7 @@ Plane supports VTOL taking off and landing on a moving platform with QuadPlanes.
 Equipment Needed
 ================
 
-To use this feature you need a beacon setup on the landing platform. This beacon should be based on an ArduPilot autopilot running the ArduPilot Rover firmware. You can set the ``FRAME_CLASS`` parameter on the beacon autopilot to "2" to make it a “boat” or "1" to make it a truck, so that the right icon shows in the ground station. The beacon will be broadcasting its position to allow the QuadPlane to track its moving HOME position, similar to :ref:`Copter's Follow Mode<copter:follow-mode>`.
+To use this feature you need a beacon setup on the landing platform. This beacon should be based on an ArduPilot autopilot running the ArduPilot Rover firmware. You can set the :ref:`FRAME_CLASS<rover:FRAME_CLASS>` parameter on the beacon autopilot to "2" to make it a “boat” or "1" to make it a truck, so that the right icon shows in the ground station. The beacon will be broadcasting its position to allow the QuadPlane to track its moving HOME position, similar to :ref:`Copter's Follow Mode<copter:follow-mode>`.
 
 .. image:: ../../../images/ship-landing.jpg
 

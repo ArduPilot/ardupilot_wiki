@@ -110,7 +110,7 @@ The 11 PWM ports plus the CAP4 ports can be used as GPIOs (relays,
 buttons, RPM etc). To use a PWM port as a GPIO, set its ``SERVOx_FUNCTION``
 parameter to "-1". See [site wiki="plane,copter,rover,sub"]:ref:`common-gpios`\ [/site][site wiki="blimp"]:ref:`copter:common-gpios`\ [/site] page for more information.
 
-For example, setting ``SERVO9_FUNCTION``, ``SERVO10_FUNCTION`` and ``SERVO11_FUNCTION``
+For example, setting :ref:`SERVO9_FUNCTION<SERVO9_FUNCTION>`, :ref:`SERVO10_FUNCTION<SERVO10_FUNCTION>` and :ref:`SERVO11_FUNCTION<SERVO11_FUNCTION>`
 to "-1" makes CAP1, CAP2 and CAP3 available for use as GPIOs, in addition to CAP4.
 
 The numbering of the GPIOs for PIN variables in ArduPilot is:

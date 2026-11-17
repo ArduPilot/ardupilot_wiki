@@ -130,7 +130,7 @@ Configuring ArduPilot
 Ensure that you have the appropriate ``SERIAL#_PROTOCOL`` parameter
 set to ``10`` ("passthrough FrSky telemetry") to select the ArduPilot
 SPORT protocol.  For example, if you have plugged your SmartPort cable
-into the serial 4/5 port on your Pixhawk, set ``SERIAL4_PROTOCOL`` to
+into the serial 4/5 port on your Pixhawk, set :ref:`SERIAL4_PROTOCOL<SERIAL4_PROTOCOL>` to
 ``10``.
 
 Reboot your controller after making this change.

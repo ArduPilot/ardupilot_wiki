@@ -15,7 +15,7 @@ A forward facing rangefinders can also be used for Obstacle Avoidance. See Range
 
    If you get a "Bad LiDAR Health" message in *Mission Planner* this
    is caused because the rangefinder isn't enabled for landing.  This is
-   done through the ``RNGFND_LANDING`` parameter and if set you should see
+   done through the :ref:`RNGFND_LANDING<RNGFND_LANDING>` parameter and if set you should see
    the message disappear.
 [/site]
 
