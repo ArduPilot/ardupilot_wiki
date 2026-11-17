@@ -212,3 +212,19 @@ Example Video
     :width: 100%
 
 [/site]
+
+Minimum Focus Altitude
+======================
+
+Most optical flow sensors cannot focus on the ground when very close to it. Below that height their output is not real motion, and if the EKF uses it the vehicle can drift, for example during landing.
+
+In firmware 4.8 and later, :ref:`FLOW_ALT_MIN <FLOW_ALT_MIN>` sets the altitude above terrain (in meters, 0 to 5) below which EKF3 stops using the flow sensor's data. The default of 0 disables this check.
+
+- Set it to the sensor's minimum focus distance from its datasheet, and no higher.
+- Below this altitude in flight, EKF3 does not use optical flow. If optical flow is the only horizontal position source and the vehicle stays below this altitude for more than 5 seconds, EKF3 loses its position estimate, which can trigger an EKF failsafe. When using only optical flow, take off promptly so the vehicle climbs through this altitude quickly.
+- The check starts only after takeoff is detected, so optical flow aiding is kept while on the ground before takeoff.
+- It is not used when optical flow is used only for terrain height estimation (:ref:`EK3_FLOW_USE <EK3_FLOW_USE>` = 2), and EKF2 ignores it.
+
+[site wiki="rover"]
+- It is ignored if :ref:`FLOW_HGT_OVR <FLOW_HGT_OVR>` is set.
+[/site]
