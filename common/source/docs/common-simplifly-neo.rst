@@ -30,7 +30,7 @@ Specifications
 -  **Sensors**
 
    -  Bosch BMI088 IMU (accel, gyro)
-   -  Bosch BMP390 barometer
+   -  Bosch BMP581 barometer
    -  Bosch BMM150 magnetometer
    -  Ramtron FRAM for parameter storage
 
@@ -257,6 +257,9 @@ Bus 0 is the internal sensor bus and is not brought out.
 
 The safety switch, its LED and the buzzer are all on the GPS connector rather
 than on a connector of their own.
+
+The safety switch is disabled by default. To require it before the outputs
+are enabled, set :ref:`BRD_SAFETY_DEFLT<BRD_SAFETY_DEFLT>` = 1.
 
 Loading Firmware
 ================
