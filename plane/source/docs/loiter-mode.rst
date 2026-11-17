@@ -6,8 +6,8 @@ LOITER Mode
 
 In LOITER mode the plane will circle around the point where you started
 the loiter, holding altitude at the altitude that you entered loiter in.
-The radius of the circle is controlled by the ``WP_LOITER_RAD`` parameter,
-but is also limited by your :ref:`ROLL_LIMIT_DEG<ROLL_LIMIT_DEG>` limit, and your ``NAVL1_PERIOD``
+The radius of the circle is controlled by the :ref:`WP_LOITER_RAD<WP_LOITER_RAD>` parameter,
+but is also limited by your :ref:`ROLL_LIMIT_DEG<ROLL_LIMIT_DEG>` limit, and your :ref:`NAVL1_PERIOD<NAVL1_PERIOD>`
 navigation tuning. As with :ref:`Return To Launch (RTL) <rtl-mode>` and
 :ref:`AUTO <auto-mode>` mode you can "nudge" the plane while in LOITER
 using stick mixing, if enabled.

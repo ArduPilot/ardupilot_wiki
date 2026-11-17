@@ -21,7 +21,7 @@ that it is correctly zeroed.
 
 During initialization, the firmware checks if you have enabled an airspeed sensor and that it is healthy, otherwise a warning will be given, but arming will still be allowed, so checking the ground station messages is important.
 
-The :ref:`ARSPD_OFFSET<ARSPD_OFFSET>` (and ``ARSPD2_OFFSET`` if a second sensor is enabled)  offset is measured and set at boot-up or if manually commanded from the ground station.
+The :ref:`ARSPD_OFFSET<ARSPD_OFFSET>` (and :ref:`ARSPD2_OFFSET<ARSPD2_OFFSET>` if a second sensor is enabled)  offset is measured and set at boot-up or if manually commanded from the ground station.
 
 .. warning:: It is very important to cover the pitot tube during power up, or when you wait and then re-calibrate. An inaccurate static calibration can result in the airspeed being reported too high, causing auto-throttle controlled modes to use very low throttle and potentially cause a crash.
 

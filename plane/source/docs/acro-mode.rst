@@ -29,7 +29,7 @@ to hold the inverted attitude short term or until you move the sticks again.
 When you apply aileron or elevator stick the plane will rotate about
 that axis (in body frame) at a rate proportional to the amount of stick
 movement. So if you apply half deflection on the aileron stick then the
-plane will start rolling at half of ``ACRO_ROLL_RATE``.
+plane will start rolling at half of :ref:`ACRO_ROLL_RATE<ACRO_ROLL_RATE>`.
 
 .. note:: the :ref:`MAN_EXPO_ROLL<MAN_EXPO_ROLL>`, :ref:`MAN_EXPO_PITCH<MAN_EXPO_PITCH>`, and :ref:`MAN_EXPO_RUDDER<MAN_EXPO_RUDDER>` parameters will apply exponential to the stick inputs, if non-zero, in this mode. This is for users with transmitters which do not provide this function and desire to "soften" stick feel around neutral.
 
