@@ -155,7 +155,7 @@ Steps
 
    Also search the ``ArduPlane`` directory for an existing mode with similar behaviour (i.e. ``mode_fbwa`` or ``Mode::Number::FLY_BY_WIRE_A``) to find other places, such as failsafe handling in ``events.cpp``, where the new mode may need special treatment.
 
-#. Add the new flight mode to the list of valid ``@Values`` for the ``FLTMODE1 ~ FLTMODE6`` parameters (and ``INITIAL_MODE``) in `Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduPlane/Parameters.cpp>`__ (search for "FLTMODE1"). Once committed to master, this will cause the new mode to appear in the list of valid values for these parameters in ground stations that use the parameter metadata. Note that even before being committed to master, a user can set up the new flight mode to be activated from the transmitter's flight mode switch by directly setting the FLTMODE1 (or FLTMODE2, etc) parameters to the number of the new mode.
+#. Add the new flight mode to the list of valid ``@Values`` for the ``FLTMODE1 ~ FLTMODE6`` parameters (and :ref:`INITIAL_MODE<plane:INITIAL_MODE>`) in `Parameters.cpp <https://github.com/ArduPilot/ardupilot/blob/master/ArduPlane/Parameters.cpp>`__ (search for "FLTMODE1"). Once committed to master, this will cause the new mode to appear in the list of valid values for these parameters in ground stations that use the parameter metadata. Note that even before being committed to master, a user can set up the new flight mode to be activated from the transmitter's flight mode switch by directly setting the FLTMODE1 (or FLTMODE2, etc) parameters to the number of the new mode.
 
    ::
 
@@ -167,7 +167,7 @@ Steps
 
 #. Add the new mode to the ``PLANE_MODE`` enum in `mavlink/ardupilotmega.xml <https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/ardupilotmega.xml>`__ and submit a PR to `pymavlink <https://github.com/ArduPilot/pymavlink>`__ adding it to the ``mode_mapping_apm`` table in `mavutil.py <https://github.com/ArduPilot/pymavlink/blob/master/mavutil.py>`__. MAVProxy does not use the ``AVAILABLE_MODES`` message and takes its mode names from this table, so the new mode will appear as unknown in MAVProxy until it is updated.
 
-   `QGroundControl <https://github.com/mavlink/qgroundcontrol>`__ requests the list of modes from the vehicle with ``AVAILABLE_MODES``, so it shows the new mode by name without changes. Its hard-coded list of Plane modes in ``ArduPlaneFirmwarePlugin`` is only a fallback for older firmware, so adding the new mode there is optional. Mission Planner takes its list of modes from the ``FLTMODE1`` parameter metadata, so it needs no changes beyond the ``@Values`` update above.
+   `QGroundControl <https://github.com/mavlink/qgroundcontrol>`__ requests the list of modes from the vehicle with ``AVAILABLE_MODES``, so it shows the new mode by name without changes. Its hard-coded list of Plane modes in ``ArduPlaneFirmwarePlugin`` is only a fallback for older firmware, so adding the new mode there is optional. Mission Planner takes its list of modes from the :ref:`FLTMODE1<plane:FLTMODE1>` parameter metadata, so it needs no changes beyond the ``@Values`` update above.
 
 #. Optionally, add an RC auxiliary switch option to enter the new mode (see ``RC_Channel_Plane.cpp``) and an autotest in ``Tools/autotest/arduplane.py`` that exercises the new mode in :ref:`SITL <sitl-simulator-software-in-the-loop>`.
 

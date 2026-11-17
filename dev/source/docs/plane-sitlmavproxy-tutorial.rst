@@ -311,7 +311,7 @@ Creating the fence is very similar to creating a waypoint mission:
 
 Instead of flying to the centre of the fence you can instead add a
 :ref:`rally point <plane:common-rally-points>`
-to the map and fly to it by enabling the parameter ``FENCE_RET_RALLY``.
+to the map and fly to it by enabling the parameter :ref:`FENCE_RET_RALLY<plane:FENCE_RET_RALLY>`.
 
 Testing the vehicle
 ===================

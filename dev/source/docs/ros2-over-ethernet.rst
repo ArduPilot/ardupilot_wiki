@@ -88,7 +88,7 @@ Steps
 #. Open a MavProxy session
 #. Configure the parameters described above, starting with the ``ENABLE`` parameters first. 
 #. Reboot the flight controller
-#. Start the MicroROS Agent with the same port as the parameter for ``DDS_UDP_PORT``
+#. Start the MicroROS Agent with the same port as the parameter for :ref:`DDS_UDP_PORT<copter:DDS_UDP_PORT>`
 
   .. tabs::
 

@@ -277,7 +277,7 @@ Notify, OSD and Relays
      - :ref:`RELAY1_PIN<copter:RELAY1_PIN>` etc.
      - -1 (none)
      - commonly included when VTX power switch or dual Camera inputs are defined
-   * - ``RELAY1_DEFAULT`` to ``RELAY6_DEFAULT``
+   * - :ref:`RELAY1_DEFAULT<copter:RELAY1_DEFAULT>` to :ref:`RELAY6_DEFAULT<copter:RELAY6_DEFAULT>`
      - :ref:`RELAY1_DEFAULT<copter:RELAY1_DEFAULT>` etc.
      - 0 (Off)
      - define of -1 leaves the parameter's normal default
