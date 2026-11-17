@@ -85,10 +85,10 @@ high the copter's heading will oscillate. If they are too low the copter
 may be unable to maintain its heading.
 
 As mentioned on the :ref:`Stabilize mode's tuning section <stabilize-mode_tuning>`,
-the :ref:`ACRO_Y_RATE<ACRO_Y_RATE>` parameter controls how quickly copter rotates based on
-a pilot’s yaw input.  The default of 4.5 commands a 200 deg/sec rate of
-rotation when the yaw stick is held fully left or right.  Higher values
-will make it rotate more quickly.
+the :ref:`PILOT_Y_RATE<PILOT_Y_RATE>` parameter sets the rotation rate, in deg/s,
+commanded when the yaw stick is held fully left or right in Stabilize and
+the other modes except Acro and Drift (default 202.5 deg/s). In Acro and Drift
+the equivalent parameter is :ref:`ACRO_Y_RATE<ACRO_Y_RATE>`.
 
 Altitude Tuning
 ===============
