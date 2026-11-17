@@ -490,7 +490,7 @@ The serial library provides access to ArduPilot's serial port infrastructure and
 
 - ``find_serial(instance)`` - Returns a serial access object that allows a script to interface with a device over a port set to protocol 28 (Scripting) (e.g. ``SERIALx_PROTOCOL``, though CAN/NET/etc ports work as well). Instance 0 is the first such port, instance 1 the second, and so on. If the requested instance is not found, returns ``nil``.
 
-- ``find_simulated_device(protocol, instance)`` - Returns a serial access object that allows a script to simulate a device attached via a specific protocol. The device protocol is configured by the parameter ``SCR_SDEVx_PROTO``. Instance 0 is the first such protocol, instance 1 the second, and so on. If the requested instance is not found, or the parameter [site wiki="copter,plane,rover,sub"]:ref:`SCR_SDEV_EN<SCR_SDEV_EN>`[/site][site wiki="dev"]:ref:`SCR_SDEV_EN<copter:SCR_SDEV_EN>`[/site] is disabled, returns ``nil``.
+- ``find_simulated_device(protocol, instance)`` - Returns a serial access object that allows a script to simulate a device attached via a specific protocol. The device protocol is configured by the parameter ``SCR_SDEVx_PROTO``. Instance 0 is the first such protocol, instance 1 the second, and so on. If the requested instance is not found, or the parameter [site wiki="copter,plane,rover,sub"]:ref:`SCR_SDEV_EN<SCR_SDEV_EN>`\ [/site][site wiki="dev"]:ref:`SCR_SDEV_EN<copter:SCR_SDEV_EN>`\ [/site] is disabled, returns ``nil``.
 
 The objects returned by the above functions support the following methods:
 

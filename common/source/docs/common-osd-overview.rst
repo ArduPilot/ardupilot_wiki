@@ -164,7 +164,7 @@ Panel Name    Description
  THROTTLE     Throttle Percentage being sent to motor(s)
  COMPASS      Compass Rose
  WIND         Wind Speed and Direction (on Rover, apparent wind from the windvane, if fitted)
- ASPEED       Airspeed from sensor if present and healthy, otherwise the synthetic airspeed estimate (only used for Plane control if [site wiki="plane"]:ref:`TECS_SYNAIRSPEED<TECS_SYNAIRSPEED>`[/site][site wiki="copter,rover,sub"]:ref:`TECS_SYNAIRSPEED<plane:TECS_SYNAIRSPEED>`[/site] is set)
+ ASPEED       Airspeed from sensor if present and healthy, otherwise the synthetic airspeed estimate (only used for Plane control if [site wiki="plane"]:ref:`TECS_SYNAIRSPEED<TECS_SYNAIRSPEED>`\ [/site][site wiki="copter,rover,sub"]:ref:`TECS_SYNAIRSPEED<plane:TECS_SYNAIRSPEED>`\ [/site] is set)
  VSPEED       Climb Rate
  ESCTEMP      Highest ESC Temperature, or that of the ESC selected by ``OSDn_ESC_IDX`` (requires ESC telemetry)
  ESCRPM       Highest ESC RPM, or that of the ESC selected by ``OSDn_ESC_IDX`` (requires ESC telemetry)
