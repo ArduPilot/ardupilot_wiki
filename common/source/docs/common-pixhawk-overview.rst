@@ -692,8 +692,8 @@ pins 1 - 6 on the silkscreen as seen above.
 
 By default all 6 are servo (PWM) outputs. To use one as a digital
 input/output instead, set the ``SERVOx_FUNCTION`` parameter of that
-output to "-1" (AUX 1 to AUX 6 are outputs 9 to 14, so ``SERVO9_FUNCTION``
-to ``SERVO14_FUNCTION``), as described in the note below.
+output to "-1" (AUX 1 to AUX 6 are outputs 9 to 14, so :ref:`SERVO9_FUNCTION<SERVO9_FUNCTION>`
+to :ref:`SERVO14_FUNCTION<SERVO14_FUNCTION>`), as described in the note below.
 
 .. note:: To set a PWM/SERVO/MOTOR output to be a GPIO, set its ``SERVOx_FUNCTION`` parameter to "-1". If set to "0", it remains a PWM output, unassigned to a function, and outputs that output's trim value when board safety is not active. If the servo function is being "mirrored" to a remote device, as in the case of a DroneCAN or KDECAN ESC, then in order to change the autopilot board's corresponding output pin to be a GPIO, but allow the ``SERVOx_FUNCTION`` to still be assigned to the remote device, the :ref:`SERVO_GPIO_MASK<SERVO_GPIO_MASK>` parameter can be used to assign the board pin to be a GPIO without affecting the ``SERVOx_FUNCTION`` assignment for the remote device.
 

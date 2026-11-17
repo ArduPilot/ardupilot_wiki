@@ -120,7 +120,7 @@ To enable this feature connect with a Ground Station and set the following param
 -  :ref:`AVD_ENABLE <AVD_ENABLE>`: set to "1" to enable ADS-B based avoidance (param refresh may be necessary after setting this)
 -  :ref:`AVD_F_DIST_XY <AVD_F_DIST_XY>`: the horizontal distance in meters that should be considered a near-miss
 -  :ref:`AVD_F_DIST_Z <AVD_F_DIST_Z>`: the vertical distance in meters above or below the vehicle that should be considered a near-miss
--  :ref:`AVD_F_TIME <AVD_F_TIME>`: how many seconds in advance of a projected near-miss (based on the vehicle's current position and velocity) the vehicle should begin the ``AVD_F_ACTION``.
+-  :ref:`AVD_F_TIME <AVD_F_TIME>`: how many seconds in advance of a projected near-miss (based on the vehicle's current position and velocity) the vehicle should begin the :ref:`AVD_F_ACTION<AVD_F_ACTION>`.
 -  :ref:`AVD_F_ACTION <AVD_F_ACTION>`: controls how the vehicle should respond to a projected near-miss (i.e. 2:Climb Or Descend, 3:Move Horizontally, 4:Move Perpendicularly in 3D, 5:RTL or 6:Hover)
 -  :ref:`AVD_F_RCVRY <AVD_F_RCVRY>`: sets how the vehicle will behave after the vehicle has cleared the near-miss area (i.e. 1 = resume previous flight mode)
 
@@ -156,7 +156,7 @@ an older version, use:
 
     sudo pip install --upgrade pymavlink MAVProxy
 
-Set the number of aircraft to simulate using the ``SIM_ADSB_COUNT`` parameter. Ping2020 simulation support
+Set the number of aircraft to simulate using the :ref:`SIM_ADSB_COUNT<SIM_ADSB_COUNT>` parameter. Ping2020 simulation support
 can be enabled by setting parameter :ref:`SIM_ADSB_TX <SIM_ADSB_TX>`. Other simulation options for ADS-B are present, all
 starting with ``SIM_ADSB_``.
 

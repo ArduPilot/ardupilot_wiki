@@ -104,7 +104,7 @@ These settings assume a connection to Serial2. For another port, change the ``SE
 - Set bit 1 (value 2) of the ``MAVx_OPTIONS`` of the sensor's MAVLink channel (Don't forward mavlink to/from) to keep its messages off the telemetry link. See :ref:`MAVLink configuration <mavlink_configuration>` for how the channels are numbered
 - Reboot the autopilot again to apply the MAVLink forwarding setting
 
-.. note:: On 4.6 and earlier the forwarding option is bit 10 of ``SERIAL2_OPTIONS`` (value 1024) instead. Do not set that bit on 4.7 or later; it fails a pre-arm check.
+.. note:: On 4.6 and earlier the forwarding option is bit 10 of :ref:`SERIAL2_OPTIONS<SERIAL2_OPTIONS>` (value 1024) instead. Do not set that bit on 4.7 or later; it fails a pre-arm check.
 
 Testing the sensor
 ==================

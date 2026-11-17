@@ -25,7 +25,7 @@ To setup as the first rangefinder. Reboot after setting parameters:
 
 -  :ref:`RNGFND1_MAX<RNGFND1_MAX>` = "2" (i.e. 2m max range)
 -  :ref:`RNGFND1_MIN<RNGFND1_MIN>` = "0.2" (i.e. 0.2m min range)
--  :ref:`RNGFND1_STOP_PIN<RNGFND1_STOP_PIN>` = Enter GPIO number for pin attached to HC-SRO4 "Trigger" pin. For example, on PixHawk with ``SERVO13_FUNCTION`` and ``SERVO14_FUNCTION`` set to "-1", AUX6 (GPIO 55) could be used here, and AUX5 (GPIO54) could be used below.
+-  :ref:`RNGFND1_STOP_PIN<RNGFND1_STOP_PIN>` = Enter GPIO number for pin attached to HC-SRO4 "Trigger" pin. For example, on PixHawk with :ref:`SERVO13_FUNCTION<SERVO13_FUNCTION>` and :ref:`SERVO14_FUNCTION<SERVO14_FUNCTION>` set to "-1", AUX6 (GPIO 55) could be used here, and AUX5 (GPIO54) could be used below.
 -  :ref:`RNGFND1_PIN<RNGFND1_PIN>` = Enter GPIO number for pin attached to HC-SRO4 "Echo" pin.
 -  :ref:`RNGFND1_TYPE<RNGFND1_TYPE>` = “30" (HC-SR04 sonar)
 -  :ref:`RNGFND1_ORIENT<RNGFND1_ORIENT>` = "25" (Downward facing) if used for altitude control.

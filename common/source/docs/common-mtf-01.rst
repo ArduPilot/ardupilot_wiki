@@ -76,7 +76,7 @@ For the following we will assume it will be connected to Serial1 port of the aut
 
       - Set :ref:`SERIAL1_BAUD<SERIAL1_BAUD>` = 115
       - Set :ref:`SERIAL1_PROTOCOL<SERIAL1_PROTOCOL>` = 1 (MAVLink1)
-      - Set ``SERIAL1_OPTIONS`` = 1024 (bit 10, Don't forward mavlink to/from)
+      - Set :ref:`SERIAL1_OPTIONS<SERIAL1_OPTIONS>` = 1024 (bit 10, Don't forward mavlink to/from)
       - Set :ref:`FLOW_TYPE<FLOW_TYPE>` = 5 (MAVLink)
       - Set :ref:`RNGFND1_TYPE<RNGFND1_TYPE>` = 10 (MAVLink)
       - Reboot autopilot to see rangefinder parameters

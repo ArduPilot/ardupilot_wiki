@@ -173,7 +173,7 @@ increased to make better use of available memory for caching terrain tiles. The 
 is 12 but a good value on an STM32-H7 processor would be 60 or higher.
 
 If your AutoPilot has less memory, less storage space, or communication
-bandwidth might be an issue, it is recommended that you use a ``TERRAIN_SPACING`` of 100
+bandwidth might be an issue, it is recommended that you use a :ref:`TERRAIN_SPACING<TERRAIN_SPACING>` of 100
 meters to prevent the aircraft running off the side of a grid in flight
 and not having data available.
 
