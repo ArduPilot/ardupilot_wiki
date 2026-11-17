@@ -8,7 +8,7 @@ GPS Input
     
 The GPSInput module allows for GPS_INPUT message support. It will listen on a local udp port for json messages and pass them on to the connected flight controller.
 
-It requires the ``GPS1_TYPE`` parameter to be set to 14 (MAVLink).
+It requires the :ref:`GPS1_TYPE<copter:GPS1_TYPE>` parameter to be set to 14 (MAVLink).
 
 GPSInput.port
 =============
