@@ -38,7 +38,7 @@ features:
    - Weight-on-Wheels (WoW) sensor (if present) confirms contact or is unknown
 
    Altitude above home is **not** used as a motor shutoff condition (except when a rangefinder is used,see above).
-   The ``LAND_ALT_LOW_M`` parameter (default 10m) only controls the
+   The :ref:`LAND_ALT_LOW_M<LAND_ALT_LOW_M>` parameter (default 10m) only controls the
    **descent speed transition** from :ref:`LAND_SPD_HIGH_MS<LAND_SPD_HIGH_MS>`
    to :ref:`LAND_SPD_MS<LAND_SPD_MS>` — it has no role in landing detection or disarming.
 

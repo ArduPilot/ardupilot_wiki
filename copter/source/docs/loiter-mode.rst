@@ -30,7 +30,7 @@ If using another position source like optical flow or another :ref:`Non-GPS Navi
 
 .. note::
 
-   When Coordinated Turns are enabled (via the ``LOIT_OPTIONS`` parameter, Bit 0), the aircraft modifies its commanded accelerations in Loiter mode to take into account the requested yaw rate and current horizontal velocity. This produces turns that feel more natural and “aircraft-like,” as the drone banks into the turn to match the trajectory. Without this option, Loiter turns are controlled purely by position and velocity demands, which can result in a flat, sliding turn.
+   When Coordinated Turns are enabled (via the :ref:`LOIT_OPTIONS<LOIT_OPTIONS>` parameter, Bit 0), the aircraft modifies its commanded accelerations in Loiter mode to take into account the requested yaw rate and current horizontal velocity. This produces turns that feel more natural and “aircraft-like,” as the drone banks into the turn to match the trajectory. Without this option, Loiter turns are controlled purely by position and velocity demands, which can result in a flat, sliding turn.
 
 .. _loiter-mode_tuning:
 
