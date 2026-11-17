@@ -74,6 +74,8 @@ New Features
 - Serial passthrough to an RC input port (e.g. to flash an ELRS receiver) no longer has its port settings changed by RC input while active, see https://github.com/ArduPilot/ardupilot_wiki/pull/8276
 - VTX control over MSP for HDZero and ELRS backpack, new VTX_TYPES to choose which protocol controls the VTX, and MSP_OPTIONS ForceVTXHighPower bit, see https://github.com/ArduPilot/ardupilot_wiki/pull/8292
 - Lua scripts can write their own text and symbols to the OSD using the new osd scripting binding, see https://github.com/ArduPilot/ardupilot_wiki/pull/8294
+- FLOW_ALT_MIN stops EKF3 from using optical flow data below the sensor's minimum focus altitude, see https://github.com/ArduPilot/ardupilot_wiki/pull/8313
+- Boards with an active-low safety switch input can set ``define HAL_SAFETY_IN_ACTIVE_LOW 1`` in their hwdef.dat, see https://github.com/ArduPilot/ardupilot_wiki/pull/8312
 
 [site wiki="plane"]
 - Rangefinder engagement distance, see https://github.com/ArduPilot/ardupilot_wiki/pull/7559
