@@ -3444,7 +3444,7 @@ value and a specified PWM value, for a given number of cycles and with a
 set period.
 
 The mid-position value is specified in the ``RCn_TRIM`` parameter for
-the channel ([site wiki="copter,plane,rover,sub"]:ref:`RC8_TRIM<RC8_TRIM>`[/site][site wiki="dev,planner"]:ref:`RC8_TRIM<copter:RC8_TRIM>`[/site] in the screenshot below). The default value is
+the channel ([site wiki="copter,plane,rover,sub"]:ref:`RC8_TRIM<RC8_TRIM>`\ [/site][site wiki="dev,planner"]:ref:`RC8_TRIM<copter:RC8_TRIM>`\ [/site] in the screenshot below). The default value is
 1500..
 
 **Command parameters**
