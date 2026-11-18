@@ -30,7 +30,7 @@ Specifications
 -  **Sensors**
 
    -  Bosch BMI088 IMU (accel, gyro)
-   -  Bosch BMP581 barometer
+   -  Bosch BMP390 barometer (BMP581 on later boards)
    -  Bosch BMM150 magnetometer
    -  Ramtron FRAM for parameter storage
 
