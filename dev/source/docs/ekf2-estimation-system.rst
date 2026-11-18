@@ -89,9 +89,9 @@ Using EKF2
 #. The use of multiple IMU's, is controlled by the EK2_IMU_MASK
    parameter:
 
-   -  To use only IMU1, set EK2_IMU_MASK = 1 (this is the default)
+   -  To use only IMU1, set EK2_IMU_MASK = 1
    -  To use only IMU2, set EK2_IMU_MASK = 2
-   -  To run dual EKF2 using IMU1 and IMU2,  set :ref:`EK2_IMU_MASK<copter:EK2_IMU_MASK>` = 3
+   -  To run dual EKF2 using IMU1 and IMU2,  set :ref:`EK2_IMU_MASK<copter:EK2_IMU_MASK>` = 3 (the default on most boards)
 
 #. After setting the parameters you will need to reboot.
 
@@ -301,7 +301,7 @@ log file and mention the term EKF2 in your post title.
 The parameters for the new EKF start with the prefix EK2\_ and are
 listed below
 
-**EK2_ENABLE**
+:ref:`EK2_ENABLE<copter:EK2_ENABLE>`
 
 This turns the EKF 2 on and off. Set to 1 to turn on and 0 to turn
 off. Turning EKF2 on only makes the calculations run, it does not mean
@@ -309,7 +309,7 @@ it will be used for flight control. To use it for flight control set
 AHRS_EKF_TYPE=2. A reboot or restart will need to be performed
 after changing the value of EK2_ENABLE for it to take effect.
 
-**EK2_GPS_TYPE**
+:ref:`EK2_GPS_TYPE<copter:EK2_GPS_TYPE>`
 
 This controls the use of GPS measurements :
 
@@ -318,7 +318,7 @@ This controls the use of GPS measurements :
 -  2 = use 2D position
 -  3 = use no GPS (optical flow will be used if available)
 
-**EK2_VELNE_NOISE**
+:ref:`EK2_VELNE_M_NSE<copter:EK2_VELNE_M_NSE>`
 
 This sets a lower limit on the speed accuracy reported by the GPS
 receiver that is used to set horizontal velocity observation noise. If
@@ -327,7 +327,7 @@ then the parameter value will be used. Increasing it reduces the
 weighting of the GPS horizontal velocity measurements. It has units of
 metres/sec
 
-**EK2_VELD_NOISE**
+:ref:`EK2_VELD_M_NSE<copter:EK2_VELD_M_NSE>`
 
 This sets a lower limit on the speed accuracy reported by the GPS
 receiver that is used to set vertical velocity observation noise in. If
@@ -336,27 +336,27 @@ then the parameter value will be used. Increasing it reduces the
 weighting of the GPS vertical velocity measurements. It has units of
 metres/sec.
 
-**EK2_VEL_GATE**
+:ref:`EK2_VEL_I_GATE<copter:EK2_VEL_I_GATE>`
 
 This sets the number of standard deviations applied to the GPS velocity
 measurement innovation consistency check. Decreasing it makes it more
 likely that good measurements will be rejected. Increasing it makes it
 more likely that bad measurements will be accepted.
 
-**EK2_POSNE_NOISE**
+:ref:`EK2_POSNE_M_NSE<copter:EK2_POSNE_M_NSE>`
 
 This sets the GPS horizontal position observation noise. Increasing it
 reduces the weighting of GPS horizontal position measurements. It has
 units of metres
 
-**EK2_POS_GATE**
+:ref:`EK2_POS_I_GATE<copter:EK2_POS_I_GATE>`
 
 This sets the number of standard deviations applied to the GPS position
 measurement innovation consistency check. Decreasing it makes it more
 likely that good measurements will be rejected. Increasing it makes it
 more likely that bad measurements will be accepted.
 
-**EK2_GLITCH_RAD**
+:ref:`EK2_GLITCH_RAD<copter:EK2_GLITCH_RAD>`
 
 This controls the maximum radial uncertainty in position between the
 value predicted by the filter and the value measured by the GPS before
@@ -366,75 +366,78 @@ also means that non-GPS errors such as IMU and compass can create a
 larger error in position before the filter is forced back to the GPS
 position. It has units of metres.
 
-**EK2_GPS_DELAY**
+:ref:`GPS1_DELAY_MS<copter:GPS1_DELAY_MS>`
 
-This is the number of msec that the GPS measurements lag behind the
-inertial measurements. The maximum delay that can be compensated by
-the filter is 250 msec.
+EKF2 no longer has its own GPS delay parameter (``EK2_GPS_DELAY`` before
+4.0). It uses the lag that the GPS driver reports for the primary GPS.
+Set it in msec with GPS1_DELAY_MS, or
+:ref:`GPS2_DELAY_MS<copter:GPS2_DELAY_MS>` for a second GPS
+(``GPS_DELAY_MS`` and ``GPS_DELAY_MS2`` in 4.5 and earlier). Zero uses
+the default delay for the detected GPS type.
 
-**EK2_ALT_SOURCE**
+:ref:`EK2_ALT_SOURCE<copter:EK2_ALT_SOURCE>`
 
 This parameter controls which height sensor is used by the EKF. If the
 selected option cannot be used, it will default to Baro as the primary
 height source. Setting 0 will use the baro altitude at all times.
-Setting 1 uses the range finder and is only available in combination
-with optical flow navigation (EK2_GPS_TYPE = 3). Setting 2 uses GPS.
+Setting 1 uses the range finder, setting 2 uses GPS and setting 3 uses
+range beacons.
 When height sources other than Baro are in use, the offset between the
 Baro height and EKF height estimate is continually updated. If a
 switch to Baro height needs to be made when the filter is operating,
 then the  Baro height is corrected for the learned offset to prevent a
 sudden step in height estimate.
 
-**EK2_ALT_NOISE**
+:ref:`EK2_ALT_M_NSE<copter:EK2_ALT_M_NSE>`
 
 This is the RMS value of noise in the altitude measurement. Increasing
 it reduces the weighting of the baro measurement and will make the
 filter respond more slowly to baro measurement errors, but will make it
 more sensitive to GPS and accelerometer errors.  It has units of metres.
 
-**EK2_HGT_I_GATE**
+:ref:`EK2_HGT_I_GATE<copter:EK2_HGT_I_GATE>`
 
 This sets the number of standard deviations applied to the height
 measurement innovation consistency check. Decreasing it makes it more
 likely that good measurements will be rejected. Increasing it makes it
 more likely that bad measurements will be accepted.
 
-**EK2_HGT_DELAY**
+:ref:`EK2_HGT_DELAY<copter:EK2_HGT_DELAY>`
 
 This is the number of msec that the height measurements lag behind the
 inertial measurements. The maximum delay that can be compensated
 by the filter is 250 msec.
 
-**EK2_MAG_NOISE**
+:ref:`EK2_MAG_M_NSE<copter:EK2_MAG_M_NSE>`
 
 This is the RMS value of noise in magnetometer measurements. Increasing
-it reduces the weighting on these measurements. It has units of mGauss.
+it reduces the weighting on these measurements. It has units of Gauss.
 
-**EK2_MAG_CAL**
+:ref:`EK2_MAG_CAL<copter:EK2_MAG_CAL>`
 
 This determines when the filter will use the 3-axis magnetometer fusion
 model that estimates both earth and body fixed magnetic field states.
 This model is only suitable for use when the external magnetic field
 environment is stable.
 
--  EKF_MAG_CAL = 0 enables calibration when airborne and is the
+-  EK2_MAG_CAL = 0 enables calibration when airborne and is the
    default setting for Plane users.
--  EKF_MAG_CAL = 1 enables calibration when manoeuvreing.
--  EKF_MAG_CAL = 2 prevents magnetometer calibration regardless of
+-  EK2_MAG_CAL = 1 enables calibration when manoeuvreing.
+-  EK2_MAG_CAL = 2 prevents magnetometer calibration regardless of
    flight condition, is recommended if the external magnetic field is
    varying and is the default for rovers.
--  EKF_MAG_CAL = 3 enables calibration when the first in-air field and
+-  EK2_MAG_CAL = 3 enables calibration when the first in-air field and
    yaw reset has completed and is the default for copters.
--  EKF_MAG_CAL = 4 enables calibration all the time.
+-  EK2_MAG_CAL = 4 enables calibration all the time.
 
-**EK2_MAG_GATE**
+:ref:`EK2_MAG_I_GATE<copter:EK2_MAG_I_GATE>`
 
 This parameter sets the number of standard deviations applied to the
 magnetometer measurement innovation consistency check. Decreasing it
 makes it more likely that good measurements will be rejected. Increasing
 it makes it more likely that bad measurements will be accepted.
 
-**EK2_EAS_NOISE**
+:ref:`EK2_EAS_M_NSE<copter:EK2_EAS_M_NSE>`
 
 This is the RMS value of noise in equivalent airspeed measurements used
 by planes. Increasing it reduces the weighting of airspeed measurements
@@ -442,97 +445,103 @@ and will make wind speed estimates less noisy and slower to converge.
 Increasing also increases navigation errors when dead-reckoning without
 GPS measurements. It has units of metres/sec.
 
-**EK2_EAS_GATE**
+:ref:`EK2_EAS_I_GATE<copter:EK2_EAS_I_GATE>`
 
 This sets the number of standard deviations applied to the airspeed
 measurement innovation consistency check. Decreasing it makes it more
 likely that good measurements will be rejected. Increasing it makes it
 more likely that bad measurements will be accepted.
 
-**EK2_RNG_NOISE**
+:ref:`EK2_RNG_M_NSE<copter:EK2_RNG_M_NSE>`
 
 This is the RMS value of noise in the range finder measurement.
 Increasing it reduces the weighting on this measurement. It has units of
 metres.
 
-**EK2_RNG_GATE**
+:ref:`EK2_RNG_I_GATE<copter:EK2_RNG_I_GATE>`
 
 This sets the number of standard deviations applied to the range finder
 innovation consistency check. Decreasing it makes it more likely that
 good measurements will be rejected. Increasing it makes it more likely
 that bad measurements will be accepted.
 
-**EK2_MAX_FLOW**
+:ref:`EK2_MAX_FLOW<copter:EK2_MAX_FLOW>`
 
 This parameter sets the magnitude maximum optical flow rate in that will
 be accepted by the filter. It has units of rad/sec.
 
-**EK2_FLOW_NOISE**
+:ref:`EK2_FLOW_M_NSE<copter:EK2_FLOW_M_NSE>`
 
 This is the RMS value of noise and errors in optical flow measurements.
 Increasing it reduces the weighting on these measurements. It has units
 of rad/sec.
 
-**EK2_FLOW_GATE**
+:ref:`EK2_FLOW_I_GATE<copter:EK2_FLOW_I_GATE>`
 
 This sets the number of standard deviations applied to the optical flow
 innovation consistency check. Decreasing it makes it more likely that
 good measurements will be rejected. Increasing it makes it more likely
 that bad measurements will be accepted.
 
-**EK2_FLOW_DELAY**
+:ref:`EK2_FLOW_DELAY<copter:EK2_FLOW_DELAY>`
 
 This is the number of msec that the optical flow measurements lag behind
 the inertial measurements. It is the time from the end of the optical
 flow averaging period and does not include the time delay due to the
 100msec of averaging within the flow sensor.
 
-**EK2_GYRO_PNOISE**
+:ref:`EK2_GYRO_P_NSE<copter:EK2_GYRO_P_NSE>`
 
 This control disturbance noise controls the growth of estimated error
 due to gyro measurement errors excluding bias. Increasing it makes the
 filter trust the gyro measurements less and other measurements more. It
 has units of rad/sec.
 
-**EK2_ACC_PNOISE**
+:ref:`EK2_ACC_P_NSE<copter:EK2_ACC_P_NSE>`
 
 This control disturbance noise controls the growth of estimated error
 due to accelerometer measurement errors excluding bias. Increasing it
 makes the filter trust the accelerometer measurements less and other
 measurements more. It has units of metres/sec/sec.
 
-**EK2_GBIAS_PNOISE**
+:ref:`EK2_GBIAS_P_NSE<copter:EK2_GBIAS_P_NSE>`
 
 This state process noise controls the growth of the gyro delta angle
 bias state error estimates. Increasing it makes rate gyro bias
-estimation faster and noisier. It has units of rad/sec.
+estimation faster and noisier. It has units of rad/sec/sec.
 
-**EKF2_GSCL_PNOISE**
+:ref:`EK2_GSCL_P_NSE<copter:EK2_GSCL_P_NSE>`
 
 This state process noise controls the rate of gyro scale factor
 learning. Increasing it makes rate gyro scale factor estimation faster
 and noisier.
 
-**EK2_ABIAS_PNOISE**
+:ref:`EK2_ABIAS_P_NSE<copter:EK2_ABIAS_P_NSE>`
 
 This state process noise controls the growth of the vertical
 accelerometer delta velocity bias state error estimate. Increasing it
 makes accelerometer bias estimation faster and noisier. It has units of
-metres/sec/sec.
+metres/sec/sec/sec.
 
-**EK2_MAG_PNOISE**
+:ref:`EK2_MAGB_P_NSE<copter:EK2_MAGB_P_NSE>`
 
-This state process noise controls the growth of magnetic field state
-error estimates. Increasing it makes magnetic field bias estimation
-faster and noisier. It has units of Gauss/sec.
+This state process noise controls the growth of body magnetic field
+state error estimates. Increasing it makes magnetometer bias error
+estimation faster and noisier. It has units of Gauss/sec.
 
-**EK2_WIND_PNOISE**
+:ref:`EK2_MAGE_P_NSE<copter:EK2_MAGE_P_NSE>`
+
+This state process noise controls the growth of earth magnetic field
+state error estimates. Increasing it makes earth magnetic field
+estimation faster and noisier. It has units of Gauss/sec.
+
+:ref:`EK2_WIND_P_NSE<copter:EK2_WIND_P_NSE>`
 
 This state process noise controls the growth of wind state error
 estimates. Increasing it makes wind estimation faster and noisier. It
 has units of metres/sec/sec
 
-**EK2_WIND_PSCALE**
+:ref:`EK2_WIND_PSCALE<copter:EK2_WIND_PSCALE>`
 
 This controls how much the process noise on the wind states is increased
 when gaining or losing altitude to take into account changes in wind
@@ -540,7 +549,7 @@ speed and direction with altitude. Increasing this parameter increases
 how rapidly the wind states adapt when changing altitude, but does make
 wind velocity estimates noisier.
 
-**EK2_GPS_CHECK**
+:ref:`EK2_GPS_CHECK<copter:EK2_GPS_CHECK>`
 
 This is a 1 byte bitmap controlling which GPS preflight checks
 are performed. Set to 0 to bypass all checks. Set to 255 perform all
@@ -551,7 +560,7 @@ following bit locations causes the corresponding checks to be performed.
 
 0: The receivers reported number of satellites must be >= 6
 
-1: The receivers reported HDoP must be >=2.5
+1: The receivers reported HDoP must be <= 2.5
 
 2: The receivers reported speed accuracy must be less than1.0 metres/sec
 (if available)
@@ -578,7 +587,7 @@ for the EKF2 to set its origin and start using GPS.
 Note: The accuracy required for checks 2, 3, 5, 6 and 7 can be adjusted
 using the EK2_CHECK_SCALE parameter.
 
-**EK2_CHECK_SCALE**
+:ref:`EK2_CHECK_SCALE<copter:EK2_CHECK_SCALE>`
 
 This is a percentage scaler applied to the thresholds that are used to
 check GPS accuracy before it is used by the EKF. Values greater than 100
@@ -586,14 +595,15 @@ increase and values less than 100 reduce the maximum GPS error the EKF
 will accept. This modifies the checks enabled by bits 2, 3, 5, 6 and 7
 in the EK2_GPS_CHECK parameter.
 
-**EK2_IMU_MASK**
+:ref:`EK2_IMU_MASK<copter:EK2_IMU_MASK>`
 
 This is a 1 byte bitmap controlling which IMUs will be used by EKF2. A
 separate instance of EKF2 will be started for each IMU selected.
 
--  Set to 1 to use the first IMU only (default)
+-  Set to 1 to use the first IMU only
 -  Set to 2 to use the second IMU only
--  Set to 3 to use the first and second IMU.
+-  Set to 3 to use the first and second IMU (the default on most boards;
+   some boards set their own default)
 
 Additional IMU's up to a maximum of 6 can be used if memory and
 processing resources permit. There may be insufficient memory and
