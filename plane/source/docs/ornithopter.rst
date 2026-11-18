@@ -1,4 +1,4 @@
-.. ornithopter:
+.. _ornithopter:
 
 ============
 Ornithopters
