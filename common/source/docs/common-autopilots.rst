@@ -173,6 +173,7 @@ Closed Hardware
     JFB-200 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/JFB200/README.md>
     JHEMCU F405Pro <common-jhemcuf405pro>
     JHEMCU F405WING <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef/JHEMCUF405WING>
+    JHEMCU GSF405A/GSF405A-RX2 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/JHEMCU-GSF405A/readme.md>
     JHEMCU H743HD <common-jhemcu-h743hd>
     KARSHAKH743VTOL <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/KARSHAKH743VTOL/README.md>
     KT-FMU-F1 <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_HAL_ChibiOS/hwdef/KT-FMU-F1/README.md>
