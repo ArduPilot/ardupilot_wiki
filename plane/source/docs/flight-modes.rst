@@ -48,6 +48,7 @@ of functionality available.
    <tr><td>TAKEOFF</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Automatic takeoff to specific altitude, and loiter at distance from takeoff until mode is changed</td></tr>
    <tr><td>THERMAL</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Mode entered to search for thermal lift by SOARING feature or manually if lift is encountered. See <a href="thermal-mode.html">THERMAL Mode</a></td></tr>
    <tr><td>AUTOLAND</td><td>A</td><td>A</td><td>A</td><td>Y</td><td></td><td>Fixed wing Autoland See <a href="mode_autoland.html">AUTOLAND Mode</a></td></tr>
+   <tr><td>GLIDE</td><td>A</td><td>A</td><td>A</td><td></td><td></td><td>Failsafe glide: wings level, zero pitch, zero throttle. See <a href="glide-mode.html">GLIDE Mode</a> (4.8 and later)</td></tr>
    </table>
 
 .. raw:: html
@@ -90,6 +91,7 @@ Flight Mode List
     CIRCLE Mode <circle-mode>
     FBWA Mode (FLY BY WIRE_A) <fbwa-mode>
     FBWB Mode (FLY BY WIRE_B) <fbwb-mode>
+    GLIDE Mode <glide-mode>
     GUIDED Mode <guided-mode>
     LOITER Mode <loiter-mode>
     MANUAL Mode <manual-mode>
