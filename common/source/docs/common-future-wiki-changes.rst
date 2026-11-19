@@ -76,6 +76,7 @@ New Features
 - Lua scripts can write their own text and symbols to the OSD using the new osd scripting binding, see https://github.com/ArduPilot/ardupilot_wiki/pull/8294
 - FLOW_ALT_MIN stops EKF3 from using optical flow data below the sensor's minimum focus altitude, see https://github.com/ArduPilot/ardupilot_wiki/pull/8313
 - Boards with an active-low safety switch input can set ``define HAL_SAFETY_IN_ACTIVE_LOW 1`` in their hwdef.dat, see https://github.com/ArduPilot/ardupilot_wiki/pull/8312
+- SITL DDS topics are timestamped from the ROS 2 simulation ``/clock`` topic when SITL is started with ``--use_sim_time true`` (the default in the ardupilot_sitl ROS 2 launch files), see https://github.com/ArduPilot/ardupilot_wiki/pull/8319
 
 [site wiki="plane"]
 - Rangefinder engagement distance, see https://github.com/ArduPilot/ardupilot_wiki/pull/7559
@@ -85,6 +86,7 @@ New Features
 - Automatic flap speed schedule reworked: target airspeed is used without needing an airspeed sensor, with AIRSPEED_CRUISE as the fallback, see https://github.com/ArduPilot/ardupilot_wiki/pull/8060
 - ALT_OFFSET now always resets to zero at boot, and new FLIGHT_OPTIONS bit 17 also resets it on flight mode and AUTO navigation command changes, see https://github.com/ArduPilot/ardupilot_wiki/pull/8094
 - AUTOLAND now limits bank angle to LEVEL_ROLL_LIMIT during the flare, as AUTO mode landings do, see https://github.com/ArduPilot/ardupilot_wiki/pull/8262
+- The Glide failsafe action and emergency landing switch (RCx_OPTION 157) now switch to a dedicated GLIDE mode (27) instead of FBWA at zero throttle, see https://github.com/ArduPilot/ardupilot_wiki/pull/8318
 [/site]
 [site wiki="copter"]
 - Ability to abort flip using aux switch low, see https://github.com/ArduPilot/ardupilot_wiki/pull/7759
