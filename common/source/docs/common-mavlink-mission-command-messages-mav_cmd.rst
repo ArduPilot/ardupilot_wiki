@@ -1916,16 +1916,12 @@ distance (the chord) between the previous destination and the exit
 point: ``radius = chord / (2 * sin(arc angle / 2))``. The practical
 arc angle range is -360 degrees to +360 degrees.
 
-A ground steering vehicle cannot track an arc with a radius smaller
-than its :ref:`TURN_RADIUS <TURN_RADIUS>`, so arming is refused if the
-mission contains such an arc. Skid steering vehicles are exempt from
-this check. The check scans the mission in storage order and stops at
-the first DO_JUMP or DO_JUMP_TAG, so arcs stored after a jump are not
-checked.
-
 If the mission is interrupted part way along an arc (for example by
 changing out of AUTO mode) and is then resumed, the vehicle rejoins
-the original arc and travels only the angle remaining.
+the original arc and travels only the angle remaining. If the
+remaining angle cannot be determined, for example because the
+vehicle was moved off the arc while interrupted, the vehicle
+instead drives straight to the exit point.
 
 Obstacle avoidance does not follow arcs: if avoidance intervenes on an
 arc leg, the remainder of the leg is planned as a straight line to the
