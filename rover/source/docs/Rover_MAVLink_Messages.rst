@@ -4,6 +4,9 @@
 MAVLink Messages
 ================
 
+.. raw:: html
+   :file: ../_static/mavlink_messages_versioning_script.inc
+
 
 The `MAVLink <https://mavlink.io/en/>`_ protocol supports a variety of features and functionalities, but not all `messages <https://mavlink.io/en/messages/>`_ or `commands <https://mavlink.io/en/services/command.html>`_ are implemented by the ArduPilot ecosystem, or relevant to a particular autopilot firmware.
 
