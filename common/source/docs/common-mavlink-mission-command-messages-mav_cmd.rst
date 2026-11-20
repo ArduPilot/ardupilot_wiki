@@ -1872,7 +1872,7 @@ The command's location (lat, lon, alt) is the exit point of the arc.
    <tr>
    <td><strong>param1</strong></td>
    <td>Arc Angle</td>
-   <td>Arc angle in degrees. Positive values are clockwise arcs, negative values are counter-clockwise arcs.</td>
+   <td>Arc angle in whole degrees. Positive values are clockwise arcs, negative values are counter-clockwise arcs.</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td><strong>param2</strong></td>
@@ -1913,8 +1913,12 @@ The command's location (lat, lon, alt) is the exit point of the arc.
 
 The arc's radius is determined by the arc angle and the straight line
 distance (the chord) between the previous destination and the exit
-point: ``radius = chord / (2 * sin(arc angle / 2))``. The practical
-arc angle range is -360 degrees to +360 degrees.
+point: ``radius = chord / (2 * abs(sin(arc angle / 2)))``. The arc
+angle range is -359 degrees to +359 degrees; an angle of 0 gives a
+straight leg to the exit point. The chord starts at the previous
+destination if that leg was completed; if the arc is the first leg
+or the previous leg was interrupted, it starts from the vehicle's
+stopping point, which changes the radius.
 
 If the mission is interrupted part way along an arc (for example by
 changing out of AUTO mode) and is then resumed, the vehicle rejoins
