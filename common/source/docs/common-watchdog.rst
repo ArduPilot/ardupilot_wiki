@@ -31,8 +31,7 @@ If the dataflash log cannot be found, find the git-hash of the firmware.  This a
 .. image:: ../../../images/git-hash.png
    :target: ../_images/git-hash.png
 
-Open `ArduPilot's support forum <https://discuss.ardupilot.org/>`__, find the category for your vehicle and software version (e.g. `Copter-4.6 <https://discuss.ardupilot.org/c/arducopter/copter-46/179>`__, `Plane-4.6 <https://discuss.ardupilot.org/c/arduplane/plane-4-6/182>`__, `Rover-4.6 <https://discuss.ardupilot.org/c/ardurover/rover-46/180>`__),
-create a "New Topic", include "watchdog" in the title and attach the crash_dump.bin file, log file and/or git-hash as described above.  If the files cannot be uploaded directly, please include a link to where they can be downloaded from.
+Open a `new issue <https://github.com/ArduPilot/ardupilot/issues/new/choose>`__ on the ArduPilot GitHub repository, include "watchdog" in the title, state the autopilot board and firmware version, and attach the crash_dump.bin file, log file and/or git-hash as described above.  If the files cannot be uploaded directly, please include a link to where they can be downloaded from.
 
 Determining that a Watchdog Reset Occurred
 ==========================================

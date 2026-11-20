@@ -144,5 +144,6 @@ Notes
 -  If you set the :ref:`RTL_ALT_M<RTL_ALT_M>` to a number at other than 0 it will go to
    and maintain that altitude while returning.
 -  RTL uses :ref:`WP_SPD<WP_SPD>` to determine how fast it travels.
--  Once the copter arrives at the home location the copter will pause
-   for ``RTL_LOIT_TIME`` milliseconds, timeout (AUTO_LAND), then land.
+-  Once the copter arrives at the home location it will loiter for
+   :ref:`RTL_LOIT_TIME<RTL_LOIT_TIME>` milliseconds, then land, or, if
+   :ref:`RTL_ALT_FINAL_M<RTL_ALT_FINAL_M>` is not zero, descend to that altitude and hold.

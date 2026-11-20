@@ -72,7 +72,7 @@ Tuning
 ======
 
 -  Go to failsafe setup in *APM Planner 2* or *Mission Planner*, and
-   make sure the max/min values match ``SERVO5_MIN``/``SERVO5_MAX`` (or adjust
+   make sure the max/min values match :ref:`SERVO5_MIN<SERVO5_MIN>`/:ref:`SERVO5_MAX<SERVO5_MAX>` (or adjust
    them) so that your flaps move all the way ( :ref:`SERVO1_TRIM <SERVO1_TRIM>` should also be set to 1500). - Setting the :ref:`FLAP_SLEWRATE <FLAP_SLEWRATE>`
    to 100 allows moving flaps from 0 to 100% in one second.  Lower this
    to make your flaps move more slowly.
@@ -111,5 +111,5 @@ Notes
 -  ``SERVOx_MIN`` and ``SERVOx_MAX`` for Flaperon output channels limit
    deflection of Flaperons and you can use the TRIM value to move the
    neutral position in case you want more down travel than up travel.
--  ``SERVO1_TRIM`` acts as normal aileron trim.  ``SERVO1_MIN`` and
-   ``SERVO1_MAX`` should match the transmitter setting
+-  :ref:`SERVO1_TRIM<SERVO1_TRIM>` acts as normal aileron trim.  :ref:`SERVO1_MIN<SERVO1_MIN>` and
+   :ref:`SERVO1_MAX<SERVO1_MAX>` should match the transmitter setting

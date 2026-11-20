@@ -17,19 +17,19 @@ This enables overlay of FC data on the video. Once enabled, it uses various pane
 Parameters
 ==========
 
-To enable the OSD overlay on MAX7456-type chips, set parameter: ``OSD_TYPE`` to 1, reboot and reload parameters. 
+To enable the OSD overlay on MAX7456-type chips, set parameter: :ref:`OSD_TYPE<OSD_TYPE>` to 1, reboot and reload parameters. 
 This exposes the whole OSD parameter group. 
 
-To set a RC channel for screen switching, use parameter ``OSD_CHAN``.
+To set a RC channel for screen switching, use parameter :ref:`OSD_CHAN<OSD_CHAN>`.
 
-To set the units used to display, use parameter ``OSD_UNITS``:
+To set the units used to display, use parameter :ref:`OSD_UNITS<OSD_UNITS>`:
 
 - ``0`` = Metric (meters,kilometers,meters/sec,kilometers/hour,degs in C)
 - ``1`` = Imperial (feet, miles, feet/sec, miles/hour, degs in F)
 - ``2`` = ArduPilot Native (meters,kilometers,meters/sec,degs in C)
 - ``3`` = Aviation (feet, nautical mile, feet/min, knots, degs in C)
 
-To set vertical and horizontal display offset (space at top and left side of screen), use parameters ``OSD_H_OFFSET``, ``OSD_V_OFFSET``.
+To set vertical and horizontal display offset (space at top and left side of screen), use parameters :ref:`OSD_H_OFFSET<OSD_H_OFFSET>`, :ref:`OSD_V_OFFSET<OSD_V_OFFSET>`.
 
 Several options can be set using :ref:`OSD_OPTIONS<OSD_OPTIONS>` (bitmask selection):
 
@@ -164,7 +164,7 @@ Panel Name    Description
  THROTTLE     Throttle Percentage being sent to motor(s)
  COMPASS      Compass Rose
  WIND         Wind Speed and Direction (on Rover, apparent wind from the windvane, if fitted)
- ASPEED       Airspeed from sensor if present and healthy, otherwise the synthetic airspeed estimate (only used for Plane control if ``TECS_SYNAIRSPEED`` is set)
+ ASPEED       Airspeed from sensor if present and healthy, otherwise the synthetic airspeed estimate (only used for Plane control if [site wiki="plane"]:ref:`TECS_SYNAIRSPEED<TECS_SYNAIRSPEED>`\ [/site][site wiki="copter,rover,sub"]:ref:`TECS_SYNAIRSPEED<plane:TECS_SYNAIRSPEED>`\ [/site] is set)
  VSPEED       Climb Rate
  ESCTEMP      Highest ESC Temperature, or that of the ESC selected by ``OSDn_ESC_IDX`` (requires ESC telemetry)
  ESCRPM       Highest ESC RPM, or that of the ESC selected by ``OSDn_ESC_IDX`` (requires ESC telemetry)

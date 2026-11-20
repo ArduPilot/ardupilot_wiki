@@ -15,7 +15,7 @@ A forward facing rangefinders can also be used for Obstacle Avoidance. See Range
 
    If you get a "Bad LiDAR Health" message in *Mission Planner* this
    is caused because the rangefinder isn't enabled for landing.  This is
-   done through the ``RNGFND_LANDING`` parameter and if set you should see
+   done through the :ref:`RNGFND_LANDING<RNGFND_LANDING>` parameter and if set you should see
    the message disappear.
 [/site]
 
@@ -71,6 +71,7 @@ Unidirectional Rangefinders
     Benewake TF02-Pro / TF03 / TFS20-L / TF-Luna / TF-Nova / TF350 <common-benewake-tf02-lidar>
     Benewake TFmini / TFmini Plus <common-benewake-tfmini-lidar>
     CORVON CV08 / CV50 <common-corvon-cv08-cv50>
+    DTS6012M Lidar <common-rangefinder-dts6012m>
     Garmin Lidar-Lite <common-rangefinder-lidarlite>
     GY-US42 Sonar <common-rangefinder-gy-us42>
     Hexsoon 24G Radar <common-rangefinder-hexsoon-24g>

@@ -26,7 +26,7 @@ In either case, it must be freed up from use as a PWM output, as described in th
 
 .. note:: To set a PWM/SERVO/MOTOR output to be a GPIO, set its ``SERVOx_FUNCTION`` parameter to "-1". If set to "0", it remains a PWM output, unassigned to a function, and outputs that output's trim value when board safety is not active. If the servo function is being "mirrored" to a remote device, as in the case of a DroneCAN or KDECAN ESC, then in order to change the autopilot board's corresponding output pin to be a GPIO, but allow the ``SERVOx_FUNCTION`` to still be assigned to the remote device, the :ref:`SERVO_GPIO_MASK<SERVO_GPIO_MASK>` parameter can be used to assign the board pin to be a GPIO without affecting the ``SERVOx_FUNCTION`` assignment for the remote device.
 
-For example, setting ``SERVO6_FUNCTION`` to "-1" would make PWM output 6 available for use as a GPIO.
+For example, setting :ref:`SERVO6_FUNCTION<SERVO6_FUNCTION>` to "-1" would make PWM output 6 available for use as a GPIO.
 The pin number assigned to that output when used as a GPIO needs to be determined from its hwdef.dat file, located `here <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_HAL_ChibiOS/hwdef>`__ as shown below, where PWM6 is assigned as GPIO pin 55 when used as such:
 
 .. image:: ../../../images/gpio.png

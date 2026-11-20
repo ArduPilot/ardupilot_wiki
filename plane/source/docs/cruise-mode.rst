@@ -22,7 +22,7 @@ The way it works is this:
 
 -  if you have any aileron or rudder input then it flies just like
    :ref:`FBWB <fbwb-mode>`. So it holds altitude until you use the elevator
-   to change the target altitude (at the ``FBWB_CLIMB_RATE`` rate) and
+   to change the target altitude (at the :ref:`FBWB_CLIMB_RATE<FBWB_CLIMB_RATE>` rate) and
    it adjusts airspeed based on throttle
 -  when you let go of the aileron and rudder sticks for more than 0.5
    seconds it sets an internal waypoint at your current location, and

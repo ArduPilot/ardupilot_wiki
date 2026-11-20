@@ -52,7 +52,7 @@ elevator (throttle) is on channel 2, then the settings should be:
 -  ``RCMAP_ROLL=1``
 -  ``RCMAP_THROTTLE=2``
 
-``RCMAP_PITCH`` and ``RCMAP_YAW`` can be whatever channels you want to
+:ref:`RCMAP_PITCH<RCMAP_PITCH>` and :ref:`RCMAP_YAW<RCMAP_YAW>` can be whatever channels you want to
 make them as long as they are not channels 1 and 2.
 
 For Rover you should also select the receiver channel that will be used

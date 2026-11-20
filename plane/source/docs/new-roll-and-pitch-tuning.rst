@@ -271,7 +271,7 @@ Tuning the yaw damper
 ---------------------
 
 #. Verify that the :ref:`YAW2SRV_SLIP<YAW2SRV_SLIP>` and :ref:`YAW2SRV_INT<YAW2SRV_INT>` gain terms are
-   set to zero, the ``YAW2SRV_RLL`` gain term is set to 1.0 and the
+   set to zero, the :ref:`YAW2SRV_RLL<YAW2SRV_RLL>` gain term is set to 1.0 and the
    :ref:`YAW2SRV_DAMP<YAW2SRV_DAMP>` gain term is set to zero
 #. Now rapidly roll the model from maximum bank angle in one direction
    to maximum bank angle in the opposite direction. Do this several

@@ -574,7 +574,7 @@ are flying quickly, or are at low speed with ``EKF_MAG_CAL`` enabled,
 these will slowly change during flight as the filter 'learns' the
 earth's magnetic field. These have the same meaning as the compass
 offsets, but are the opposite sign (eg in the following figure MX
-stabilises at a value of +35, indicating that a ``COMPASS_OFS_X`` value
+stabilises at a value of +35, indicating that a :ref:`COMPASS_OFS_X<copter:COMPASS_OFS_X>` value
 of -35 should be used.
 
 .. image:: ../images/MagXYZ.jpg

@@ -37,13 +37,13 @@ In general, F4 based autopilots using an external bi-directional inverter can us
 
 -   ``SERIALx_PROTOCOL`` = 23
 -   ``SERIALx_OPTIONS`` = 160 (enable pull-up/pull-downs on TX and RX pins for those external inverter circuits that may require it, won't affect those that do not need it)
--   ``RSSI_TYPE`` =3
+-   :ref:`RSSI_TYPE<RSSI_TYPE>` =3
 
 F4 based autopilots using an "un-inverted FPort" output from the receiver can connect it to any UART's TX pin with the configuration:
 
 -   ``SERIALx_PROTOCOL`` = 23
 -   ``SERIALx_OPTIONS`` = 4 (Half Duplex), or = 132 (Half Duplex, TX Pull-up) if receiver does not have sufficient drive on the "un-inverted" output
--   ``RSSI_TYPE`` =3
+-   :ref:`RSSI_TYPE<RSSI_TYPE>` =3
 
 .. note:: F4 based autopilots cannot use the RX pin with an "un-inverted FPort" output since the SWAP capability is only available in F7/H7 based autopilots and Half Duplex requires connection the UART TX pin.
 
@@ -52,13 +52,13 @@ F7/H7 based autopilots can directly connect to the TX pin of any UART and use th
 
 -   ``SERIALx_PROTOCOL`` =23
 -   ``SERIALx_OPTIONS`` =  7 (invert TX/RX, Half Duplex) if using "un-inverted" FPort signal, then = 4 since inversion is not required)
--   ``RSSI_TYPE`` =3
+-   :ref:`RSSI_TYPE<RSSI_TYPE>` =3
 
     OR to the RX pin:
 
 -   ``SERIALx_PROTOCOL`` =23
 -   ``SERIALx_OPTIONS`` =  15 (invert TX/RX,Half Duplex, SWAP TX/RX pins)
--   ``RSSI_TYPE`` =3
+-   :ref:`RSSI_TYPE<RSSI_TYPE>` =3
 
 
 .. note:: Some F7/H7 autopilots have level/shifters on their UARTs that cause a delay in Half Duplex operation, like CubeOrange. If the above configuration does not, try setting :ref:`RC_OPTIONS<RC_OPTIONS>` = 8 which will add padding in the protocol to accommodate this. However, using this option when not required will break operation.

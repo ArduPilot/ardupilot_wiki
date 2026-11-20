@@ -36,11 +36,11 @@ Changing the speed of the simulation
 ------------------------------------
 
 Most of the simulator backends (native, X-plane, etc.) support changing the speed while
-running (NOT Realflight). Just set the ``SIM_SPEEDUP`` parameter as needed. A value of 1
+running (NOT Realflight). Just set the :ref:`SIM_SPEEDUP<copter:SIM_SPEEDUP>` parameter as needed. A value of 1
 means normal wall-clock time. A value of 5 means 5x realtime. A value
 of 0.1 means 1/10th of real time.
 
-Running with high-levels of speedup can result in enough network traffic that MAVProxy can’t keep up. An error such as “Set RC override timeout” or the vehicle entering GCS failsafe are typical of these failures. Reducing the ``SIM_SPEEDUP`` factor is typically sufficient to avoid this problem. Also, using the ``--udp`` options will use UDP instead of the slower TCP communication protocol and can help avoid this issue at higher speedups.
+Running with high-levels of speedup can result in enough network traffic that MAVProxy can’t keep up. An error such as “Set RC override timeout” or the vehicle entering GCS failsafe are typical of these failures. Reducing the :ref:`SIM_SPEEDUP<copter:SIM_SPEEDUP>` factor is typically sufficient to avoid this problem. Also, using the ``--udp`` options will use UDP instead of the slower TCP communication protocol and can help avoid this issue at higher speedups.
 
 Loading a parameter set
 -----------------------
@@ -127,30 +127,30 @@ To see other wind parameters do:
 Testing GPS failure
 -------------------
 
-To test losing GPS lock, use ``SIM_GPS_DISABLE``:
+To test losing GPS lock, use :ref:`SIM_GPS1_ENABLE<copter:SIM_GPS1_ENABLE>`:
 
 ::
 
-    param set SIM_GPS_DISABLE 1
+    param set SIM_GPS1_ENABLE 0
 
-You can also enable/disable a 2nd GPS using ``SIM_GPS2_DISABLE``.
+You can also enable/disable a 2nd GPS using :ref:`SIM_GPS2_ENABLE<copter:SIM_GPS2_ENABLE>`.
 
 Testing GPS-for-Yaw
 -------------------
 
-To test GPS-for-Yaw using two simulated UBlox GPSs:
+To test GPS-for-Yaw using two simulated UBlox GPSs, set :ref:`GPS1_TYPE<copter:GPS1_TYPE>`, :ref:`GPS2_TYPE<copter:GPS2_TYPE>`, :ref:`GPS1_POS_Y<copter:GPS1_POS_Y>`, :ref:`GPS2_POS_Y<copter:GPS2_POS_Y>`, :ref:`SIM_GPS1_POS_Y<copter:SIM_GPS1_POS_Y>`, :ref:`SIM_GPS2_POS_Y<copter:SIM_GPS2_POS_Y>`, :ref:`SIM_GPS2_ENABLE<copter:SIM_GPS2_ENABLE>` and :ref:`SIM_GPS2_HDG<copter:SIM_GPS2_HDG>` as below:
 
 ::
 
     param set EK3_SRC1_YAW 2
     param set GPS_AUTO_CONFIG 0
-    param set GPS_TYPE 17
-    param set GPS_TYPE2 18
-    param set GPS_POS1_Y -0.2
-    param set GPS_POS2_Y 0.2
-    param set SIM_GPS_POS_Y -0.2
+    param set GPS1_TYPE 17
+    param set GPS2_TYPE 18
+    param set GPS1_POS_Y -0.2
+    param set GPS2_POS_Y 0.2
+    param set SIM_GPS1_POS_Y -0.2
     param set SIM_GPS2_POS_Y 0.2
-    param set SIM_GPS2_DISABLE 0
+    param set SIM_GPS2_ENABLE 1
     param set SIM_GPS2_HDG 1
 
 Reboot SITL and the heading should be visible in the GPS2_RAW message's yaw field:
@@ -159,14 +159,14 @@ Reboot SITL and the heading should be visible in the GPS2_RAW message's yaw fiel
 
     status GPS2_RAW
 
-To test using a single NMEA GPS:
+To test using a single NMEA GPS, set :ref:`GPS1_TYPE<copter:GPS1_TYPE>`, :ref:`SIM_GPS1_TYPE<copter:SIM_GPS1_TYPE>` and :ref:`SIM_GPS1_HDG<copter:SIM_GPS1_HDG>` as below:
 
 ::
 
     param set EK3_SRC1_YAW 2
-    param set GPS_TYPE 5
-    param set SIM_GPS_TYPE 5
-    param set SIM_GPS_HDG 1
+    param set GPS1_TYPE 5
+    param set SIM_GPS1_TYPE 5
+    param set SIM_GPS1_HDG 1
 
 Reboot SITL and the heading should be visible in the GPS_RAW_INT message's yaw field:
 

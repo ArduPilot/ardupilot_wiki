@@ -138,7 +138,7 @@ For your first flight:
 
 - Only push the vehicle gently and observe the reactions.
 
-- Expected behavior: The vehicle should stop/slide (set by ``AVOID_BEHAVE``) at a certain distance away from the obstacle (set by ``AVOID_MARGIN/AVOID_DIST_MAX`` depending on the flight mode).
+- Expected behavior: The vehicle should stop/slide (set by :ref:`AVOID_BEHAVE<AVOID_BEHAVE>`) at a certain distance away from the obstacle (set by ``AVOID_MARGIN/AVOID_DIST_MAX`` depending on the flight mode).
 
 
 If everything works as expected, the next step is to test out the safety margins for your specific sensor/vehicle/environment:

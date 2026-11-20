@@ -25,7 +25,7 @@ What to do if you have an issue
 
 3. Having a :Ref:`dataflash log <common-diagnosing-problems-using-logs>` will help you, or someone helping you, to diagnose the issue.
 
-.. note:: WatchDog resets ("WDG:") should be reported `on this page <https://github.com/ArduPilot/ardupilot/issues/15915>`_ , Internal Errors ("Internal Error:") should be reported `here <https://github.com/ArduPilot/ardupilot/issues/15916>`_
+.. note:: WatchDog resets ("WDG:") should be reported as a `new issue <https://github.com/ArduPilot/ardupilot/issues/new/choose>`__ on the ArduPilot GitHub repository. Include the crash_dump.bin file, the firmware version, the autopilot board, and a log if one is available (see :ref:`Reporting a Watchdog / Crash Dump <crash_dump>`). Internal Errors ("Internal Errors 0x...") should be reported as a `new issue <https://github.com/ArduPilot/ardupilot/issues/new/choose>`__ on the ArduPilot GitHub repository. Include the full error message, the firmware version, the autopilot board, and a log if one is available.
 
 
 Vehicle Will Not Arm

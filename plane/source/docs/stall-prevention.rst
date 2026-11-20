@@ -32,7 +32,11 @@ parameter is set to 1 then two things are done:
    margin above the stall speed to turn at the demanded bank angle. If
    you don't then the turn will be limited to the safe limit, but it
    will always allow a bank of at least 25 degrees (to ensure you can
-   still manoeuvre if your airspeed estimate is badly off).
+   still manoeuvre if your airspeed estimate is badly off). If
+   :ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>` bit 16 is set, an airspeed sensor
+   is in use and :ref:`AIRSPEED_STALL<AIRSPEED_STALL>` is set, this 25
+   degree minimum is not applied and the bank can be limited down to
+   :ref:`LEVEL_ROLL_LIMIT<LEVEL_ROLL_LIMIT>`.
 -  when in auto-throttle modes the autopilot will also raise the minimum
    airspeed in the :ref:`TECS system <tecs-total-energy-control-system-for-speed-height-tuning-guide>`
    to the level at which the current demanded bank angle can be safely
@@ -71,8 +75,9 @@ prevention code:
 In each of these modes the aircraft is either calculating a desired bank
 angle for the navigation code, or the user is inputting a desired bank
 angle via the aileron stick. In both cases the stall prevention code
-will limit the bank angle based on the amount of margin between
-``AIRSPEED_MIN`` and the current airspeed.
+will limit the bank angle based on the amount of margin between the
+stall speed (:ref:`AIRSPEED_STALL<AIRSPEED_STALL>`, or
+:ref:`AIRSPEED_MIN<AIRSPEED_MIN>` if it is 0) and the current airspeed.
 
 The following modes are affected by the automatic speed increase in TECS
 when the bank angle is limited by stall prevention:
@@ -117,13 +122,13 @@ pitch is added in FBWA and AUTOTUNE modes based on the throttle
 position. The amount of down pitch added is based on the
 :ref:`STAB_PITCH_DOWN <STAB_PITCH_DOWN>`
 parameter, which defaults to 2 degrees. At zero throttle this full down
-pitch is added. If throttle is above ``TRIM_THROTTLE`` then no down
+pitch is added. If throttle is above :ref:`TRIM_THROTTLE<TRIM_THROTTLE>` then no down
 pitch is added. Between those two values the down pitch is added in
 proportion to the throttle.
 
 This has the effect of slightly lowering the nose when you lower
 throttle in FBWA and AUTOTUNE modes, which makes the plane gain a bit of
 speed, and thus makes it less likely to stall. The value you need for
-``STAB_PITCH_DOWN`` depends on how much drag your plane has. A very
+:ref:`STAB_PITCH_DOWN<STAB_PITCH_DOWN>` depends on how much drag your plane has. A very
 sleek model will need a smaller value. A high drag model will need a
 larger value.

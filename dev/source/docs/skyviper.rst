@@ -210,12 +210,12 @@ To use a different transmitter you will probably have to force the DSM protocol 
 Mode1/Mode2
 -----------
 
-The default TX stick mapping is mode2. To change to mode1, go to the Flight Parameters page in the web interface (``http://192.168.99.1/parameters.html``) and choose the Radio category. Change ``BRD_RADIO_STKMD`` to your preferred RC mode. Modes 1, 2, 3 and 4 are supported.
+The default TX stick mapping is mode2. To change to mode1, go to the Flight Parameters page in the web interface (``http://192.168.99.1/parameters.html``) and choose the Radio category. Change :ref:`BRD_RADIO_STKMD<copter:BRD_RADIO_STKMD>` to your preferred RC mode. Modes 1, 2, 3 and 4 are supported.
 
 Disabling RX Telemetry
 ----------------------
 
-You can temporarily disable telemetry from the drone by setting the ``BRD_RADIO_TELEM`` parameters to zero. See the parameters page at http://192.168.99.1/parameters.html
+You can temporarily disable telemetry from the drone by setting the :ref:`BRD_RADIO_TELEM<copter:BRD_RADIO_TELEM>` parameters to zero. See the parameters page at http://192.168.99.1/parameters.html
 
 When telemetry is disabled the TX will beep constantly as it tries to find the drone, and won’t update the buzzer or LEDs for fight mode changes.
 
@@ -225,7 +225,7 @@ Factory Test Mode for TX/RX
 
 To facilitate rapid testing of transmitters in the factory there is a special factory test mode. This mode avoids the need to bind each transmitter, and gives fast startup on fixed channels.
 Factory test mode can be setup for up to 8 test stations in the factory. Each test station should have its own test copter.
-To setup a copter for factory test mode you need to set a receiving copter as the test copter for a particular test station. You do this by setting the ``BRD_RADIO_TESTCH`` parameter in the Radio parameters on ``http://192.168.99.1/parameters.html`` to a factory testing station number. This can be:
+To setup a copter for factory test mode you need to set a receiving copter as the test copter for a particular test station. You do this by setting the :ref:`BRD_RADIO_TESTCH<copter:BRD_RADIO_TESTCH>` parameter in the Radio parameters on ``http://192.168.99.1/parameters.html`` to a factory testing station number. This can be:
 
 ::
 
