@@ -16,7 +16,7 @@ Pure rate stabilization, bypassing the attitude (angle) controller and using onl
 Rate Loop Only with I-term Scaling
 ===================================
 
-On multicopters, when the "Rate Loop Only" option is enabled (bit 1 of :ref:`ACRO_OPTIONS<ACRO_OPTIONS>`), the rate controller's I-term (integral term) is automatically scaled by the angle P gain for each axis. This makes the I-term contribution proportional to the attitude correction strength, mimicking the tuning approach used by Betaflight. Pilots transitioning from Betaflight should find that after ArduPilot tuning (:ref:`common-tuning`), the tune will feel more like Betaflight tuning with this option enabled.
+On multicopters and helis, when the "Rate Loop Only" option is enabled (bit 1 of :ref:`ACRO_OPTIONS<ACRO_OPTIONS>`), the rate controller's I-term (integral term) is automatically scaled by the angle P gain for each axis. This makes the I-term contribution proportional to the attitude correction strength, mimicking the tuning approach used by Betaflight. Pilots transitioning from Betaflight should find that after ArduPilot tuning (:ref:`common-tuning`), the tune will feel more like Betaflight tuning with this option enabled.
 
 With I-term scaling enabled:
 
