@@ -84,6 +84,7 @@ These GPS can incorporate real time kinematic data, either internally generated 
     DATAGNSS GEM1305 RTK Receiver<common-datagnss-gem1305-rtk>
     DATAGNSS NANO RTK Receiver<common-datagnss-nano-rcv-rtk>
     Emlid Reach RTK Receiver <common-reach-rtk-receiver>
+    Eview HB56 RTK GNSS Receiver (Septentrio mosaic-X5) <https://gnss-solutions.com/product/hb56-gnss-receiver/>
     Eview HB6 RTK GNSS Receiver (Septentrio mosaic-X5) <https://gnss-solutions.com/product/hb6-gnss-receiver/>
     CubePilot HERE 3/3+ DroneCAN RTK GPS/IMU/Compass <https://docs.cubepilot.org/user-guides/here-3/here-3-manual>
     CubePilot HERE 4 DroneCAN RTK GPS/IMU/Compass (see note below) <https://docs.cubepilot.org/user-guides/here-4/here-4-manual>
@@ -135,6 +136,7 @@ Moving Baseline (GPS for Yaw) Capable
     CUAV C-RTK2 HP  Heading and RTK receiver<common-cuav-c-rtk2-hp>
     CubePilot HERE 4 DroneCAN RTK GPS/IMU/Compass <https://docs.cubepilot.org/user-guides/here-4/here-4-manual>
     CubePilot HEREPRO DroneCAN RTK GPS/Compass <https://docs.cubepilot.org/user-guides/herepro/herepro-manual>
+    Eview HB56H Dual-Antenna Heading Receiver (Septentrio mosaic-H) <https://gnss-solutions.com/product/hb56h-gnss-receiver/>
     Eview HB6 Pro Dual-Antenna Heading Receiver (Septentrio mosaic-H) <https://gnss-solutions.com/product/hb6-pro-gnss-receiver/>
     Foxteck AEROFOX F9P-RTK <https://www.foxtechfpv.com/aerofox-f9p-rtk-unit.html>
     Freefly RTK GPS Ground Station <https://store.freeflysystems.com/products/rtk-gps-ground-station>
