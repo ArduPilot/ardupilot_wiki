@@ -202,7 +202,18 @@ Setup for Normal Operation
 
 - Alternatively, GPS can work with OpticalFlow using EKF source switching.
 - See :ref:`GPS / Non-GPS Transitions <common-non-gps-to-gps>` for information on EKF source switching.
+
 [site wiki="plane,copter"]
+.. note::
+   This applies when holding position using optical flow without GPS and
+   flying higher than a few meters. By default, the EKF weakens position
+   corrections as height increases, allowing the vehicle to drift,
+   especially in wind. To improve hold, set :ref:`EK3_FLOW_GAIN_H <EK3_FLOW_GAIN_H>`
+   (default 4 m) to about a quarter of your maximum height above ground,
+   such as 12 for flights around 45 m. Setting this value too high can cause
+   oscillations, but because changes take effect immediately, you can tune
+   it in flight. This parameter is available in firmware 4.8 or later.
+
 .. note:: When Copters have an optical flow sensor enabled (along with a rangefinder) and it is specified as the only horizontal position source (e.g. ``EK3_SRCx_VELXY`` = OpticalFlow and ``EK3_SRCx_POSXY`` = None) and the vehicle is flying in a pilot controlled mode requiring a position estimate (ie Loiter or PosHold) the vehicle will not climb above the rangefinder's maximum altitude specified in ``RNGFNDx_MAX``. This is a safety mechanism because otherwise the EKF failsafe would trigger as the vehicle flew out of rangefinder range.
 
 Example Video
