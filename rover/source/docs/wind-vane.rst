@@ -27,7 +27,7 @@ to a alternative sensor. Note that any change to the _TYPE parameters will requi
 
 Wind Direction
 ----------------------
-Wind direction can be directly sensed through the use of an analogue voltage input. However it is also possible to use a fixed wind direction,
+Wind direction can be directly sensed through the use of a directional sensor. However it is also possible to use a fixed wind direction,
 this is not recommended for long term use, but will allow testing of sailboats without the need for specialist sensors. The wind vane type can be
 selected with :ref:`WNDVN_TYPE <WNDVN_TYPE>`. The wind direction is filtered using a low pass filter, the frequency of this filter can be set 
 using :ref:`WNDVN_DIR_FILT <WNDVN_DIR_FILT>`. If the wind direction is oscillating this frequency can be reduced. This will reduce the effect
@@ -42,6 +42,8 @@ the vehicle will have no new information about wind direction.
     
     Analogue Wind Vane <wind-vane-analogue>
     Home Heading <wind-vane-home-heading>
+    Angle Sensor Wind Vane <wind-vane-angle-sensor>
+    NMEA <wind-vane-NMEA>
 
 
 Wind Speed
@@ -59,4 +61,4 @@ speed is filtered using a low pass filter, the frequency of this filter can be s
     RPM <wind-vane-rpm>
     Modern Devices rev-p <wind-vane-MD-rev-p>
     Connecting Bluetooth Windvane to ArduPilot <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_WindVane/Tools/Bluetooth%20NMEA%20receiver/Bluetooth%20NMEA%20receiver.md>
-
+    NMEA <wind-vane-NMEA>
