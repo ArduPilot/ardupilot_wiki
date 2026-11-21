@@ -21,6 +21,8 @@ Features such as multiple screen switching, multiple units and statistics are su
 
 Stick commands for accessing HDZero's VTX Menu and Camera Menu, or 0mW mode also work.
 
+In firmware 4.8 and later, the HDZero VTX band, channel, power and pit mode can also be controlled from the autopilot. See :ref:`common-vtx`.
+
 HDZero using ArduPilot custom fonts
 
 .. image:: ../../../images/msp_osd_displayport.jpg

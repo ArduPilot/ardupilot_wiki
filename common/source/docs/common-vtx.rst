@@ -4,7 +4,7 @@
 Video Transmitter Support
 =========================
 
-Video transmitter (VTX) support allows the autopilot to control an attached video transmitter. Depending on the VTX and protocol used, components that can be controlled include video band, video channel, transmitter power and pit mode. Supported protocols are SmartAudio, IRC Tramp, and TBS Crossfire (CRSF).
+Video transmitter (VTX) support allows the autopilot to control an attached video transmitter. Depending on the VTX and protocol used, components that can be controlled include video band, video channel, transmitter power and pit mode. Supported protocols are SmartAudio, IRC Tramp, TBS Crossfire (CRSF) and, in firmware 4.8 and later, MSP (for digital HD systems such as HDZero and ELRS backpack VTX control).
 
 .. note:: Not all video transmitters claiming SmartAudio support fully support the specification and some functions may not be provided in that transmitter, or implemented in a non-standard way. Consult the manufacturer's documentation if questions arise.
 
@@ -49,6 +49,39 @@ ImmersionRC Tramp
 
 - Connect the telemetry pin of the video transmitter to the TX pin of the autopilot's UART used to control it.
 - Set :ref:`SERIAL5_PROTOCOL <SERIAL5_PROTOCOL>` = 44 if using SERIAL5 for connection to VTX
+
+MSP (HDZero and ELRS backpack)
+------------------------------
+
+In firmware 4.8 and later, VTX band, channel, frequency, power and pit mode can be controlled over MSP. This is only included in firmware for autopilots with more than 2MB of flash, or boards which specifically enable it in their hardware definition.
+
+**HDZero** air units are controlled over the same DisplayPort connection used for the OSD (see :ref:`common-displayport`):
+
+- Set :ref:`OSD_TYPE<OSD_TYPE>` = 5 (MSP_DISPLAYPORT)
+- Set :ref:`SERIAL5_PROTOCOL <SERIAL5_PROTOCOL>` = 42 (DisplayPort) if using SERIAL5, with both TX and RX connected to the air unit
+- Set :ref:`MSP_OPTIONS<MSP_OPTIONS>` bit 2 (EnableBTFLFonts). The HDZero air unit only offers VTX control to an autopilot identifying itself as Betaflight, which this option enables. Bit 3 (EnableINAVFonts) must not be set.
+
+At boot the air unit sends its current settings and power table to the autopilot, which then updates the ``VTX_x`` parameters to match. After that, changes to the ``VTX_x`` parameters are sent to the air unit. Channel changes made in the goggles will also still work.
+
+**ELRS backpack** style VTX control, where MSP VTX configuration messages are sent to the autopilot, works on either a DisplayPort (42) or MSP (32) serial port.
+
+If an MSP VTX drops to low power when the vehicle is disarmed and you want it held at full power instead, set :ref:`MSP_OPTIONS<MSP_OPTIONS>` bit 4 (ForceVTXHighPower). This makes the autopilot always report itself as armed to the VTX.
+
+.. note:: Walksnail and DJI systems do not currently support VTX control over MSP.
+
+Selecting which protocol controls the VTX
+-----------------------------------------
+
+ArduPilot controls a single VTX. If more than one VTX control protocol is present (for example a CRSF receiver and an HDZero air unit), :ref:`VTX_TYPES<VTX_TYPES>` selects which ones are allowed to control it. By default all are allowed. Clear a protocol's bit to stop it from controlling the VTX:
+
+=====================================    ==========
+:ref:`VTX_TYPES<VTX_TYPES>` bit          Protocol
+=====================================    ==========
+0                                        CRSF
+1                                        SmartAudio
+2                                        Tramp
+3                                        MSP
+=====================================    ==========
 
 Video transmitter settings
 --------------------------
