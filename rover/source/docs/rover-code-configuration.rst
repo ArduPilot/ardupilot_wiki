@@ -26,5 +26,6 @@ In addition to mandatory calibration, you may also choose to :ref:`Configure Opt
     ESC Calibraton <common-esc-calibration>
     Failsafes <rover-failsafes>
     EKF Failsafe <common-ekf-inav-failsafe>
+    Servo Failsafe Positions <common-servo-failsafe>
     Control Modes <rover-control-modes>
 
