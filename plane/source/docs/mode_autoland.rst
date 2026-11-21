@@ -40,6 +40,7 @@ Notes:
 
 - Switching out of AUTOLAND to another mode aborts the landing and returns control to that new mode.
 - Throttle aborts of the final landing sequence are not supported. (:ref:`LAND_ABORT_THR<LAND_ABORT_THR>`)
+- In firmware 4.8 and later, once the plane flares, its bank angle is limited to :ref:`LEVEL_ROLL_LIMIT<LEVEL_ROLL_LIMIT>` to prevent a wing strike, as in an AUTO mode landing (see :ref:`automatic-landing`). Earlier firmware did not limit roll during an AUTOLAND flare.
 - If the plane has taken off not using the aforementioned modes, the mode cannot be entered since the takeoff direction has not been captured. In these cases, if it is selected as a long failsafe action ("5"), :ref:`FS_LONG_ACTN<FS_LONG_ACTN>`, it will switch to normal RTL instead of AUTOLAND on failsafe.
 - The mode co-exists with any mission autolanding sequence, which can be used in AUTO mode, or with :ref:`RTL_AUTOLAND<RTL_AUTOLAND>`.
 - QuadPlanes cannot use this mode.
