@@ -99,12 +99,12 @@ or use ``SIM_RC_FAIL=2`` which sets all channels at neutral  (1500us) and the th
 Testing the effects of vibration
 --------------------------------
 
-To test the vehicle's reaction to vibration, use ``SIM_ACC_RND``. The
+To test the vehicle's reaction to vibration, use :ref:`SIM_ACC1_RND<copter:SIM_ACC1_RND>` (first accelerometer). The
 example below adds 3 m/s/s acceleration noise:
 
 ::
 
-    param set SIM_ACC_RND 3
+    param set SIM_ACC1_RND 3
 
 Testing the effects of wind
 ---------------------------
