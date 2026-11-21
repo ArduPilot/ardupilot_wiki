@@ -99,6 +99,20 @@ Unicore UM982
 
 For Unicore UM982 based GPSes, the "Master" and "Slave" antennas must be mounted at least 30cm apart on the vehicle. The offset distances in the x/y/z directions must be entered detailed in the :ref:`Master-Slave Antenna Offsets<antenna-offsets>` section below.
 
+u-blox ZED-X20D
+---------------
+
+The ZED-X20D computes heading internally from its two antennas. ArduPilot detects the module and configures it to send its heading.
+
+- The module must run u-blox HDG firmware version 2.00 or later.
+- The autopilot must be connected to the module's UART1. Its UART2 is input only.
+- Yaw from this module is only supported on autopilots with more than 1MB of flash. On others the module provides position only.
+- :ref:`SERIAL3_PROTOCOL<SERIAL3_PROTOCOL>` = 5 ("GPS") assuming the GPS is connected to SERIAL3 (be sure any lower numbered port does not use this protocol unless a GPS is attached).
+- :ref:`GPS1_TYPE<GPS1_TYPE>` = 2 (u-blox)
+- :ref:`GPS_AUTO_CONFIG<GPS_AUTO_CONFIG>` = 1 (AutoConfig Serial)
+
+The antennas must be mounted at least 30cm apart on the vehicle. Antenna 1 is the "Master" and antenna 2 the "Slave", and the position is reported for antenna 1. The offset distances in the x/y/z directions must be entered as detailed in the :ref:`Master-Slave Antenna Offsets<antenna-offsets>` section below.
+
 DroneCAN
 --------
 
