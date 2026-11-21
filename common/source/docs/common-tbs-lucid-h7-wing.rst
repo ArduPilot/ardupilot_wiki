@@ -12,8 +12,8 @@ Features
 * Input voltage: 8V-50.4V (3-12S)
 * Output power: 8A cont./10A peak BEC. 5V, 6V, 8.4V (selectable)
 * Channels: 13x PWM (including LED)
-* Gyro: ICM42688 x 2 (SPI1 & SPI4)
-* Baro: DPS310 (I2C2)
+* Gyro: ICM42688 x 2 (SPI1 & SPI4) or Dual MPU6000
+* Baro: DPS310 (I2C2), DPS368, or BMP390
 * Peripherals: 7x UART, 2x I2C, 1x CAN
 * Measurements: 6x ADC (Vbat, Current, CB2, CU2, RSSI, AirSpeed)
 * High speed ports: MicroSD BlackBox, SPI3 on pin headers
