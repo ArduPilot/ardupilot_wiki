@@ -117,17 +117,34 @@ Time
    <tr>
    <td>ap/time</td>
    <td>builtin_interface/msg/Time</td> 
-   <td>This sends time from AP's real time clock.</td>
+   <td>This sends time from AP's real time clock, or the simulation time if SITL is receiving <code>/clock</code>.</td>
    <td>100 Hz</td>
    </tr>
    <tr>
    <td>ap/clock</td>
    <td>rosgraph_msgs/msg/Clock</td> 
-   <td>This sends time from AP's real time clock in a format suitable for aligning ROS time of a companion computer.</td>
+   <td>This sends time from AP's real time clock in a format suitable for aligning ROS time of a companion computer, or the simulation time if SITL is receiving <code>/clock</code>.</td>
    <td>100 Hz</td>
+   </tr>
+   <tr>
+   <td>/clock (subscribed, SITL only)</td>
+   <td>rosgraph_msgs/msg/Clock</td>
+   <td>Simulation clock from the ROS 2 simulation environment. Only subscribed when SITL is started with <code>--use_sim_time true</code>. If received, it is used to timestamp all outgoing DDS topics.</td>
+   <td>-</td>
    </tr>
    </tbody>
    </table>
+
+Simulation clock synchronisation
+--------------------------------
+
+In SITL, ArduPilot subscribes to the ROS 2 simulation ``/clock`` topic (an absolute topic name, not affected by the ``ap/`` prefix or namespacing) so that its DDS topic timestamps match simulation time, as described in the `ROS 2 clock and time design <https://design.ros2.org/articles/clock_and_time.html>`__. Simulators such as Gazebo publish ``/clock`` automatically.
+
+The subscription is only made when SITL is started with ``--use_sim_time true``, which defaults to false. The ardupilot_sitl ROS 2 launch files pass it by default (``use_sim_time:=True``). When starting SITL with sim_vehicle.py, add ``-A "--use_sim_time true"``.
+
+Until the first ``/clock`` message is received, ArduPilot uses its real time clock, or time since boot if the real time clock is not set. Once ``/clock`` has been received, timestamps follow the last received simulation time, and stay at that value if the publisher stops. The time in use is also published on ``ap/clock`` and ``ap/time``.
+
+.. note:: This is available in firmware 4.8 and later, and is only compiled into SITL builds.
 
 Control
 =======
