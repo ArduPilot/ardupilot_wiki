@@ -132,6 +132,8 @@ MAVLink commands
 
 The full set of MAVLink commands can be executed from within a LUA script. An `example is shown here <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/command_int.lua>`_.
 
+.. note:: Scripts that use the generated ``MAVLink`` module to encode or decode MAVLink messages load it from the SD card in ``APM/scripts/modules/MAVLink``. When upgrading to ArduPilot 4.8 or later, replace this directory with the matching firmware version's `libraries/AP_Scripting/modules/MAVLink <https://github.com/ArduPilot/ardupilot/tree/master/libraries/AP_Scripting/modules/MAVLink>`__ directory. The internal message layout changed to support 32-bit system IDs, and older copies of ``mavlink_msgs.lua`` cannot decode it, even with system IDs below 256. Updating the firmware does not update the module files on the SD card. Scripts that construct or parse raw MAVLink headers themselves must be updated separately for MAVLink 2.1.
+
 API Documentation
 =================
 
