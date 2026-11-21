@@ -29,7 +29,7 @@ If enabled and set-up correctly the radio failsafe will trigger if any of these 
 -  The wires connecting the receiver to the autopilot are broken
    (unlikely).
 
-The radio failsafe will also trigger if the pilot forces the throttle channel below :ref:`FS_THR_VALUE<FS_THR_VALUE>` from the transmitter.
+The radio failsafe will also trigger if the pilot forces the throttle channel to or below :ref:`FS_THR_VALUE<FS_THR_VALUE>` from the transmitter.
 
 What will happen
 ================
