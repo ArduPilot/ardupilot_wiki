@@ -59,6 +59,7 @@ from sphinx.application import Sphinx
 
 import rst_table
 from frontend.scripts import get_discourse_posts
+from scripts.check_ref_directives import check_file as check_ref_directives_file
 from scripts.dedupe_params import dedupe_periph_net_parameters
 
 if sys.version_info < (3, 8):
@@ -1052,27 +1053,17 @@ def check_imports():
 
 
 def check_ref_directives():
-    '''check formatting around ref directive that sphinx does not warn about'''
-    character_before_ref_tag = re.compile(r"[a-zA-Z0-9_:]:ref:")
-    character_after_ref_tag = re.compile(r"(:ref:`.*?`[_]{0,2}) ([\.,:])")
-
+    '''check formatting around ref directive that sphinx does not warn about.
+    Same check as the check-ref-directives pre-commit hook, run here as a
+    warning so local builds still report it.'''
     # don't check "common="" files in vehicle wikis
     skipped_files = set()
     for wiki in ALL_WIKIS:
         skipped_files.update(glob.glob(f'{wiki}/source/docs/common-*.rst'))
     wiki_glob = set(glob.glob("**/*.rst", recursive=True))
-    files_to_check = wiki_glob.difference(skipped_files)
-    for f in files_to_check:
-        with open(f, "r", encoding='utf-8') as file:
-            try:
-                for i, line in enumerate(file.readlines()):
-                    if character_before_ref_tag.search(line):
-                        error(f'Remove character before ref directive in "{f}" on line number {i+1}')
-                    if character_after_ref_tag.search(line):
-                        error(f'Remove character after ref directive in "{f}" on line number {i+1}')
-            except UnicodeDecodeError as ex:
-                print(f"UnicodeError in {f}: ", ex)
-                sys.exit(1)
+    for f in sorted(wiki_glob.difference(skipped_files)):
+        for err in check_ref_directives_file(Path(f)):
+            error(err)
 
 
 def create_features_pages(site):
