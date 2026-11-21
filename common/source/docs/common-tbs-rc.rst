@@ -59,6 +59,38 @@ Instead of CRSF protocol, MAVLink protocol can be used if the receiver is config
 
 If the ELRS transmitter module has WIFI capability, then the telemetry data can be forwarded wirelessly to a PC or phone based GCS close to the transmitter.
 
+Updating ELRS Receiver Firmware Through the Autopilot
+-----------------------------------------------------
+
+ESP8285/ESP32 based ELRS receivers can be flashed without disconnecting them from the autopilot by using :ref:`common-serial-passthrough` and `esptool <https://github.com/espressif/esptool>`__. This needs ArduPilot 4.8 or later. Earlier firmware kept reconfiguring the RC input port while passthrough was active, which corrupted the transfer.
+
+The ExpressLRS Configurator's "Betaflight Passthrough" flashing method uses the Betaflight CLI and will not work with ArduPilot. Use esptool directly instead.
+
+- If you will use the receiver's boot button to enter its bootloader, hold it while powering up the autopilot and receiver, then release it. Do this first, as :ref:`SERIAL_PASS2<SERIAL_PASS2>` is reset to -1 whenever the autopilot reboots
+- Connect the autopilot to the PC by USB and connect a ground station
+- Set :ref:`SERIAL_PASSTIMO<SERIAL_PASSTIMO>` = 30 (or longer)
+- Set :ref:`SERIAL_PASS1<SERIAL_PASS1>` = 0 (USB)
+- Set :ref:`SERIAL_PASS2<SERIAL_PASS2>` to the serial port the receiver is connected to, for example 4 if it is on SERIAL4
+- Disconnect or close the ground station, leaving the USB cable connected
+- If the receiver is not already in its bootloader, send it the ELRS reboot to bootloader frame (hex ``EC 04 32 62 6C 0A``) at 420000 baud on the autopilot's USB port
+- Flash the receiver with esptool through the autopilot's USB port. For an ESP8285 receiver:
+
+::
+
+    esptool.py --chip esp8266 --port COM5 --baud 420000 --before no_reset --after soft_reset write_flash -z 0x0 firmware.bin
+
+esptool's ``esp8266`` setting covers ESP8285 chips. ``--after soft_reset`` starts the new firmware once the write is done, as the autopilot's USB port cannot reset the receiver.
+
+For an ESP32 receiver the firmware is written at 0x10000, after the bootloader and partition table, as the ExpressLRS flasher does:
+
+::
+
+    esptool.py --chip esp32 --port COM5 --baud 420000 --before no_reset --after no_reset write_flash -z --flash_mode dio --flash_freq 40m --flash_size detect 0x10000 firmware.bin
+
+For an ESP32-C3 or ESP32-S3 receiver use ``--chip esp32c3`` or ``--chip esp32s3`` instead, with the same 0x10000 offset. ESP32 receivers cannot be restarted through the autopilot, so power cycle the receiver once the write is done.
+
+There is no need to set the receiver port's baud rate, the autopilot uses the baud rate esptool opens the USB port with. Passthrough ends once :ref:`SERIAL_PASSTIMO<SERIAL_PASSTIMO>` seconds pass with no data from the PC, after which the autopilot resumes using the port for RC input.
+
 ELRS bootloader "lockup"
 ------------------------
 

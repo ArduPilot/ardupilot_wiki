@@ -17,7 +17,7 @@ Setup
 .. note::  On most F7 and H7 boards, a second USB virtual serial port also appears when you connect via USB to the autopilot and is assigned the last SERIALx port in ArduPilot for SLCAN use. This can also be used for serial device configuration by changing :ref:`SERIAL_PASS1<SERIAL_PASS1>` to that port's number. This allows the autopilot to remain connected to a Ground Control Station, and still use passthrough to a sensor for configuration simultaneously on the PC via its configuration program.
 
 - Its best if the sensor already can be detected and used by ArduPilot first.
-- Be sure to set each port's baud rate appropriately using the ``SERIALx_BAUD`` parameters (USB ports automatically use the passthrough port's baud rate and do not need to be changed). The rates may be different for each port. ArduPilot will do the buffering.  For example, if attempting passthrough to the first GPS, :ref:`SERIAL3_BAUD <SERIAL3_BAUD>` should normally be set to 230400 but you may check the GPS driver's "autobauding" by looking at the ground stations Message window soon after startup. Additionally, many sensor drivers ignore what is set for this parameter, since its hardcoded in the driver, but it MUST be set when using the passthrough feature.
+- Be sure to set each port's baud rate appropriately using the ``SERIALx_BAUD`` parameters. When one side is a USB port, the other port is switched to the baud rate the PC's configuration software opens the USB port with, so only that software's baud rate matters. The rates may be different for each port. ArduPilot will do the buffering.  For example, if attempting passthrough to the first GPS, :ref:`SERIAL3_BAUD <SERIAL3_BAUD>` should normally be set to 230400 but you may check the GPS driver's "autobauding" by looking at the ground stations Message window soon after startup. Additionally, many sensor drivers ignore what is set for this parameter, since its hardcoded in the driver, but it MUST be set when passing through between two ports that are not USB.
 
 .. figure:: ../../../images/serial-passthrough-gps-baud.png
    :target: ../_images/serial-passthrough-gps-baud.png
@@ -31,6 +31,8 @@ Setup
 .. note:: some GCS do not have any easy means to "Disconnect" or will immediately try to reconnect. In those cases just close the GCS application entirely.
 
 - Open the sensor's configuration software and connect to the autopilot's COM port.  If all goes well the configuration software should work as it does when the PC is directly connected to the sensor
+
+.. note:: Passthrough can also be used to update the firmware of an ELRS receiver connected for RC input. See :ref:`common-tbs-rc`.
 
 If the configuration fails to connect there are some things to try:
 
