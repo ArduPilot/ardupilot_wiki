@@ -2,14 +2,20 @@
 
 [copywiki destination="plane,copter,rover,sub"]
 
-=========================================
-SIYI A8, ZR10, ZR30, ZT6 and ZT30 Gimbals
-=========================================
-
-The `SIYI A8 <https://shop.siyi.biz/products/siyi-a8-mini-gimbal-camera>`__, `ZR10 <https://shop.siyi.biz/products/siyi-zr10-gimbal-camera>`__, `ZR30 <https://shop.siyi.biz/products/zr30-4k-8mp-ultra-hd-180x-hybrid-30x-optical-gimbal-camera>`__, `ZT6 <https://siyi.biz/en/index.php?id=602>`__ and `ZT30 <https://shop.siyi.biz/products/siyi-zt30>`__ are 3-axis gimbals and camera which can communicate with ArduPilot using a custom serial protocol
+===================
+SIYI Camera Gimbals
+===================
 
 .. image:: ../../../images/siyi-zr10-gimbal.png
     :target: https://shop.siyi.biz/products/zr10
+
+Siyi manufactures a range of camera gimbals that are compatible with ArduPilot using a custom protocol via serial or Ethernet.  The lineup includes:
+
+- `SIYI A8 <https://shop.siyi.biz/products/siyi-a8-mini-gimbal-camera>`__
+- `SIYI ZR10 <https://shop.siyi.biz/products/siyi-zr10-gimbal-camera>`__
+- `SIYI ZR30 <https://shop.siyi.biz/products/zr30-4k-8mp-ultra-hd-180x-hybrid-30x-optical-gimbal-camera>`__
+- `SIYI ZT6 <https://siyi.biz/en/index.php?id=602>`__
+- `SIYI ZT30 <https://shop.siyi.biz/products/siyi-zt30>`__
 
 .. warning::
 
@@ -67,20 +73,40 @@ Connect with a ground station and set the following parameters.  The params belo
 
     A8 does not support zoom at 4K recording resolution
 
-Configuring the Gimbal
-----------------------
+Firmware Updates and Configuration
+----------------------------------
 
-- Download, install and run "SIYI PC Assistant" which can be found on any of the links below
-- Ensure the gimbal is running a recent firmware.  For ZR10 use 0.2.1 or higher.  For A8 use 0.1.7 or higher.
+Ensure the camera gimbal is running a recent firmware:
 
-  - `A8's downloads page <https://siyi.biz/en/index.php?id=downloads&asd=22>`__
-  - `ZR10's download page <https://siyi.biz/en/index.php?id=downloads&asd=27>`__
-  - `ZR30's download page <https://siyi.biz/en/index.php?id=downloads&asd=25>`__
-  - `ZT6's download page <https://siyi.biz/en/index.php?id=downloads&asd=602>`__
-  - `ZT30's download page <https://siyi.biz/en/index.php?id=downloads&asd=25>`__
+- Download, install and run "SIYI PC Assistant" which can be found on any of the links below.  Also download the "Firmware Pack" which includes the latest firmware for the camera and gimbal
+
+  - `A8's downloads page <https://siyi.biz/en/product/tri-axis-single-camera-gimbal/a8-mini/download/>`__
+  - `ZR10's download page <https://siyi.biz/en/product/tri-axis-single-camera-gimbal/zr10/download/>`__
+  - `ZR30's download page <https://siyi.biz/en/product/tri-axis-single-camera-gimbal/zr30/download/>`__
+  - `ZT6's download page <https://siyi.biz/en/product/tri-axis-multi-sensor-gimbal-pod/zt6/download/>`__
+  - `ZT30's download page <https://siyi.biz/en/product/tri-axis-multi-sensor-gimbal-pod/zt30/download/>`__
+  
+- Connect the camera gimbal to a PC using a USB cable
+- Power on the camera gimbal
+- Open the Siyi PC Assistant and check the gimbal and camera firmware versions
+- The gimbal version appears on the "upload" page. For ZR10 use 0.2.1 or higher.  For A8 use 0.1.7 or higher.
 
 .. image:: ../../../images/siyi-gimbal-firmversion.png
     :target: ../_images/siyi-gimbal-firmversion.png
+
+- Upgrade the gimbal firmware by pushing the "getfilename" button, select the "xxx Gimbal Firmware xxx.bin" file downloaded above and push the "upgrade" button
+
+- The camera version appears on the "gimbal config" page.
+
+.. image:: ../../../images/siyi-camera-firmversion.png
+    :target: ../_images/siyi-camera-firmversion.png
+
+- Upgrade the camera firmware:
+
+  - Power down the camera gimbal and remove the SD card
+  - From the Firmware Pack downloaded above, find the file named "xxx UpgradeSD.bin" and copy it to the top directory of the SD card
+  - Place the SD card back in the camera gimbal
+  - Power on the device, connect with the Siyi Assistant and confirm the version has been updated
 
 Ethernet Connectivity
 ---------------------
