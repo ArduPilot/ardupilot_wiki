@@ -27,6 +27,8 @@ The exact behaviour depends on the :ref:`RTL_AUTOLAND<RTL_AUTOLAND>` value:
 
 .. note:: if you execute an RTL due to a battery failsafe and the :ref:`MIS_OPTIONS<MIS_OPTIONS>` bit 1 (Use distance to land) is set, then if continuing the mission results in a closer landing point, then the mission will proceed.
 
+.. note::The switch from RTL into that sequence happens once each time the vehicle is armed. After it has happened, another RTL in the same flight stays in RTL. That includes a later mode change by the pilot and a ``NAV_RETURN_TO_LAUNCH`` mission item. Arming again allows RTL to start the sequence once more.
+
 [/site]
 [site wiki="copter"]
 
