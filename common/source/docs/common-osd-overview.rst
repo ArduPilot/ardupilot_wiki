@@ -143,6 +143,15 @@ Several user defined warnings can be set which will flash the respective osd pan
 - :ref:`OSD_W_RSSI<OSD_W_RSSI>` - Blinks rssi panel if less than this integet percentage value. 0-99%
 - :ref:`OSD_W_NSAT<OSD_W_NSAT>` - Blinks #Sat panel if less than this number. 0-30
 
+Lua Script Control of the OSD
+=============================
+
+In firmware 4.8 and later, a :ref:`Lua script <common-lua-scripts>` can write its own text and symbols to the OSD using the ``osd`` scripting binding. This works with MAX7456 type OSDs, MSP DisplayPort OSDs and the SITL OSD.
+
+While a script is using the OSD, the normal OSD screen is not drawn. The script can draw the normal screen itself with ``osd:draw_screen()`` and then write its own items over it. If the script stops using the OSD for about 2 seconds, the normal OSD display returns.
+
+The available functions are listed in the scripting `docs.lua <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/docs/docs.lua>`__ file. An example script, `osd.lua <https://github.com/ArduPilot/ardupilot/blob/master/libraries/AP_Scripting/examples/osd.lua>`__, shows a direction arrow and distance to the next waypoint or home, plus several OSD symbols, for both MAX7456 and DisplayPort symbol tables.
+
 List of OSD Panels
 ==================
 
