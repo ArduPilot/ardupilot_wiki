@@ -247,7 +247,7 @@ Supported Features
 +----------------------+----------------------------+----------+---------+---------+-------+
 |        156           | Torqeedo Error Clear       |          |         |   X     |       |
 +----------------------+----------------------------+----------+---------+---------+-------+
-|        157           | Force FBWA Long FS Action  |          |    X    |         |       |
+|        157           | Force Glide FS Action      |          |    X    |         |       |
 +----------------------+----------------------------+----------+---------+---------+-------+
 |        158           | Optflow Calibration        |    X     |    X    |         |       |
 +----------------------+----------------------------+----------+---------+---------+-------+
@@ -554,10 +554,15 @@ Other functions are:
     TRIM RC/SERVO Save                   | Saves current RC input trim and SERVO output trim for pitch,
                                          | roll, and yaw in Plane and for Steering in Rover.[site wiki="rover"] See :ref:`Save Steering Trim <savetrim>`.[/site]
     Torqeedo Error Clear                  Clears error condition in Torqeedo motor controller.
-    Force FBWA as Long FS Action         | Forces mode change to FBWA in Long FS, overriding the
-                                         | [site wiki="plane"]:ref:`FS_LONG_ACTN<FS_LONG_ACTN>`\ [/site][site wiki="copter,rover,sub"]:ref:`FS_LONG_ACTN<plane:FS_LONG_ACTN>`\ [/site] parameter value for emergency
+    Force Glide FS Action                | Forces mode change to GLIDE on a failsafe, overriding the
+                                         | [site wiki="plane"]:ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` and :ref:`FS_LONG_ACTN<FS_LONG_ACTN>`\ [/site][site wiki="copter,rover,sub"]:ref:`FS_SHORT_ACTN<plane:FS_SHORT_ACTN>` and :ref:`FS_LONG_ACTN<plane:FS_LONG_ACTN>`\ [/site] parameter values for emergency
                                          | landings beyond RC control range to prevent normal
-                                         | failsafe action from occurring.
+                                         | failsafe action from occurring. Only applies in
+                                         | MANUAL, STABILIZE, ACRO, FBWA, FBWB, CRUISE,
+                                         | AUTOTUNE and TRAINING, plus CIRCLE, LOITER,
+                                         | THERMAL and TAKEOFF for a long failsafe; ignored
+                                         | in AUTO and GUIDED. Before 4.8, this switched to
+                                         | FBWA with zero throttle.
     Optflow Calibration                   Enables calibration of optical flow parameters.
     Force Flying                         | Disables the landing detection heuristic to prevent false
                                          | landing detections during a mission or manual flight
