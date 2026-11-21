@@ -19,7 +19,7 @@ Siyi manufactures a range of camera gimbals that are compatible with ArduPilot u
 
 .. warning::
 
-    The Siyi A2 is not supported
+    The Siyi A2 is not supported.
 
 Where to Buy
 ------------
@@ -43,7 +43,7 @@ Connecting to the Autopilot
 
 Connect the gimbal's RX, TX and GND pins to one of the autopilot's serial ports as shown above.
 
-Connect with a ground station and set the following parameters.  The params below assume the autopilot's telem2 port is used and the Camera1 control instance,
+Connect with a ground station and set the following parameters.  The params below assume the autopilot's telem2 port is used and the Camera1 control instance:
 
 - :ref:`SERIAL2_PROTOCOL <SERIAL2_PROTOCOL>` to 8 ("SToRM32 Gimbal Serial")
 - :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` to "115" for 115200 bps
@@ -56,12 +56,8 @@ Connect with a ground station and set the following parameters.  The params belo
 - :ref:`RC6_OPTION <RC6_OPTION>` = 213 ("Mount Pitch") to control the gimbal's pitch angle with RC channel 6
 - :ref:`RC7_OPTION <RC7_OPTION>` = 214 ("Mount Yaw") to control the gimbal's yaw angle with RC channel 7
 - :ref:`RC8_OPTION <RC8_OPTION>` = 163 ("Mount Yaw Lock") to switch between normal yaw operation and locking mount heading with RC channel 8 (in RC Targeting mode only).
-- Enable camera controls with one of the following parameters:
-
-
-- set :ref:`CAM1_TYPE<CAM1_TYPE>` to 4 / "Mount (Siyi)" to allow control of the camera
-
-- Optionally these auxiliary functions are also available
+- :ref:`CAM1_TYPE<CAM1_TYPE>` = 4 / "Mount (Siyi)" to allow control of the camera
+- Optionally these auxiliary functions are also available:
 
   - :ref:`RC9_OPTION <RC9_OPTION>` = 9 ("Camera Trigger") to take a picture
   - :ref:`RC9_OPTION <RC9_OPTION>` = 166 ("Camera Record Video") to start/stop recording of video
@@ -85,7 +81,7 @@ Ensure the camera gimbal is running a recent firmware:
   - `ZR30's download page <https://siyi.biz/en/product/tri-axis-single-camera-gimbal/zr30/download/>`__
   - `ZT6's download page <https://siyi.biz/en/product/tri-axis-multi-sensor-gimbal-pod/zt6/download/>`__
   - `ZT30's download page <https://siyi.biz/en/product/tri-axis-multi-sensor-gimbal-pod/zt30/download/>`__
-  
+
 - Connect the camera gimbal to a PC using a USB cable
 - Power on the camera gimbal
 - Open the Siyi PC Assistant and check the gimbal and camera firmware versions
@@ -117,33 +113,33 @@ Instead of using a UART serial connection to control the gimbal, an Ethernet vir
     :target: ../_images/siyi-a8-botblox-ethernet.png
     :width: 450px
 
-An example of the setup of the gimbal in a networked ArduPilot vehicle system is detailed in :ref:`common-ethernet-vehicle` but in short, to control the gimbal over Ethernet
+An example of the setup of the gimbal in a networked ArduPilot vehicle system is detailed in :ref:`common-ethernet-vehicle` but in short, to control the gimbal over Ethernet:
 
 - Connect the gimbal and autopilot using an :ref:`ethernet adapter <common-ethernet-adapters>`
-- Ensure the autopilot and gimbal are on the same subnet (e.g the first 3 octets of the IP address match, 4th octet is different)
+- Ensure the autopilot and gimbal are on the same subnet (e.g. the first 3 octets of the IP address match, 4th octet is different)
 
   - The gimbal's IP address can be set using the Siyi Assistant software (see image below)
   - Set the autopilot's :ref:`NET_ENABLE<NET_ENABLE>` = 1 and reboot to enable networking
   - Set the autopilot's IP address using :ref:`NET_IPADDR0<NET_IPADDR0>`, :ref:`NET_IPADDR1<NET_IPADDR1>`, :ref:`NET_IPADDR2<NET_IPADDR2>`, :ref:`NET_IPADDR3<NET_IPADDR3>` (e.g. 192.168.144.14)
-- Create a serial connection over ethernet
+- Create a serial connection over Ethernet
 
   - Set :ref:`NET_P1_TYPE<NET_P1_TYPE>` = 1 (UDP Client) and reboot the autopilot
   - Set :ref:`NET_P1_IP0<NET_P1_IP0>`, :ref:`NET_P1_IP1<NET_P1_IP1>`, :ref:`NET_P1_IP2<NET_P1_IP2>`, :ref:`NET_P1_IP3<NET_P1_IP3>` to the gimbal's IP address (e.g. 192.168.144.25)
-  - Set :ref:`NET_P1_PORT<NET_P1_PORT>` = 37260 (port that Siyi gimbals listens for commands on)
+  - Set :ref:`NET_P1_PORT<NET_P1_PORT>` = 37260 (port that Siyi gimbals listen for commands on)
   - Set :ref:`NET_P1_PROTOCOL<NET_P1_PROTOCOL>` = 8 (Gimbal)
 
-To view the Siyi cammera's live video over Ethernet use the Siyi Assistant to set the "IP Config", "Coding Format" and Video Output mode as shown below.  Note that the IP's first three numbers should match the telemetry system being used (e.g. :ref:`Herelink <common-herelink>`, Siyi MK32, etc) or PC the camera is connected to.  In image below shows the default IP address for Siyi gimbals
+To view the Siyi camera's live video over Ethernet use the Siyi Assistant to set the "IP Config", "Coding Format" and Video Output mode as shown below.  Note that the IP's first three numbers should match the telemetry system being used (e.g. :ref:`Herelink <common-herelink>`, Siyi MK32, etc) or PC the camera is connected to.  The image below shows the default IP address for Siyi gimbals.
 
 .. image:: ../../../images/SIYI-Assistant.jpg
     :target: ../_images/SIYI-Assistant.jpg
 
-The video is available using an RTSP URL which can vary by camera type.  Note the URL's IP address should match the camera's IP address that was entered into the Siyi Assistant above
+The video is available using an RTSP URL which can vary by camera type.  Note the URL's IP address should match the camera's IP address that was entered into the Siyi Assistant above:
 
 - A8, ZR10: rtsp://192.168.144.25:8554/main.264
 - ZT6 (IR): rtsp://192.168.144.25:8554/video1
-- ZT6 (rgb): rtsp://192.168.144.25:8554/video2
+- ZT6 (RGB): rtsp://192.168.144.25:8554/video2
 
-If connected to a PC, `VLC <https://www.videolan.org/>`__ can be used to test the feed
+If connected to a PC, `VLC <https://www.videolan.org/>`__ can be used to test the feed:
 
 - Open VLC
 - Select "Media", "Open Network Stream" and enter the RTSP URL
@@ -151,7 +147,7 @@ If connected to a PC, `VLC <https://www.videolan.org/>`__ can be used to test th
 .. image:: ../../../images/siyi-a8-vlc.png
     :target: ../_images/siyi-a8-vlc.png
 
-If using QGC, the live video can be configured from the "Application Settings", "General" screen.  Set "Source" to "RTSP Video Stream" and "RTSP URL" to one of the RTSP URLs listed above
+If using QGC, the live video can be configured from the "Application Settings", "General" screen.  Set "Source" to "RTSP Video Stream" and "RTSP URL" to one of the RTSP URLs listed above:
 
 .. image:: ../../../images/siyi-a8-qgc.png
     :target: ../_images/siyi-a8-qgc.png
@@ -161,9 +157,9 @@ If using Mission Planner, the live video can be displayed on the Data screen by 
 Downloading Images and Video
 ----------------------------
 
-Images and videos captured by the camera can be remotely downloaded to a companion computer or PC via Ethernet using `this siyi-download.py Python script <https://github.com/ArduPilot/ardupilot/blob/master/Tools/cameras_gimbals/siyi-download/siyi-download.py>`__
+Images and videos captured by the camera can be remotely downloaded to a companion computer or PC via Ethernet using `this siyi-download.py Python script <https://github.com/ArduPilot/ardupilot/blob/master/Tools/cameras_gimbals/siyi-download/siyi-download.py>`__.
 
 Control and Testing
 -------------------
 
-See :ref:`Gimbal / Mount Controls <common-mount-targeting>` and :ref:`Camera Controls <common-camera-controls>`  for details on how to control the camera and gimbal using RC, GCS or Auto mode mission commands
+See :ref:`Gimbal / Mount Controls <common-mount-targeting>` and :ref:`Camera Controls <common-camera-controls>` for details on how to control the camera and gimbal using RC, GCS or Auto mode mission commands.
