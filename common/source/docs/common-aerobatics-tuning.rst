@@ -46,7 +46,7 @@ Set :ref:`AUTOTUNE_LEVEL<AUTOTUNE_LEVEL>` = 8, and do an :ref:`Autotuning <autom
 Check PIDS
 ==========
 
-From the the Autotuning flight, check the logs for proper FF PID, and to tighten up the P and D terms. For the following we will look at an actual log and check if how the Pitch portion of the Aututune turned out by comparing the "Target" (PIDP.Tar log message) rates demanded by the stick movements during the Autotune for pitch versus what the actual pitch rotation rates (PIDP.Act) where measured by the IMU. 
+From the Autotuning flight, check the logs for proper FF PID, and to tighten up the P and D terms. For the following we will look at an actual log and check if how the Pitch portion of the Aututune turned out by comparing the "Target" (PIDP.Tar log message) rates demanded by the stick movements during the Autotune for pitch versus what the actual pitch rotation rates (PIDP.Act) where measured by the IMU. 
 
 .. image:: ../../../images/aerobatic-pid-tuning1.png
     :target: ../_images/aerobatic-pid-tuning1.png
