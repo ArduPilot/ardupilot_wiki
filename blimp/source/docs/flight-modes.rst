@@ -39,7 +39,7 @@ The table below shows for each flight mode whether it provides altitude or posit
 Recommended Flight Modes
 ========================
 
-It is best to start with manual mode to ensure the the actuators and rc controller have been set up correctly (i.e. pushing the pitch stick forward does make the blimp move forward).
+It is best to start with manual mode to ensure the actuators and rc controller have been set up correctly (i.e. pushing the pitch stick forward does make the blimp move forward).
 
 Once this is confirmed, you can switch into VELOCITY mode. This uses only the velocity PID controller, thus allowing tuning this controller using the VEL* parameters. 
 Test whether centering the sticks results in a standstill and no oscillation. Also test that the blimp reaches a set velocity reasonably quickly. 
