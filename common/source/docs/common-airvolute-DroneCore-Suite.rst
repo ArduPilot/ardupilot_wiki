@@ -5,7 +5,7 @@ Airvolute DroneCore.Suite
 =========================
 
 **DroneCore.Suite** is a one stop autopilot and flight computer solution for developers of advanced drone systems demanding high computing power and high level of modularity. 
-It is the "core" of the drone containing most of its electronics in a compact form and it provides wide options for software development of the the most challenging AI and vision based applications.
+It is the "core" of the drone containing most of its electronics in a compact form and it provides wide options for software development of the most challenging AI and vision based applications.
 
 .. image:: ../../../images/airvolute_droneCore.Suite_9233.jpg
 
