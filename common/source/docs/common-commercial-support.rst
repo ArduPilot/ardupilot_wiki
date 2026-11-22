@@ -150,12 +150,11 @@ support for ArduPilot including vehicle design, tuning, log analysis, bug fixes 
     <tr class="row-odd">
         <td><center><a class="first last reference external image-reference" href="https://www.khunmanned.com/"><img alt="KH Unmanned" src="../_images/KHUnmanned_logo.png" style="width: 90px;" /></a><br/><br/>UK</center></td>
         <td><div class="first last line-block">
-            <div class="line">KH Unmanned, Matthew Kear and Peter Hall, <a href="mailto:info@khunmanned.com" target="_top">info@khunmanned.com</a></div>
+            <div class="line">KH Unmanned, Peter Hall, <a href="mailto:info@khunmanned.com" target="_top">info@khunmanned.com</a></div>
             <div class="line"><br/></div>
             <div class="line">Consulting services include: ArduPilot code development (C++, Lua)</div>
             <div class="line">specialising in vehicle dynamics. Vehicle setup support and log</div>
             <div class="line">analysis. For UK-based clients we offer a tuning service.</div>
-            <div class="line">Mechanical analysis (FEA). Aerodynamic analysis (CFD).  </div>
             </div>
         </td>
     </tr>
