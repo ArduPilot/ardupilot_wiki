@@ -243,7 +243,7 @@ MAVLink reporting
 If you have MAVLINK set to 1 (or 2), then the radio firmware will also look for
 MAVLink HEARTBEAT messages coming from the serial connection. If it sees
 a HEARTBEAT message then it knows that the MAVLink protocol is in use,
-and it will start injecting MAVLink 'RADIO' status packets into the the
+and it will start injecting MAVLink 'RADIO' status packets into the
 serial stream.
 
 The RADIO packets contain information about the RSSI (Received Signal
