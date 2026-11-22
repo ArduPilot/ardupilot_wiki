@@ -41,7 +41,7 @@ Building the Fins
 #. Use super glue to glue the ends of two strips at 90 degrees to each other, forming a right-angled triangle.
 #. Repeat this with the other 6 strips.
 #. Cut triangles out of the plastic of the same size as the wood frames.
-#. Glue the plastic to the the wood frames. The hypotenuse edge will be left loose. Try to keep the plastic pulled flat while you glue, but without warping the wood frame.
+#. Glue the plastic to the wood frames. The hypotenuse edge will be left loose. Try to keep the plastic pulled flat while you glue, but without warping the wood frame.
 #. Glue the 90 deg attachment points to the corner of the triangle where you glued the two strips together.
 
 See the photo below for an example:
