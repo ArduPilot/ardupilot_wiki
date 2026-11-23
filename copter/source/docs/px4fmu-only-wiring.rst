@@ -20,11 +20,10 @@ Overview
 
 -  Copter firmware version 3.1 and later supports only the combined
    system of the PX4 FMU and PX4 IO board; the FMU-only system is no
-   longer supported. Purchase a PX4 FMU kit from 3DRobotics LINK_BROKEN
-   and a PX4 I/O board LINK_BROKEN
+   longer supported. (The PX4 FMU kit and PX4 I/O board were originally sold by 3DRobotics, but are now discontinued.)
 -  A special cable that fits into the PX4's main "Multi" connector will
-   allow you to perform the primary wiring and it is available from
-   3DRobotics LINK_BROKEN
+   allow you to perform the primary wiring (originally available from
+   3DRobotics).
 -  If you choose, you can cut off the single pin connectors and solder
    directly to the necessary locations and trim back the excess wires.
 -  Use the 4 supplied nylon standoffs to mount the PX4FMU to a piece of
