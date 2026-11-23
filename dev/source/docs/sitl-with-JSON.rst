@@ -16,7 +16,7 @@ Global position and free-running (non-lockstep) simulators
 The physics backend can send these optional fields in addition to the ones described in the repository:
 
 - ``latitude`` (degrees), ``longitude`` (degrees) and ``altitude`` (meters, AMSL): the vehicle's global position. All three must be sent together. When they are present, they are used instead of ``position``, and ``position`` is then no longer a required field. The first position received sets the simulation's start location.
-- ``no_lockstep`` (boolean): set to ``true`` when the physics backend runs in real time and cannot be stepped by ArduPilot. ArduPilot then does not wait for each sensor packet; if none has arrived, it advances its own time at the ``SIM_RATE_HZ`` loop rate. It also does not adjust its frame rate to match the backend.
+- ``no_lockstep`` (boolean): set to ``true`` when the physics backend runs in real time and cannot be stepped by ArduPilot. ArduPilot then does not wait for each sensor packet; if none has arrived, it advances its own time at the :ref:`SIM_RATE_HZ<copter:SIM_RATE_HZ>` loop rate. It also does not adjust its frame rate to match the backend.
 
 These fields are useful for connecting existing simulators, such as flight simulators, that keep their own world position and time.
 
