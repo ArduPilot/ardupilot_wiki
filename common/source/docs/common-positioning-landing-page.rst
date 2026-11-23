@@ -176,6 +176,23 @@ The :ref:`GPS_AUTO_CONFIG<GPS_AUTO_CONFIG>` parameter provides several automatic
 - 3: Clear all configurations not set by ArduPilot (u-Blox only)
     On next boot, resets u-Blox GPS modules to default before applying ArduPilot configuration values (u-Blox Generation 9 and newer).
 
+u-Blox Key-Value Configuration (Generation 9 and newer)
+-------------------------------------------------------
+
+Newer u-Blox modules are configured with "key-value" messages (CFG-VALGET/VALSET/VALDEL) instead of the older configuration messages:
+
+- M9, M10, F10, NEO-F9 and ZED-F9 modules support both methods. ArduPilot keeps using the older method for these unless bit 8 of :ref:`GPS_DRV_OPTIONS<GPS_DRV_OPTIONS>` is set.
+- X20 and F20 modules (u-Blox protocol version 40 and newer) **only** support key-value configuration. ArduPilot must have the key-value configuration code built in to use them.
+
+The key-value configuration code is included in:
+
+- Firmware 4.7: only CubeOrange and CubeOrangePlus (and their variants), CubeYellow, CubePurple, CubeRed, Here4FC and Here4AP firmware
+- Firmware 4.8 and later: all autopilots with 2MB of flash
+
+ArduPilot configures the same settings with either method, including the enabled constellations (:ref:`GPS1_GNSS_MODE<GPS1_GNSS_MODE>`), update rate (:ref:`GPS1_RATE_MS<GPS1_RATE_MS>`), navigation filter (:ref:`GPS_NAVFILTER<GPS_NAVFILTER>`), minimum satellite elevation (:ref:`GPS_MIN_ELEV<GPS_MIN_ELEV>`), raw data logging (:ref:`GPS_RAW_DATA<GPS_RAW_DATA>`) and :ref:`moving baseline <common-gps-for-yaw>` operation. While configuring, it sends messages to the ground station such as "GPS 1: u-blox protocol: <version>" and "GPS 1: Legacy config unsupported" (for X20/F20 modules).
+
+With :ref:`GPS_AUTO_CONFIG<GPS_AUTO_CONFIG>` = 3, ArduPilot reads back the module's configuration at boot. If it finds settings that ArduPilot doesn't manage (for example, ones changed with u-center), it resets the module to its defaults ("GPS 1: u-blox resetting to default config") and then applies its own configuration, the same as option 1. This avoids conflicting settings left over from earlier use.
+
 GPS Driver Options
 ==================
 
