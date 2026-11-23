@@ -404,7 +404,7 @@ Setting with Mission Planner
 
 Rate Roll P and Rate Pitch P will be used in the following example procedure
 
-.. image:: ../images/RollPitchTuning.png
+.. image:: ../../../images/RollPitchTuning.png
     :target: ../_images/RollPitchTuning.png
 
 #. Connect your autopilot to Mission Planner
