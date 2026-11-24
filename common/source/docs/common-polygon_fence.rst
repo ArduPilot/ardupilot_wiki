@@ -29,6 +29,13 @@ Multiple fences can be specified of differing types and shapes in the list.
 ..  youtube:: U3Z8bO3KbyM
     :width: 100%
 
+Home-Centered Circular Inclusion Fence
+======================================
+
+A circular inclusion fence can also be centered on the vehicle's home position instead of a fixed location, using the ``MAV_CMD_NAV_FENCE_HOME_CIRCLE_INCLUSION`` fence item, which only has a radius. If home is moved, for example by the ground station or by being reset on arming, the fence moves with it. This allows a fence that keeps the vehicle within a given distance of wherever it is launched to be set up once, without redrawing it at each flying site. It is treated as one of the inclusion fences above, so it is enabled by the polygon bit of :ref:`FENCE_TYPE<FENCE_TYPE>` (not the circle bit used for the :ref:`cylindrical fence <common-ac2_simple_geofence>`), and can be combined with other inclusion and exclusion fences. The fence is not loaded until home has been set.
+
+Ground station support is needed to create this fence item. In MAVProxy, it is added with ``fence addhomecircle RADIUS`` (radius in meters), or from the map's right-click menu.
+
 Number of fences
 ================
 
