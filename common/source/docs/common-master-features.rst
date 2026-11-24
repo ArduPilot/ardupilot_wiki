@@ -23,5 +23,9 @@ New Features
 [site wiki="plane,copter,rover,sub"]
     Changes to Currawong Velocity ESCs <common-velocity-can-escs>
 [/site]
+[site wiki="plane"]
+    Fixed-Wing Input Shaping <plane-input-shaping>
+[/site]
+
 
 [copywiki destination="plane,copter,rover,blimp,sub"]
