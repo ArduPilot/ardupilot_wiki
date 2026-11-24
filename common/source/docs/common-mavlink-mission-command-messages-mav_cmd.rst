@@ -449,14 +449,21 @@ and then proceed to the next waypoint.
 
 [site wiki="plane" heading="off"]
 
-The vehicle will fly to the specified latitude, longitude and altitude.
-The waypoint is considered "complete" when Plane is within the specified
-radius of the target location, at which point Plane processes the next
-command.
+The vehicle will fly to the specified latitude, longitude and altitude,
+along the track from the previous waypoint.
+The waypoint is considered "complete", and Plane processes the next
+command, when Plane comes within the acceptance distance of its target,
+or when it crosses the finish line through that target (the line at right
+angles to the track), whichever happens first.
+The target is the waypoint itself, unless param3 extends the leg past it.
 
-The protocol additionally provides for the plane to circle the waypoint
-with a specified radius and direction for a specified time (Delay).
-These parameters are not supported by Copter.
+With param2 and param3 both zero the acceptance distance is the turn
+distance set by :ref:`WP_RADIUS<WP_RADIUS>`, so Plane starts turning onto
+the next leg before it reaches the waypoint.
+param2 and param3 change where the waypoint completes, as described below.
+
+Plane does not hold or orbit at a waypoint: param1 (Delay) is not
+supported.
 
 **Command parameters**
 
@@ -478,14 +485,27 @@ These parameters are not supported by Copter.
    <tr>
    <td><strong>param2</strong></td>
    <td>Acc radius</td>
-   <td>Acceptance radius in meters (waypoint is complete when the plane is this close to the waypoint location</td>
+   <td>Acceptance radius in whole meters, 0 to 255. The waypoint is complete
+   when Plane is this close to the waypoint, or to the end of the leg
+   extension when param3 is set.
+   A non-zero param2 is used exactly as given. Unlike the WP_RADIUS turn
+   distance, it is not scaled up with altitude (by EAS2TAS squared), not
+   limited to the L1 distance, and not reduced for turns of less than
+   90 degrees, so the waypoint completes param2 meters early even when the
+   next leg carries straight on.
+   0 uses the WP_RADIUS turn distance if param3 is also 0; if param3 is set,
+   0 means no acceptance radius, and the waypoint completes on the finish
+   line through the end of the leg extension.</td>
    </tr>
    <tr>
    <td><strong>param3</strong></td>
    <td>Pass by</td>
-   <td>0 to pass through the WP, if > 0 radius in meters to pass by WP.
-   Positive value for clockwise orbit, negative value for counter-clockwise
-   orbit. Allows trajectory control.</td>
+   <td>Leg extension in whole meters, 0 to 255. Plane extends the track from
+   the previous waypoint this far past the waypoint and flies to the end of
+   the extension, so it does not turn early: unless param2 is set, the
+   waypoint completes when Plane crosses the finish line through the end of
+   the leg extension.
+   Plane does not orbit the waypoint, so negative values are not supported.</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td>param4</td>
