@@ -31,6 +31,12 @@ These commands are supported in ArduPilot 4.6.0 and higher:
 
 - MAV_CMD_SET_CAMERA_SOURCE to set which lens (aka image sensor) is used
 
+These features are supported in ArduPilot 4.8.0 and higher (see :ref:`mavlink-camera-selection` below):
+
+- camera IDs 7 to 255 select a MAVLink camera by its component ID
+- MAV_CMD_VIDEO_START_CAPTURE and MAV_CMD_VIDEO_STOP_CAPTURE accept a camera ID, so that an individual video stream can be selected
+- messages from MAVLink cameras (CAMx_TYPE = 6) are relayed to ground stations with the camera's own system and component IDs
+
 These commands and messages are not yet supported but may be in future releases
 
 - MAV_CMD_REQUEST_CAMERA_CAPTURE_STATUS
@@ -38,7 +44,6 @@ These commands and messages are not yet supported but may be in future releases
 - MAV_CMD_SET_CAMERA_MODE
 - MAV_CMD_DO_TRIGGER_CONTROL
 - MAV_CMD_VIDEO_START_STREAMING and MAV_CMD_VIDEO_STOP_STREAMING to start and stop streaming a video to the ground station
-- CAMERA_CAPTURE_STATUS
 - CAMERA_IMAGE_CAPTURED
 - CAMERA_TRACKING_IMAGE_STATUS
 - CAMERA_TRACKING_GEO_STATUS
@@ -50,6 +55,21 @@ These commands and messages are not yet supported but may be in future releases
 .. note::
 
     The :ref:`user wiki pages for cameras and gimbals is here <copter:common-cameras-and-gimbals>`.
+
+.. _mavlink-camera-selection:
+
+Selecting a camera (4.8 and higher)
+-----------------------------------
+
+In ArduPilot 4.8 (and higher) commands sent to the autopilot, and camera mission commands, select the camera using the same rules:
+
+- 0 means all cameras (or the primary camera, for tracking commands and the legacy video capture form described below)
+- 1 to 6 select the 1st, 2nd, etc camera configured on the autopilot (the CAM1\_, CAM2\_ parameters)
+- 7 to 255 select the MAVLink camera (CAMx_TYPE = 6) using that component ID (see CAMx_COMPID)
+
+Camera IDs that do not match a configured camera, and fractional, negative or out-of-range values, are rejected rather than being applied to another camera. For fields that were previously unused (e.g. the camera ID of MAV_CMD_SET_CAMERA_ZOOM, MAV_CMD_SET_CAMERA_FOCUS and the video capture commands), NaN is treated as 0 so that commands from older ground stations work as before.
+
+A MAVLink camera connected to the autopilot (CAMx_TYPE = 6) keeps its own identity: its HEARTBEAT, CAMERA_INFORMATION, VIDEO_STREAM_INFORMATION, CAMERA_CAPTURE_STATUS and other camera messages are relayed to ground stations with the camera's own system and component IDs, so a ground station can discover the camera and send commands to it directly. Only one camera/gimbal unit per MAVLink link is supported. Setting the camera link's MAVx_OPTIONS bit 4 ("Unicast") is recommended: it isolates the camera from broadcast traffic while still allowing addressed requests and replies (e.g. MAVFTP for the camera definition file) to pass between the camera and ground station.
 
 MAV_CMD_DO_DIGICAM_CONTROL to take a picture
 --------------------------------------------
@@ -712,17 +732,17 @@ To start or stop recording video send a `COMMAND_LONG <https://mavlink.io/en/mes
    <tr>
    <td><strong>param1</strong></td>
    <td>float</td>
-   <td>Stream ID (All=0, 1st camera=1, 2nd camera=2)</td>
+   <td>Stream ID. If a camera ID is provided (4.8 and higher): 0=all streams on that camera, 1=1st stream, etc. Otherwise this is the camera (0=primary camera, 1=1st camera, 2=2nd camera)</td>
    </tr>
-   <tr style="color: #c0c0c0">
+   <tr>
    <td><strong>param2</strong></td>
    <td>float</td>
-   <td>Status Frequency (unused)</td>
+   <td>START: Status Frequency (4.8 and higher, only used if a camera ID is provided). STOP: Camera ID (4.8 and higher, see <a href="#mavlink-camera-selection">Selecting a camera</a>)</td>
    </tr>
-   <tr style="color: #c0c0c0">
+   <tr>
    <td><strong>param3</strong></td>
    <td>float</td>
-   <td>unused</td>
+   <td>START: Camera ID (4.8 and higher, see <a href="#mavlink-camera-selection">Selecting a camera</a>). STOP: unused</td>
    </tr>
    <tr style="color: #c0c0c0">
    <td><strong>param4</strong></td>
@@ -747,6 +767,10 @@ To start or stop recording video send a `COMMAND_LONG <https://mavlink.io/en/mes
    </tbody>
    </table>
 
+.. note::
+
+    If the camera ID is 0 (or NaN), param1 is interpreted as the camera number, as in versions before 4.8, and all streams on that camera are controlled. To select an individual stream, or to control several cameras, send a command with a non-zero camera ID for each camera. For example, a MAV_CMD_VIDEO_START_CAPTURE with param1=2 and param3=0 selects the 2nd camera, not stream 2. Video mission items saved with earlier firmware keep their original behaviour.
+
 The example commands below can be copy-pasted into MAVProxy (aka SITL) to test this command.  Before running these commands enter:
 
 - module load message
@@ -754,13 +778,19 @@ The example commands below can be copy-pasted into MAVProxy (aka SITL) to test t
 +----------------------------------------------------+---------------------------------------------+
 | Example MAVProxy/SITL Command                      | Description                                 |
 +====================================================+=============================================+
-| ``message COMMAND_LONG 0 0 2500 0 0 0 0 0 0 0 0``  | Start recording video on all cameras        |
+| ``message COMMAND_LONG 0 0 2500 0 0 0 0 0 0 0 0``  | Start recording video on the primary camera |
 +----------------------------------------------------+---------------------------------------------+
 | ``message COMMAND_LONG 0 0 2500 0 1 0 0 0 0 0 0``  | Start recording video on 1st camera         |
 +----------------------------------------------------+---------------------------------------------+
-| ``message COMMAND_LONG 0 0 2501 0 0 1 0 0 0 0 0``  | Stop recording video on all cameras         |
+| ``message COMMAND_LONG 0 0 2500 0 2 0 1 0 0 0 0``  | Start recording video stream 2 of 1st       |
+|                                                    | camera (4.8 and higher)                     |
++----------------------------------------------------+---------------------------------------------+
+| ``message COMMAND_LONG 0 0 2501 0 0 0 0 0 0 0 0``  | Stop recording video on the primary camera  |
 +----------------------------------------------------+---------------------------------------------+
 | ``message COMMAND_LONG 0 0 2501 0 1 0 0 0 0 0 0``  | Stop recording video on 1st camera          |
++----------------------------------------------------+---------------------------------------------+
+| ``message COMMAND_LONG 0 0 2501 0 0 1 0 0 0 0 0``  | Stop recording all video streams of 1st     |
+|                                                    | camera (4.8 and higher)                     |
 +----------------------------------------------------+---------------------------------------------+
 
 MAV_CMD_CAMERA_TRACK_POINT to start tracking a point on the live video stream
