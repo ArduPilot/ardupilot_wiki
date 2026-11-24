@@ -38,6 +38,7 @@ The most commonly used simulators are:
 -  :ref:`Replay <testing-with-replay>` has no graphical interface but allows re-running master from a dataflash log
 -  :ref:`JSBSim <sitl-with-jsbsim>` is a sophisticated open-source plane and multicopter simulator with no graphical interface. It can be used with a wide variety of airframes.
 -  :ref:`PteroSim <sitl-with-pterosim>` is a UAV simulator built on Unreal Engine, providing 6-DOF flight dynamics and simulated sensors
+-  :ref:`Fly Before <sitl-with-flybefore>` is an RC flight simulator for macOS that runs ArduPlane SITL with one switch and no build environment, for fixed wing and QuadPlane aircraft
 -  :ref:`Silent Wings Soaring<soaring-sitl-with-silentwings>` 
 -  :ref:`MATLAB and Simulink<sitl-with-MATLAB>` are numerical computing environments used for developing algorithms and plotting data developed by `MathWorks <https://www.mathworks.com/>`__.
 -  :ref:`JSON interface<sitl-with-JSON>` The JSON interface is a generic interface protocol designed to be easy to implement for those developing physics backend. There are Python and MATLAB examples.
@@ -64,6 +65,7 @@ List of simulators (so they can appear in the menu):
     Replay <testing-with-replay>
     JSBSim <sitl-with-jsbsim>
     PteroSim <sitl-with-pterosim>
+    Fly Before <sitl-with-flybefore>
     Silent Wings Soaring<soaring-sitl-with-silentwings>
     Last Letter <using-last_letter-as-an-external-sitl-simulator>
     CRRCSim <simulation-2sitl-simulator-software-in-the-loopusing-using-the-crrcsim-simulator>
