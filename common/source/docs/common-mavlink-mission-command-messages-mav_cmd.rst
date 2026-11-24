@@ -1851,24 +1851,31 @@ MAV_CMD_NAV_ARC_WAYPOINT
 Supported by: Copter 4.7 and later (not Plane or Rover).
 
 Fly from the previous waypoint to the target location along a circular arc.
-The arc starts at the previous waypoint (or the vehicle's position if there is
-no previous waypoint) and ends at this command's location. The Arc Angle in
+The arc starts at the previous waypoint and ends at this command's location. The Arc Angle in
 param1 sets how far around the circle the vehicle turns between those two points,
 which sets the radius of the arc. If the two waypoints are at different altitudes,
 the vehicle climbs or descends steadily along the arc.
 
+.. note:: The arc is only flown if the previous navigation command is a regular
+   waypoint with no delay, or another arc waypoint, using the same altitude
+   frame. Otherwise, for example directly after a takeoff, after a waypoint with
+   a delay, a NAV_DELAY or a spline waypoint, or when a mission is resumed at the
+   arc waypoint, the vehicle flies a straight line to the arc's end point.
+
 -  Positive Arc Angle values fly a clockwise arc (seen from above), and negative
    values fly a counter-clockwise arc.
--  Larger angles give a longer, more curved path between the same two points.
+-  Larger angles give a longer path between the same two points.
    For example, 90 degrees flies a quarter circle, 180 degrees flies a semicircle
    whose diameter is the line between the waypoints, and 270 degrees flies three
    quarters of a circle. The tightest radius (half the distance between the
    waypoints) is at 180 degrees.
 -  An Arc Angle of 0 (or less than 1 degree) flies a straight line, the same as
    a regular waypoint.
--  The vehicle does not stop at an arc waypoint. There is no delay parameter, and
-   the vehicle flies straight on into the next segment. Arc waypoints can be
-   mixed with regular waypoints in the same mission.
+-  There is no delay parameter. Like a regular waypoint with no delay, the
+   vehicle blends into a following waypoint, arc waypoint or spline waypoint
+   without stopping. It stops at the arc's end point if the arc is the last
+   navigation command, or is followed by an RTL, LOITER_TURNS or TAKEOFF command.
+   Arc waypoints can be mixed with regular waypoints in the same mission.
 -  Speed along the arc is limited by :ref:`WP_SPD<WP_SPD>` and by the
    cornering acceleration limit, :ref:`WP_ACC_CNR<WP_ACC_CNR>`, so tight
    arcs are flown more slowly.
