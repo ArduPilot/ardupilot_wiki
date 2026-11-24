@@ -529,6 +529,47 @@ supported.
    </tr>
    </tbody>
    </table>
+
+**Where the waypoint completes**
+
+The images below are from a SITL flight of a rectangular mission whose
+corners use four combinations of param2 and param3, with
+:ref:`WP_RADIUS<WP_RADIUS>` set to 50 meters:
+
+- **#3, a standard waypoint** (param2 = 0, param3 = 0): the waypoint
+  completes at the turn distance, 53.2 meters before the waypoint, and
+  Plane turns early onto the next leg.
+  The turn distance is WP_RADIUS scaled by the square of the ratio of true
+  to equivalent airspeed (EAS2TAS), so above sea level it is a little more
+  than WP_RADIUS.
+- **#4, a leg extension** (param3 = 70): the leg extends 70 meters past
+  the waypoint and the waypoint completes on the finish line through the
+  end of the extension, so Plane flies 70 meters past the waypoint before
+  it turns.
+- **#5, a leg extension with an acceptance radius** (param2 = 80,
+  param3 = 60): the 80 meter radius is measured from the end of the leg
+  extension, 60 meters past the waypoint, so the waypoint completes 20 meters
+  before the waypoint.
+- **#6, an acceptance radius alone** (param2 = 80, param3 = 0): the
+  80 meter radius replaces the WP_RADIUS turn distance and is measured from
+  the waypoint, so the waypoint completes 80 meters before it.
+
+.. figure:: ../../../images/plane-waypoint-completion-overview.png
+   :target: ../_images/plane-waypoint-completion-overview.png
+
+   Plane: the flown track of the example mission
+
+.. figure:: ../../../images/plane-waypoint-completion-corners.png
+   :target: ../_images/plane-waypoint-completion-corners.png
+
+   Plane: each corner drawn along its inbound track, with the ideal acceptance distance
+
+The orange dots show where the vehicle completed each waypoint.
+They lie a little further along the track than the ideal acceptance
+point, by up to the distance Plane flies in a tenth of a second, because
+Plane checks for waypoint completion ten times a second.
+Plane also takes about a second to roll into the turn, so it flies on
+almost straight for a short distance after the waypoint completes.
 [/site]
 
 [site wiki="rover" heading="off"]
