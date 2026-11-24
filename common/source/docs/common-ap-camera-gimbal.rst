@@ -13,8 +13,8 @@ AP Camera Gimbal
 `AP Camera Gimbal <https://github.com/ArduPilot/AP_CameraGimbal/blob/master/README.md>`__ is open source software that can be installed and run on these camera gimbals:
 
 - :ref:`Siyi camera gimbals <common-siyi-zr10-gimbal>`: MT11, A8 mini, ZR10 and ZT30 (ZT30 supports application updates only and needs the AP launchers already installed)
-- :ref:`XF Robot Z-1 mini <common-xfrobot-gimbal>`
-- RPi CM4 paired with :ref:`XF Robot C-20T <common-caddx-gimbal>` and Sony IMX477 connected via CSI/MIPI
+- :ref:`XFRobot Z-1 mini <common-xfrobot-gimbal>`
+- RPi CM4 paired with :ref:`XFRobot C-20T <common-xfrobot-gimbal>` and Sony IMX477 connected via CSI/MIPI
 
 This software has most (but perhaps not all) of the same features as the manufacturer's original software but also includes:
 
@@ -28,19 +28,19 @@ How to Install
 For first time installations:
 
 - Download the appropriate firmware for your camera gimbal from `firmware.ardupilot.org <https://firmware.ardupilot.org/Tools/AP_CameraGimbal/release/>`__
-- Follow :ref:`Siyi <common-siyi-zr10-gimbal>` or :ref:`XF Robot <common-xfrobot-gimbal>` firmware update instructions but use the firmware downloaded above. Each camera's folder on `firmware.ardupilot.org <https://firmware.ardupilot.org/Tools/AP_CameraGimbal/release/>`__ includes a README.md with install and revert instructions for that camera
+- Follow :ref:`Siyi <common-siyi-zr10-gimbal>` or :ref:`XFRobot <common-xfrobot-gimbal>` firmware update instructions but use the firmware downloaded above. Each camera's folder on `firmware.ardupilot.org <https://firmware.ardupilot.org/Tools/AP_CameraGimbal/release/>`__ includes a README.md with install and revert instructions for that camera
 - RPi CM4 users should instead follow the `RPi CM4 instructions <https://github.com/ArduPilot/AP_CameraGimbal/blob/master/packaging/rpi_libcam_caddx/README.md>`__. The software is built on the Pi, MAVLink is routed from the autopilot to UDP port 16001 using Rpanion and Rpanion's video streaming must be left stopped
 
 Subsequent upgrades can be done using AP_CameraGimbal's built-in firmware update web page (not available on the RPi CM4).
 
-The camera gimbal can be reverted to the manufacturer's original software by following the :ref:`Siyi <common-siyi-zr10-gimbal>` or :ref:`XF Robot <common-xfrobot-gimbal>` firmware update instructions.
+The camera gimbal can be reverted to the manufacturer's original software by following the :ref:`Siyi <common-siyi-zr10-gimbal>` or :ref:`XFRobot <common-xfrobot-gimbal>` firmware update instructions.
 
 Configuration
 -------------
 
-The autopilot should be physically connected following the regular :ref:`Siyi <common-siyi-zr10-gimbal>` or :ref:`XF Robot <common-xfrobot-gimbal>` instructions.
+The autopilot should be physically connected following the regular :ref:`Siyi <common-siyi-zr10-gimbal>` or :ref:`XFRobot <common-xfrobot-gimbal>` instructions.
 
-Set the parameters below assuming the autopilot's Serial2 port is used and the Camera1 control instance. A serial connection can be used with the Siyi A8 mini, MT11 and ZR10 but not the XF Robot Z1-Mini (Ethernet only) or the RPi CM4 (see the RPi instructions above). ZT30 serial MAVLink is untested:
+Set the parameters below assuming the autopilot's Serial2 port is used and the Camera1 control instance. A serial connection can be used with the Siyi A8 mini, MT11 and ZR10 but not the XFRobot Z-1 mini (AP_CameraGimbal supports only Ethernet on this gimbal, even though the manufacturer's software also supports serial) or the RPi CM4 (see the RPi instructions above). ZT30 serial MAVLink is untested:
 
 - :ref:`CAM1_TYPE <CAM1_TYPE>` = 6 (MAVLinkCamV2)
 - :ref:`MNT1_TYPE <MNT1_TYPE>` = 6 (MAVLink)
@@ -48,7 +48,7 @@ Set the parameters below assuming the autopilot's Serial2 port is used and the C
 - :ref:`SERIAL2_BAUD <SERIAL2_BAUD>` = 115 (115200 bps)
 - Reboot the autopilot
 
-Alternatively if the camera gimbal is connected to the autopilot over ethernet:
+Alternatively if the camera gimbal is connected to the autopilot over Ethernet:
 
 - :ref:`CAM1_TYPE <CAM1_TYPE>` = 6 (MAVLinkCamV2)
 - :ref:`MNT1_TYPE <MNT1_TYPE>` = 6 (MAVLink)
@@ -58,6 +58,8 @@ Alternatively if the camera gimbal is connected to the autopilot over ethernet:
 - :ref:`NET_P1_PORT <NET_P1_PORT>` = 16001 (AP_CameraGimbal's default MAVLink port). This should match the MAVLink port shown on the camera's Parameters web page.
 - :ref:`NET_P1_PROTOCOL <NET_P1_PROTOCOL>` = 2 (MAVLink2) instead of 8 (Gimbal)
 - Reboot the autopilot
+
+.. note:: On Plane 4.7, set :ref:`SCHED_LOOP_RATE <SCHED_LOOP_RATE>` to 100 or higher or the gimbal will not be detected (the autopilot cannot send it attitude updates at 50Hz at Plane's default 50Hz loop rate). QuadPlane already defaults to 300.
 
 Live Video
 ----------
