@@ -16,6 +16,7 @@ Currently, ArduPilot supports these systems:
 - `Trimble PX-1 GSOF <https://applanix.trimble.com/en/hardware/trimble-px-1-rtx>`__
 - `VectorNav <https://www.vectornav.com/products>`__
 - `Kebni SensAItion <https://www.kebni.com/products/inertial-sensing/sensaition-imu-ins/>`__
+- `Xsens MTi Series <https://www.movella.com/products/sensor-modules>`__
 
 Setup and Configuration
 =======================
@@ -39,13 +40,16 @@ Refer to :ref:`common-external-ahrs-sensaition` for details.
 VectorNav
 ---------
 Refer to :ref:`common-external-ahrs-vectornav` for setup.
+Xsens
+-----
+Refer to :ref:`common-external-ahrs-xsens` for setup.
 
 MicroStrain
 -----------
 
     - :ref:`AHRS_EKF_TYPE<AHRS_EKF_TYPE>` = 11 (External AHRS)
 
-    - :ref:`EAHRS_TYPE<EAHRS_TYPE>` = 1 (VectorNAV), 2 (MicroStrain5), 5(InertialLabs), or 7(MicroStrain7)
+    - :ref:`EAHRS_TYPE<EAHRS_TYPE>` = 1 (VectorNAV), 2 (MicroStrain5), 5(InertialLabs), 7(MicroStrain7), or 12(Xsens)
 
 This will replace ArduPilot’s internally generated INS/AHRS subsystems with the external system.
 The MicroStrain system must be configured via `Sensor Connect <https://www.microstrain.com/software/sensorconnect>`__ before use.
@@ -111,3 +115,4 @@ With higher baud rates, MicroStrain7 should be suitable for Copter and QuadPlane
 
     common-external-ahrs-vectornav
     common-external-ahrs-sensaition
+    common-external-ahrs-xsens
