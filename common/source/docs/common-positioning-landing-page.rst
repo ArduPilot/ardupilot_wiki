@@ -174,7 +174,7 @@ The :ref:`GPS_AUTO_CONFIG<GPS_AUTO_CONFIG>` parameter provides several automatic
 .. note:: After selecting option 2 for :ref:`common-gps-for-yaw` configuration, reverting to default (non-moving-baseline) operation requires connecting to the DroneCAN peripheral(s) and manually restoring the internal GPSx_TYPE parameters to their default values.
 
 - 3: Clear all configurations not set by ArduPilot (u-Blox only)
-    On next boot, resets u-Blox GPS modules to default before applying ArduPilot configuration values (u-Blox Generation 9 and newer).
+    At each boot, checks u-Blox GPS modules for unexpected saved settings and, if any are found, resets the module to default before applying ArduPilot configuration values (u-Blox Generation 9 and newer, see below).
 
 u-Blox Key-Value Configuration (Generation 9 and newer)
 -------------------------------------------------------
@@ -187,11 +187,13 @@ Newer u-Blox modules are configured with "key-value" messages (CFG-VALGET/VALSET
 The key-value configuration code is included in:
 
 - Firmware 4.7: only CubeOrange and CubeOrangePlus (and their variants), CubeYellow, CubePurple, CubeRed, Here4FC and Here4AP firmware
-- Firmware 4.8 and later: all autopilots with 2MB of flash
+- Firmware 4.8 and later: by default, all autopilots with 2MB of flash (SkyViper-v2450 is an exception)
+
+:ref:`GPS_AUTO_CONFIG<GPS_AUTO_CONFIG>` = 3 and bit 8 of :ref:`GPS_DRV_OPTIONS<GPS_DRV_OPTIONS>` only work on firmware that includes the key-value configuration code. On other firmware, option 3 behaves the same as option 1 and bit 8 is ignored.
 
 ArduPilot configures the same settings with either method, including the enabled constellations (:ref:`GPS1_GNSS_MODE<GPS1_GNSS_MODE>`), update rate (:ref:`GPS1_RATE_MS<GPS1_RATE_MS>`), navigation filter (:ref:`GPS_NAVFILTER<GPS_NAVFILTER>`), minimum satellite elevation (:ref:`GPS_MIN_ELEV<GPS_MIN_ELEV>`), raw data logging (:ref:`GPS_RAW_DATA<GPS_RAW_DATA>`) and :ref:`moving baseline <common-gps-for-yaw>` operation. While configuring, it sends messages to the ground station such as "GPS 1: u-blox protocol: <version>" and "GPS 1: Legacy config unsupported" (for X20/F20 modules).
 
-With :ref:`GPS_AUTO_CONFIG<GPS_AUTO_CONFIG>` = 3, ArduPilot reads back the module's configuration at boot. If it finds settings that ArduPilot doesn't manage (for example, ones changed with u-center), it resets the module to its defaults ("GPS 1: u-blox resetting to default config") and then applies its own configuration, the same as option 1. This avoids conflicting settings left over from earlier use.
+With :ref:`GPS_AUTO_CONFIG<GPS_AUTO_CONFIG>` = 3, ArduPilot checks the module's saved configuration (BBR and flash) at each boot, and sends "GPS 1: u-blox resetting to default config" when it starts this check. Only if it finds unexpected saved settings (for example, ones saved with u-center) does it delete them and reset the module to its defaults. It then applies its own configuration, the same as option 1. This avoids conflicting settings left over from earlier use.
 
 GPS Driver Options
 ==================
