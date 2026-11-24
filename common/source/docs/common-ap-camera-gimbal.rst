@@ -28,7 +28,7 @@ How to Install
 For first time installations:
 
 - Download the appropriate firmware for your camera gimbal from `firmware.ardupilot.org <https://firmware.ardupilot.org/Tools/AP_CameraGimbal/release/>`__
-- Follow :ref:`Siyi <common-siyi-zr10-gimbal>` or :ref:`XFRobot <common-xfrobot-gimbal>` firmware update instructions but use the firmware downloaded above. Each camera's folder on `firmware.ardupilot.org <https://firmware.ardupilot.org/Tools/AP_CameraGimbal/release/>`__ includes a README.md with install and revert instructions for that camera
+- Follow :ref:`Siyi <common-siyi-zr10-gimbal>` or :ref:`XFRobot <common-xfrobot-gimbal>` firmware update instructions but use the firmware downloaded above. Each camera's folder on `firmware.ardupilot.org <https://firmware.ardupilot.org/Tools/AP_CameraGimbal/release/>`__ includes a README.md with install instructions for that camera
 - RPi CM4 users should instead follow the `RPi CM4 instructions <https://github.com/ArduPilot/AP_CameraGimbal/blob/master/packaging/rpi_libcam_caddx/README.md>`__. The software is built on the Pi, MAVLink is routed from the autopilot to UDP port 16001 using Rpanion and Rpanion's video streaming must be left stopped
 
 Subsequent upgrades can be done using AP_CameraGimbal's built-in firmware update web page (not available on the RPi CM4).
@@ -59,7 +59,7 @@ Alternatively if the camera gimbal is connected to the autopilot over Ethernet:
 - :ref:`NET_P1_PROTOCOL <NET_P1_PROTOCOL>` = 2 (MAVLink2) instead of 8 (Gimbal)
 - Reboot the autopilot
 
-.. note:: On Plane 4.7, set :ref:`SCHED_LOOP_RATE <SCHED_LOOP_RATE>` to 100 or higher or the gimbal will not be detected (the autopilot cannot send it attitude updates at 50Hz at Plane's default 50Hz loop rate). QuadPlane already defaults to 300.
+.. note:: On Plane and Rover, set :ref:`SCHED_LOOP_RATE <SCHED_LOOP_RATE>` to 100 or higher and reboot the autopilot, or the gimbal will not be detected (the autopilot cannot send it attitude updates at 50Hz at the default 50Hz loop rate). QuadPlane already defaults to 300.
 
 Live Video
 ----------
