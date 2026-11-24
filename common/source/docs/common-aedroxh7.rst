@@ -5,18 +5,29 @@
 AEDROX H7
 =========
 
+The AEDROXH7 is an STM32H743-based FPV / racing flight controller from AEDROX.
+
+For full hardware documentation and pinouts, see the `manufacturer documentation <https://aedrox.gitbook.io/docs>`__.
+
+Where to Buy
+============
+`aedrox.com <https://www.aedrox.com>`__
+
 Features
 ========
 * STM32H743 microcontroller
-* ICM42688-P IMU with external clock
+* ICM42688-P IMU
 * DPS368 barometer
 * 10V 2.3A BEC, GPIO controlled; 5V 2.3A BEC
-* Flash Memory
+* 1Gbit Flash Memory for logging
+* Dual camera inputs with built-in switch
+* Analog (MAX7456) and HD OSD
 * 6x UART
 * 9x PWM
 * 1x I2C
 * 1x CAN
 * 2x GPIOs
+* Buzzer output
 
 Physical
 ========
@@ -26,8 +37,8 @@ Physical
 
 Pinout
 ======
-.. image:: ../../../images/AEDROX_FC_H7_PINOUT.png
-   :target: ../_images/AEDROX_FC_H7_PINOUT.png
+.. image:: ../../../images/AEDROX_H7_PINOUT.jpg
+   :target: ../_images/AEDROX_H7_PINOUT.jpg
 
 UART Mapping
 ============
@@ -50,15 +61,19 @@ The default RC input is configured on the UART3 (RX3/SBUS). Non SBUS,  single wi
 
 OSD Support
 ===========
-DisplayPort OSD is available by default on the HD VTX connector.
+The onboard analog OSD using :ref:`OSD_TYPE<OSD_TYPE>` = 1 (MAX7456 driver) is enabled by default. Simultaneously, DisplayPort OSD is available on the HD VTX connector (SERIAL8) using :ref:`OSD_TYPE2<OSD_TYPE2>` = 5, which is also set by default.
 
 VTX Support
 ===========
-The SH1.0-6P connector supports a DJI Air Unit / HD VTX connection. Protocol defaults to DisplayPort. Pin 1 of the connector is 10v so be careful not to connect this to a peripheral requiring 5v. DisplayPort OSD is enabled by default on SERIAL8.
+The SH1.0-6P connector supports a DJI Air Unit / HD VTX connection. Protocol defaults to DisplayPort. A second VTX connector is available for an analog VTX, and a digital VTX and an analog VTX can be used at the same time. Both connectors are wired to SERIAL8 (default protocol MSP DisplayPort), so set that UART's protocol for the device in use. The power pins on these connectors are 10V or VBATT, so be careful not to connect them to a peripheral requiring 5V.
 
 VTX power control
 =================
-GPIO 83 controls the VTX BEC output to pins marked "12V" and is included on the HD VTX connector. Setting this GPIO low removes voltage supply to this pin/pad. By default RELAY3 is configured to control this pin and sets the GPIO high at boot.
+GPIO 83 controls the VTX BEC output to pins marked "10V" and is included on the HD VTX and analog VTX connectors. Setting this GPIO low removes voltage supply to this pin/pad. By default RELAY2 is configured to control this pin and sets the GPIO high at boot.
+
+Camera Switch
+=============
+GPIO 84 selects which camera input is output to the analog VTX. Setting this GPIO high selects CAM1 and setting it low selects CAM2. By default RELAY3 is configured to control this pin and sets the GPIO low at boot.
 
 PWM Output
 ==========
@@ -70,7 +85,7 @@ The PWM is in 4 groups:
 
 * PWM 1-4 in group1
 * PWM 5-8 in group2
-* PWM 9 (LED) in group3
+* PWM 9 (serial LED by default, marked RGB_LED) in group3
 
 Channels within the same group need to use the same output rate. If
 any channel in a group uses DShot then all channels in the group need
