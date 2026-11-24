@@ -15,22 +15,15 @@ Global position and free-running (non-lockstep) simulators
 
 The physics backend can send these optional fields in addition to the ones described in the repository:
 
-- ``latitude`` (degrees), ``longitude`` (degrees) and ``altitude`` (meters, AMSL): the vehicle's global position. All three must be sent together. When they are present, they are used instead of ``position``, and ``position`` is then no longer a required field. The first position received sets the simulation's start location.
-- ``no_lockstep`` (boolean): set to ``true`` when the physics backend runs in real time and cannot be stepped by ArduPilot. ArduPilot then does not wait for each sensor packet; if none has arrived, it advances its own time at the :ref:`SIM_RATE_HZ<copter:SIM_RATE_HZ>` loop rate. It also does not adjust its frame rate to match the backend.
+- ``latitude`` (degrees), ``longitude`` (degrees) and ``altitude`` (meters, AMSL): the vehicle's global position. All three must be sent together. When they are present, they are used instead of ``position``, and ``position`` is then no longer a required field. These fields do not set the simulation's start location: SITL sets it at startup from the ``SIM_OPOS_*`` parameters, or from the ``--home`` / ``-L`` command line options. Set the start location to match the backend's initial position.
+- ``no_lockstep`` (boolean): set to ``true`` when the physics backend runs in real time and cannot be stepped by ArduPilot. ArduPilot still waits up to 100 ms for each sensor packet and advances one step for each packet it receives; only if none arrives in that time does it advance its own time by one :ref:`SIM_RATE_HZ<copter:SIM_RATE_HZ>` loop period. It also does not adjust its frame rate to match the backend.
 
 These fields are useful for connecting existing simulators, such as flight simulators, that keep their own world position and time.
 
-For example:
+Each frame must be sent as a single line, terminated by a newline (``\n``), as described in the repository. For example:
 
 .. code-block:: json
 
-    {
-      "timestamp": 123.456,
-      "latitude": -35.363261,
-      "longitude": 149.165230,
-      "altitude": 584.0,
-      "no_lockstep": true,
-      "imu": {"gyro": [0.0, 0.0, 0.0], "accel_body": [0.0, 0.0, -9.81]},
-      "attitude": [0.0, 0.0, 0.0],
-      "velocity": [0.0, 0.0, 0.0]
-    }
+    {"timestamp":123.456,"latitude":-35.363261,"longitude":149.165230,"altitude":584.0,"no_lockstep":true,"imu":{"gyro":[0.0,0.0,0.0],"accel_body":[0.0,0.0,-9.81]},"attitude":[0.0,0.0,0.0],"velocity":[0.0,0.0,0.0]}
+
+.. note:: There must be no whitespace between the colon and the value of ``no_lockstep`` (``"no_lockstep":true``). With a space, such as ``"no_lockstep": true`` (the default output of Python's ``json.dumps``), the value is read as ``false``. In Python, use ``json.dumps(frame, separators=(',', ':'))``.
