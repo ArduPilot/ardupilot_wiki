@@ -25,8 +25,25 @@ Flight Options
 14                                      In AUTO, climb to next waypoint altitude immediately instead of linear climb.
 15                                      Allows auto flap operation in manual modes as well as auto-throttle modes.
 16                                      Enable full aerodynamic load factor-based roll limits. This should be enabled when an accurate and well calibrated airspeed sensor is used to impose the correct FBW roll limits when the aircraft is turning. Requires an enabled airspeed sensor and AIRSPEED_STALL set. WARNING: If your airspeed sensor is very inaccurate or fails, having this enabled may result in almost no roll maneuverability in FBW modes.
+17                                      Reset :ref:`ALT_OFFSET<ALT_OFFSET>` to zero on flight mode changes or AUTO navigation command changes. See :ref:`flight-options-alt-offset` below.
 =====================================   ======================
 
 Default is no options enabled ("0"). Setting the bit will enable that function. For example, if forcing target airspeed in FBWB and CRUISE modes is desired, a value of "8" (bit 3 = 1) would be set.
 
 .. note:: Normally, PTCH_TRIM_DEG is subtracted from the AHRS pitch so that the artificial horizon shows pitch as if the autopilot was calibrated with aircraft level position set at PTCH_TRIM_DEG instead of flat. This normally results in the artificial horizon indicating 0 pitch when in cruise at desired cruise speed. PTCH_TRIM_DEG is the pitch trim that would be required in stabilized modes to maintain altitude at nominal cruise airspeed and throttle, and for most planes is 1-3 degrees positive, depending on the aircraft design (see :ref:`tuning-cruise`).
+
+.. _flight-options-alt-offset:
+
+ALT_OFFSET Reset
+================
+
+:ref:`ALT_OFFSET<ALT_OFFSET>` is added to the target altitude in automatic flight modes, and can be used to temporarily raise or lower an entire mission, for example to fly below unexpectedly low cloud cover.
+
+:ref:`ALT_OFFSET<ALT_OFFSET>` is always reset to zero at boot, regardless of :ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>`, so an offset used on one flight is not carried into the next. Only the active value is reset; if a non-zero value has been saved it remains stored, but is reset to zero again on every boot.
+
+If :ref:`FLIGHT_OPTIONS<FLIGHT_OPTIONS>` bit 17 is set, a non-zero :ref:`ALT_OFFSET<ALT_OFFSET>` is also reset to zero:
+
+- when switching to a different flight mode, so that a failsafe RTL, for example, does not keep the offset. The reset still occurs if the new mode subsequently fails to engage.
+- in AUTO mode, whenever the mission starts a new navigation command (waypoint, loiter, land, etc.), before that command is initialized.
+
+A "Reset ALT_OFFSET" message is sent to the GCS whenever a non-zero offset is reset.
