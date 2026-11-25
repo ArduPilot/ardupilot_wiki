@@ -78,6 +78,7 @@ New Features
 - FLOW_ALT_MIN stops EKF3 from using optical flow data below the sensor's minimum focus altitude, see https://github.com/ArduPilot/ardupilot_wiki/pull/8313
 - Boards with an active-low safety switch input can set ``define HAL_SAFETY_IN_ACTIVE_LOW 1`` in their hwdef.dat, see https://github.com/ArduPilot/ardupilot_wiki/pull/8312
 - SITL DDS topics are timestamped from the ROS 2 simulation ``/clock`` topic when SITL is started with ``--use_sim_time true`` (the default in the ardupilot_sitl ROS 2 launch files), see https://github.com/ArduPilot/ardupilot_wiki/pull/8319
+- u-blox modules configured with key-value messages (e.g. X20P) now report GLONASS, warn when a GPSn_GNSS_MODE constellation selection is rejected instead of retrying forever, and apply GPSn_GNSS_MODE changes without a reboot, see https://github.com/ArduPilot/ardupilot_wiki/pull/8347
 
 [site wiki="plane"]
 - Rangefinder engagement distance, see https://github.com/ArduPilot/ardupilot_wiki/pull/7559
