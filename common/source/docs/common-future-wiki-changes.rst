@@ -103,6 +103,7 @@ New Features
 - Follow: changing FOLL_SYSID now discards the previous lead vehicle's state, and FOLL_SYSID = 0 no longer adopts the first vehicle seen, see https://github.com/ArduPilot/ardupilot_wiki/pull/8061
 - Battery failsafe no longer disarms a landed vehicle when the failsafe action is 0 (Warn Only), so a vehicle that was force-armed with a low battery stays armed, see https://github.com/ArduPilot/ardupilot_wiki/pull/8118
 - Tradheli: SWSH log blade pitch angles are now calculated from the actual swashplate servo outputs, and SWSH logging requires the new H_CYC_ANG_MAX to be set (default 0 disables it), see https://github.com/ArduPilot/ardupilot_wiki/pull/8155
+- Loiter coordinated turns are now limited to the Loiter lean angle, fixing a speed surge after releasing full pitch and full yaw, see https://github.com/ArduPilot/ardupilot_wiki/pull/8348
 [/site]
 [site wiki="rover"]
 - Follow: changing FOLL_SYSID now discards the previous lead vehicle's state, and FOLL_SYSID = 0 no longer adopts the first vehicle seen, see https://github.com/ArduPilot/ardupilot_wiki/pull/8061
