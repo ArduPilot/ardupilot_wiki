@@ -33,6 +33,7 @@ New Board Support
 - BlueBerry H743, see https://github.com/ArduPilot/ardupilot_wiki/pull/8273
 - CSKY AVEGA6X, see https://github.com/ArduPilot/ardupilot_wiki/pull/8274
 - Simplifly Neo, see https://github.com/ArduPilot/ardupilot_wiki/pull/8199
+- DCD FC, see https://github.com/ArduPilot/ardupilot_wiki/pull/8344
 
 New Peripheral Support
 ======================
