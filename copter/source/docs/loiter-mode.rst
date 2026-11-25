@@ -32,6 +32,8 @@ If using another position source like optical flow or another :ref:`Non-GPS Navi
 
    When Coordinated Turns are enabled (via the :ref:`LOIT_OPTIONS<LOIT_OPTIONS>` parameter, Bit 0), the aircraft modifies its commanded accelerations in Loiter mode to take into account the requested yaw rate and current horizontal velocity. This produces turns that feel more natural and “aircraft-like,” as the drone banks into the turn to match the trajectory. Without this option, Loiter turns are controlled purely by position and velocity demands, which can result in a flat, sliding turn.
 
+   The coordinated turn acceleration is limited so that, combined with the pilot's request, it stays within the Loiter lean angle (:ref:`LOIT_ANG_MAX<LOIT_ANG_MAX>`). When the pilot's request already uses the full lean angle (for example, full pitch stick with full yaw), coordinated turns are reduced or removed. Before firmware 4.8, this combination could make the vehicle speed up after the sticks were released.
+
 .. _loiter-mode_tuning:
 
 Tuning
