@@ -34,11 +34,12 @@ Vehicle or Destination Outside the Fence
 
 Dijkstra's can plan a path when the vehicle or its destination is outside the inclusion fence (in firmware 4.8 and later).
 
-- If the straight line from the vehicle to its destination does not cross any fence, it is flown directly, even if both ends are outside the fence.
+- If the straight line from the vehicle to its destination does not cross any fence, it is flown directly, even if both ends are outside the fence. With an inclusion circle fence, the line counts as crossing the fence whenever either end is outside the circle, even if the line itself does not touch it.
 - Otherwise, a vehicle outside the fence first flies directly to the closest point inside the fence (the entry point). A destination outside the fence, such as home when the fence was enabled after taking off outside it, is reached by leaving the fence at the point closest to the destination (the exit point) and then flying directly to it.
-- Entry and exit points are kept at least :ref:`OA_MARGIN_MAX <OA_MARGIN_MAX>` from every fence edge where possible. If the fence is too small for this, the margin is halved until a point fits.
+- Entry and exit points are kept at least :ref:`OA_MARGIN_MAX <OA_MARGIN_MAX>` from every fence edge where possible. If no such point exists, the closest point inside the fence is used even if it is nearer an edge, and if there is none the margin is halved until a point fits.
 - The direct legs to the entry point and from the exit point are not planned around stay-out zones. If either crosses a stay-out zone, no path is planned.
-- A destination inside a stay-out zone is still refused. A vehicle that starts inside a stay-out zone can now leave it, unless the leg to the entry point crosses back into that zone (as it can with a C or U shaped zone) or crosses another one.
+- A destination is refused if reaching it means entering a stay-out zone. A vehicle that starts inside a stay-out zone can now leave it, unless the leg to the entry point crosses back into that zone (as it can with a C or U shaped zone) or crosses another one.
+- If no path can be planned, the vehicle stops and the ground station shows "Dijkstra: could not find path".
 
 Videos
 ------
