@@ -34,6 +34,8 @@ Vehicle or Destination Outside the Fence
 
 Dijkstra's can plan a path when the vehicle or its destination is outside the inclusion fence (in firmware 4.8 and later).
 
+.. note:: Dijkstra's only runs when at least one polygon fence or exclusion circle is loaded. Inclusion circles are ignored if they are the only fences, and are only used alongside a polygon fence or exclusion circle.
+
 - If the straight line from the vehicle to its destination does not cross any fence, it is flown directly, even if both ends are outside the fence. With an inclusion circle fence, the line counts as crossing the fence whenever either end is outside the circle, even if the line itself does not touch it.
 - Otherwise, a vehicle outside the fence first flies directly to the closest point inside the fence (the entry point). A destination outside the fence, such as home when the fence was enabled after taking off outside it, is reached by leaving the fence at the point closest to the destination (the exit point) and then flying directly to it.
 - Entry and exit points are kept at least :ref:`OA_MARGIN_MAX <OA_MARGIN_MAX>` from every fence edge where possible. If no such point exists, the closest point inside the fence is used even if it is nearer an edge, and if there is none the margin is halved until a point fits.
