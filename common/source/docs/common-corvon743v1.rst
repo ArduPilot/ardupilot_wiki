@@ -13,6 +13,11 @@ The CORVON743V1 is a flight controller designed and produced by CORVON.
 .. image:: ../../../images/CORVON743V1_BackView.jpg
    :target: ../_images/CORVON743V1_BackView.jpg
 
+Where to Buy
+============
+
+- Available from `CORVON <https://www.corvon.tech/en/products/corvon-h743-flight-controller-30x30-fc-for-drones-with-dual-imu-compass-barometer-stm32h743-7-uart-10-pwm-supports-betaflight-inav-ardupilot-px4-usb-c-blackbox-logging-5v-9v-bec-outputs>`__
+
 Features
 ========
 
