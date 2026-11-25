@@ -559,7 +559,7 @@ Other functions are:
                                          | landings beyond RC control range to prevent normal
                                          | failsafe action from occurring. Only applies in
                                          | MANUAL, STABILIZE, ACRO, FBWA, FBWB, CRUISE,
-                                         | AUTOTUNE and TRAINING, plus CIRCLE, LOITER,
+                                         | AUTOTUNE, TRAINING and GLIDE, plus CIRCLE, LOITER,
                                          | THERMAL and TAKEOFF for a long failsafe; ignored
                                          | in AUTO and GUIDED. Before 4.8, this switched to
                                          | FBWA with zero throttle.
