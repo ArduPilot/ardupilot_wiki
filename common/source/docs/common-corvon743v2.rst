@@ -14,6 +14,11 @@ around the STM32H743 with 10 motor outputs and 2 servo outputs.
 .. image:: ../../../images/CORVON743V2_BackView.jpg
    :target: ../_images/CORVON743V2_BackView.jpg
 
+Where to Buy
+============
+
+- Available from `CORVON <https://www.corvon.tech/en/products/h743v2-flight-controller>`__
+
 Features
 ========
 
