@@ -562,7 +562,7 @@ Other functions are:
                                          | AUTOTUNE, TRAINING and GLIDE, plus CIRCLE, LOITER,
                                          | THERMAL and TAKEOFF for a long failsafe; ignored
                                          | in AUTO and GUIDED. Before 4.8, this switched to
-                                         | FBWA with zero throttle.
+                                         | FBWA (zero throttle only while RC was lost).
     Optflow Calibration                   Enables calibration of optical flow parameters.
     Force Flying                         | Disables the landing detection heuristic to prevent false
                                          | landing detections during a mission or manual flight
