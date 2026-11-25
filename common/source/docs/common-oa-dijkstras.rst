@@ -29,6 +29,17 @@ Configuration
 - For use in :ref:`Guided mode <ac2_guidedmode>`, set :ref:`GUID_OPTIONS<GUID_OPTIONS>` bit 6 (e.g. 64)
 [/site]
 
+Vehicle or Destination Outside the Fence
+----------------------------------------
+
+Dijkstra's can plan a path when the vehicle or its destination is outside the inclusion fence (in firmware 4.8 and later).
+
+- If the straight line from the vehicle to its destination does not cross any fence, it is flown directly, even if both ends are outside the fence.
+- Otherwise, a vehicle outside the fence first flies directly to the closest point inside the fence (the entry point). A destination outside the fence, such as home when the fence was enabled after taking off outside it, is reached by leaving the fence at the point closest to the destination (the exit point) and then flying directly to it.
+- Entry and exit points are kept at least :ref:`OA_MARGIN_MAX <OA_MARGIN_MAX>` from every fence edge where possible. If the fence is too small for this, the margin is halved until a point fits.
+- The direct legs to the entry point and from the exit point are not planned around stay-out zones. If either crosses a stay-out zone, no path is planned.
+- A destination inside a stay-out zone is still refused. A vehicle that starts inside a stay-out zone can now leave it, unless the leg to the entry point crosses back into that zone (as it can with a C or U shaped zone) or crosses another one.
+
 Videos
 ------
 
