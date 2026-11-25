@@ -69,6 +69,10 @@ The autopilot requests status information from one ESC at a time, cycling betwee
 - Temperature
 - Total Current
 
+.. note::
+
+   In firmware version 4.8 and later, the rate at which ESC telemetry is written to the onboard log (``ESC``, ``ESCX``, and ``EDT2`` messages) can be configured with :ref:`ESC_TLM_LOG_RATE <ESC_TLM_LOG_RATE>` (0–100 Hz, default 100 Hz). An ESC is only logged when new data is available, and the maximum rate is capped by :ref:`SCHED_LOOP_RATE <SCHED_LOOP_RATE>` if the main loop runs below 100 Hz. Lowering this rate (e.g., to 10–25 Hz) reduces log file size on long flights, and setting it to 0 disables ESC telemetry logging without affecting real-time GCS reporting or notch filtering.
+
 The RCOU messages are also written to the onboard logs which hold the requested output level sent to the ESCs expressed as a number from 1000 (meaning stopped) to 2000 (meaning full output).
 
 This data can also be viewed in real-time using a ground station.  If using the Mission Planner go to the Flight Data screen's status tab and look for esc1_rpm.
