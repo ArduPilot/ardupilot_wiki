@@ -88,6 +88,7 @@ New Features
 - ALT_OFFSET now always resets to zero at boot, and new FLIGHT_OPTIONS bit 17 also resets it on flight mode and AUTO navigation command changes, see https://github.com/ArduPilot/ardupilot_wiki/pull/8094
 - AUTOLAND now limits bank angle to LEVEL_ROLL_LIMIT during the flare, as AUTO mode landings do, see https://github.com/ArduPilot/ardupilot_wiki/pull/8262
 - The Glide failsafe action and emergency landing switch (RCx_OPTION 157) now switch to a dedicated GLIDE mode (27) instead of FBWA at zero throttle, see https://github.com/ArduPilot/ardupilot_wiki/pull/8318
+- planedaa.lua script applet adds Detect-Alert-Avoid steering around geofences and ADS-B/MAVLink traffic, see https://github.com/ArduPilot/ardupilot_wiki/pull/8346
 [/site]
 [site wiki="copter"]
 - Ability to abort flip using aux switch low, see https://github.com/ArduPilot/ardupilot_wiki/pull/7759
