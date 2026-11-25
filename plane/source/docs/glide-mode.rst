@@ -4,7 +4,9 @@
 GLIDE Mode
 ==========
 
-GLIDE mode (mode number 27) is a failsafe mode that holds the wings level and the pitch at zero with the throttle at zero, letting the plane glide down. There is no pilot input. Throttle is held at zero regardless of :ref:`THR_MIN<THR_MIN>`.
+GLIDE mode (mode number 27) is a failsafe mode that holds the wings level with the throttle at zero, letting the plane glide down. There is no pilot input. Throttle is held at zero regardless of :ref:`THR_MIN<THR_MIN>`.
+
+The pitch target is nose down by the full :ref:`STAB_PITCH_DOWN<STAB_PITCH_DOWN>` (2 degrees by default) to keep up airspeed, limited by :ref:`PTCH_LIM_MIN_DEG<PTCH_LIM_MIN_DEG>`. It is not applied while a QuadPlane is in VTOL flight (for example, with Q_ASSIST active). The flare switch (:ref:`RCx_OPTION<RC1_OPTION>` = 89) has no effect in GLIDE mode.
 
 .. note:: GLIDE mode is available in firmware 4.8 and later. In earlier versions, the "Glide" failsafe actions switched to FBWA mode with zero throttle and level attitude instead, so the reported mode did not reflect that the plane was in a failsafe glide.
 
