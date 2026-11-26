@@ -77,6 +77,10 @@ All of the above are repeated, independently, for the second notch and are prefa
 
 .. note:: only one filter can be mode 4(FFT).
 
+.. note::
+
+   In firmware versions prior to 4.8 (Copter and Plane), :ref:`INS_HNTC2_MODE <INS_HNTC2_MODE>` and :ref:`INS_HNTC2_HMNCS <INS_HNTC2_HMNCS>` temporarily defaulted to ``0`` (Static) and ``1`` (1st harmonic only) while :ref:`INS_HNTC2_ENABLE <INS_HNTC2_ENABLE>` was ``0``, then reverted to ``1`` (Throttle) and ``3`` (1st and 2nd harmonics) on the next reboot after enabling. From 4.8 onward, both parameters keep their standard defaults (``1`` and ``3``) before and after enabling so they do not change across a reboot. If you are converting an older pre-4.2 fixed notch or want a static second notch, set :ref:`INS_HNTC2_MODE <INS_HNTC2_MODE>` = 0 (and adjust :ref:`INS_HNTC2_HMNCS <INS_HNTC2_HMNCS>` as needed) explicitly; leaving :ref:`INS_HNTC2_REF <INS_HNTC2_REF>` at ``0`` also holds the notch fixed at :ref:`INS_HNTC2_FREQ <INS_HNTC2_FREQ>`.
+
 .. _notch_center_freq:
 
 
