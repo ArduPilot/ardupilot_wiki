@@ -39,3 +39,13 @@ Its extremely important that the :ref:`Notch filtering <common-imu-notch-filteri
 - :ref:`INS_GYRO_FILTER<INS_GYRO_FILTER>` - as high as you can get without cooking your motors. Often copters have resonance around 120Hz so it is hard to get higher than this without notching out frame resonance.
 - each axis' ``ATC_RAT_xxx_FLTD`` should be :ref:`INS_GYRO_FILTER<INS_GYRO_FILTER>`/2 on roll and pitch and :ref:`INS_GYRO_FILTER<INS_GYRO_FILTER>`/4 on yaw. This is because D is more active, lets more noise through and is more likely to cook your motors. Setting it above 0.75 * :ref:`INS_GYRO_FILTER<INS_GYRO_FILTER>` is not recommended.
 - each axis' ``ATC_RAT_xxx_FLTT`` should be at the highest rate you want the EKF or your fingers to control the copter. Values of 30Hz should be fine, but higher has diminishing returns but does not affect the tune.
+
+Rate Target Interpolation
+=========================
+In firmware 4.8 and later, the rate target is smoothed when fast rate is enabled. The rate target is still calculated at the main loop rate (:ref:`SCHED_LOOP_RATE<SCHED_LOOP_RATE>`). Instead of holding it steady until the next main loop update, the rate loop now ramps it smoothly from one update to the next.
+
+Previously, the held target formed a staircase, putting noise at the main loop rate and its harmonics into the P, D and D feedforward terms. A PID target notch (``ATC_RAT_xxx_NTF``) at the main loop rate could only remove the first of these, not the harmonics or the broadband noise. Interpolation removes all of it, so such a notch is no longer needed for this purpose.
+
+The ramp adds at most one main loop period of delay to the rate target. This is usually less delay than a low ``ATC_RAT_xxx_FLTT`` added to smooth the staircase, so ``ATC_RAT_xxx_FLTT`` can often be raised after updating. For example, on a 4 inch quad raising it from 30Hz to 60Hz reduced rate error by about a third.
+
+.. note:: The RATE log message ``RDes``, ``PDes`` and ``YDes`` fields now record the rate target the rate controller actually used. They therefore appear one loop later than in logs from earlier firmware.
