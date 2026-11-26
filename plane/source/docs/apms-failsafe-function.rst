@@ -211,6 +211,8 @@ The following is a description of the actions that can be taken for battery fail
 Failsafe Parameters and their Meanings
 ======================================
 
+.. note:: In firmware 4.8 and later, the "GLIDE" failsafe action, and the emergency landing switch (:ref:`RCx_OPTION<RC1_OPTION>` = 157), switch to the dedicated :ref:`GLIDE mode <glide-mode>`, which holds wings level and pitches down by :ref:`STAB_PITCH_DOWN<STAB_PITCH_DOWN>` with zero throttle and accepts no pilot input. Earlier versions used FBWA mode, with zero throttle and level attitude only while RC was lost (a GCS failsafe with a working RC link left the sticks active).
+
 Short failsafe action (:ref:`FS_SHORT_ACTN<FS_SHORT_ACTN>` )
 ------------------------------------------------------------
 The action to immediately take on a RC failsafe event .
@@ -244,7 +246,7 @@ Otherwise:
 | 0 - CONTINUE if in   | MANUAL                 | CIRCLE unless           |
 +  AUTO, or CIRCLE     +------------------------+  emergency landing      +
 |                      | ACRO                   |  switch is active,      |
-+                      +------------------------+  then FBWA              +
++                      +------------------------+  then GLIDE             +
 |                      |STABILIZE               |                         |
 +                      +------------------------+                         +
 |                      |FBWA                    |                         |
@@ -256,6 +258,8 @@ Otherwise:
 |                      |AUTOTUNE                |                         |
 +                      +------------------------+                         +
 |                      |TRAINING                |                         |
++                      +------------------------+                         +
+|                      |GLIDE                   |                         |
 +                      +------------------------+-------------------------+
 |                      |LOITER                  |  No Change              |
 +                      +------------------------+                         +
@@ -274,7 +278,7 @@ Otherwise:
 | 1 -CIRCLE            | MANUAL                 | CIRCLE unless           |
 +                      +------------------------+  emergency landing      +
 |                      | ACRO                   |  switch is active,      |
-+                      +------------------------+  then FBWA              +
++                      +------------------------+  then GLIDE             +
 |                      |STABILIZE               |                         |
 +                      +------------------------+                         +
 |                      |FBWA                    |                         |
@@ -286,6 +290,8 @@ Otherwise:
 |                      |AUTOTUNE                |                         |
 +                      +------------------------+                         +
 |                      |TRAINING                |                         |
++                      +------------------------+                         +
+|                      |GLIDE                   |                         |
 +                      +------------------------+-------------------------+
 |                      |LOITER                  |  CIRCLE                 |
 +                      +------------------------+                         +
@@ -316,6 +322,8 @@ Otherwise:
 |                      |AUTOTUNE                |                         |
 +                      +------------------------+                         +
 |                      |TRAINING                |                         |
++                      +------------------------+                         +
+|                      |GLIDE                   |                         |
 +                      +------------------------+-------------------------+
 |                      |LOITER                  | GLIDE/FBWB              |
 +                      +------------------------+                         +
@@ -368,6 +376,8 @@ Otherwise:
 +                      +------------------------+                         +
 |                      |TRAINING                |                         |
 +                      +------------------------+                         +
+|                      |GLIDE                   |                         |
++                      +------------------------+                         +
 |                      |LOITER                  |                         |
 +                      +------------------------+                         +
 |                      |THERMAL                 |                         |
@@ -402,6 +412,8 @@ Otherwise:
 +                      +------------------------+                         +
 |                      |TRAINING                |                         |
 +                      +------------------------+                         +
+|                      |GLIDE                   |                         |
++                      +------------------------+                         +
 |                      |LOITER                  |                         |
 +                      +------------------------+                         +
 |                      |THERMAL                 |                         |
@@ -435,6 +447,8 @@ Otherwise:
 |                      |AUTOTUNE                |                         |
 +                      +------------------------+                         +
 |                      |TRAINING                |                         |
++                      +------------------------+                         +
+|                      |GLIDE                   |                         |
 +                      +------------------------+                         +
 |                      |LOITER                  |                         |
 +                      +------------------------+                         +
