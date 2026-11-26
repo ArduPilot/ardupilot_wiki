@@ -175,6 +175,7 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_NAV_LOITER_TURNS <mav_cmd_nav_loiter_turns>`
 - :ref:`MAV_CMD_NAV_LOITER_TIME <mav_cmd_nav_loiter_time>`
 - :ref:`MAV_CMD_NAV_SPLINE_WAYPOINT <mav_cmd_nav_spline_waypoint>`
+- :ref:`MAV_CMD_NAV_ARC_WAYPOINT <mav_cmd_nav_arc_waypoint>`
 - :ref:`MAV_CMD_NAV_GUIDED_ENABLE <mav_cmd_nav_guided_enable>` (NAV_GUIDED only)
 - :ref:`MAV_CMD_NAV_DELAY <mav_cmd_nav_delay>`
 - :ref:`MAV_CMD_NAV_PAYLOAD_PLACE <mav_cmd_nav_payload_place>`
@@ -1839,6 +1840,97 @@ The Mission Planner screenshot shows the path the vehicle will take.
    #3 is parallel to an imaginary line drawn between waypoints #2 and #4
 -  Waypoint #5 is a straight line so the vehicle lines itself up to
    point towards waypoint #5 even before reaching waypoint #4.
+[/site]
+
+.. _mav_cmd_nav_arc_waypoint:
+[site wiki="copter"]
+
+MAV_CMD_NAV_ARC_WAYPOINT
+------------------------
+
+Supported by: Copter 4.7 and later (not Plane or Rover).
+
+Fly from the previous waypoint to the target location along a circular arc.
+The arc starts at the previous waypoint and ends at this command's location. The Arc Angle in
+param1 sets how far around the circle the vehicle turns between those two points,
+which sets the radius of the arc. If the two waypoints are at different altitudes,
+the vehicle climbs or descends steadily along the arc.
+
+.. note:: The arc is only flown if the previous navigation command is a regular
+   waypoint with no delay, or another arc waypoint, using the same altitude
+   frame. Otherwise, for example directly after a takeoff, after a waypoint with
+   a delay, a NAV_DELAY or a spline waypoint, or when a mission is resumed at the
+   arc waypoint, the vehicle flies a straight line to the arc's end point.
+
+-  Positive Arc Angle values fly a clockwise arc (seen from above), and negative
+   values fly a counter-clockwise arc.
+-  Larger angles give a longer path between the same two points.
+   For example, 90 degrees flies a quarter circle, 180 degrees flies a semicircle
+   whose diameter is the line between the waypoints, and 270 degrees flies three
+   quarters of a circle. The tightest radius (half the distance between the
+   waypoints) is at 180 degrees.
+-  An Arc Angle of 0 (or less than 1 degree) flies a straight line, the same as
+   a regular waypoint.
+-  There is no delay parameter. Like a regular waypoint with no delay, the
+   vehicle blends into a following waypoint, arc waypoint or spline waypoint
+   without stopping. It stops at the arc's end point if the arc is the last
+   navigation command, or is followed by an RTL, LOITER_TURNS or TAKEOFF command.
+   Arc waypoints can be mixed with regular waypoints in the same mission.
+-  Speed along the arc is limited by :ref:`WP_SPD<WP_SPD>` and by the
+   cornering acceleration limit, :ref:`WP_ACC_CNR<WP_ACC_CNR>`, so tight
+   arcs are flown more slowly.
+
+**Command parameters**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Mission Planner Field</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td>Arc Angle</td>
+   <td>Angle in degrees swept from the previous waypoint to this waypoint (-359 to 359). Positive is clockwise, negative is counter-clockwise.</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param2</strong></td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param3</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param4</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr>
+   <td><strong>param5</strong></td>
+   <td>Lat</td>
+   <td>Latitude/X of the arc's end point</td>
+   </tr>
+   <tr>
+   <td><strong>param6</strong></td>
+   <td>Long</td>
+   <td>Longitude/Y of the arc's end point</td>
+   </tr>
+   <tr>
+   <td><strong>param7</strong></td>
+   <td>Alt</td>
+   <td>Altitude/Z of the arc's end point</td>
+   </tr>
+   </tbody>
+   </table>
+
+.. note:: Ground stations that don't know this command may show it as command
+   ID 36, and may draw a straight line between the waypoints instead of the arc.
 [/site]
 
 .. _mav_cmd_nav_guided_enable:
