@@ -53,6 +53,7 @@ plane_follow.lua                            Allows one or more ArduPlanes to fol
 plane_package_place.lua                     Quadplane payload place script
 plane_precland.lua                          Precision landing/loitering system for QuadPlanes
 plane_ship_landing.lua                      Script to automate moving vehicle landing with a beacon
+planedaa.lua                                Plane Detect-Alert-Avoid: steers around geofences and ADS-B/MAVLink traffic (needs AP_OASCRIPTING build option)
 quadplane_terrain_avoid.lua                 Helps a QuadPlane with a rangefinder to avoid terrain when flying near the ground
 repl.lua                                    Interactive REPL (read-evaluate-print-loop) for the Lua scripting
 revert_param.lua                            Switch allows you toevert all the parameter changes to the values from startup
