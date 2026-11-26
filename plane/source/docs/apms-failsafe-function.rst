@@ -497,6 +497,11 @@ QuadPlanes also have an EKF failsafe which acts when the position estimate becom
 
 See :ref:`common-ekf-inav-failsafe` for full details, including the :ref:`FS_EKF_THRESH <FS_EKF_THRESH>` parameter used to adjust its sensitivity.
 
+Servo Failsafe Positions
+========================
+
+Selected outputs can be driven to a fixed position during chosen failsafes. See :ref:`common-servo-failsafe`.
+
 Failsafe Diagnosis in Logs or GCS
 =================================
 
