@@ -37,7 +37,15 @@ Recommended steps for tuning this controller are:
 - The :ref:`I gain <ATC_STR_RAT_I>` corrects for long-term error.  It can often be set to the same value as P.  If the vehicle never achieves the desired turn rate, then this parameter should be increased.  If the vehicle's turn rate slowly oscillates then this parameter should be reduced.  This :ref:`I gain <ATC_STR_RAT_I>` should always be lower than then :ref:`FF gain <ATC_STR_RAT_FF>`.
 - The :ref:`D gain <ATC_STR_RAT_D>` is meant to stabilize the output by fighting against short-term changes in turn rate.  This gain can normally be left at zero.
 
-Finally set :ref:`ATC_STR_RAT_MAX <ATC_STR_RAT_MAX>` to the :ref:`ACRO_TURN_RATE <ACRO_TURN_RATE>` value and optionally reduce :ref:`ACRO_TURN_RATE <ACRO_TURN_RATE>`.  The difference between these two parameters is:
+Optionally, tune the slope (attitude-based) feed forward. :ref:`ATC_STR_RLL_FF <ATC_STR_RLL_FF>` adds steering output in proportion to the sine of the roll angle to counteract a vehicle's tendency to turn downhill (or uphill, for some frame geometries) on a side slope.
+
+.. note:: If the vehicle is primarily driven on flat ground, shows no tendency to turn on side slopes, or is a boat, leave :ref:`ATC_STR_RLL_FF <ATC_STR_RLL_FF>` at its default of 0. The steering rate I-term will continue to compensate for side-slope bias.
+
+- Drive forward in a straight line at 1 m/s or faster across a fairly constant side slope. The roll feed forward is reduced below 1 m/s and is not applied when reversing.
+- In the log, compare PIDS.I with ATT.Roll. Set :ref:`ATC_STR_RLL_FF <ATC_STR_RLL_FF>` to the same sign PIDS.I has when ATT.Roll is positive (typically negative, for vehicles that turn downhill). A starting value is PIDS.I divided by sin(ATT.Roll); for example, PIDS.I of -0.02 at 5 degrees of roll gives about -0.23.
+- Adjust until PIDS.I no longer tracks ATT.Roll.
+
+Finally, set :ref:`ATC_STR_RAT_MAX <ATC_STR_RAT_MAX>` to the :ref:`ACRO_TURN_RATE <ACRO_TURN_RATE>` value and optionally reduce :ref:`ACRO_TURN_RATE <ACRO_TURN_RATE>`.  The difference between these two parameters is:
 
 - :ref:`ACRO_TURN_RATE <ACRO_TURN_RATE>` controls how the pilot's input is converted to a desired turn rate in Acro mode.  This parameter can be reduced to make turns in Acro mode more docile for the driver
 - :ref:`ATC_STR_RAT_MAX <ATC_STR_RAT_MAX>` is the maximum turn rate that the vehicle will ever attempt in any mode.  This should normally be kept close to the vehicle's performance limits so the vehicle remains agile
