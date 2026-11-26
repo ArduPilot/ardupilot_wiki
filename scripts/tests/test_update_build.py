@@ -154,6 +154,91 @@ class TestParameterCache(unittest.TestCase):
         self.assertEqual(list(self.output.iterdir()), [])
 
 
+class TestCleanupVersionedParameters(unittest.TestCase):
+    VERSIONED_PREFIXES = {
+        'rover': 'Rover',
+        'copter': 'Copter',
+        'plane': 'Plane',
+        'sub': 'Sub',
+        'antennatracker': 'AntennaTracker',
+        'blimp': 'Blimp',
+    }
+
+    def setUp(self):
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        self.root = pathlib.Path(tmp.name, 'repo')
+        self.new_params = pathlib.Path(tmp.name, 'new_params_mversion')
+        for key, prefix in self.VERSIONED_PREFIXES.items():
+            docs = self.root / key / 'source' / 'docs'
+            static = self.root / key / 'source' / '_static'
+            docs.mkdir(parents=True)
+            static.mkdir(parents=True)
+            (docs / f'parameters-{prefix}-stable-V4.6.0.rst').write_text('v46', encoding='utf-8')
+            (docs / f'parameters-{prefix}-beta-V4.7.0.rst').write_text('v47', encoding='utf-8')
+            (docs / 'parameters.rst').write_text('latest', encoding='utf-8')
+            (docs / 'common-other.rst').write_text('doc', encoding='utf-8')
+            (docs / f'parameters-{prefix}-dir.rst').mkdir()
+            (static / f'parameters-{prefix}.json').write_text('{}', encoding='utf-8')
+            (static / 'parameters_versioning_script.inc').write_text('inc', encoding='utf-8')
+
+        prev_cwd = os.getcwd()
+        os.chdir(self.root)
+        self.addCleanup(os.chdir, prev_cwd)
+
+    def test_cleanup_all_sites_removes_versioned_rst_and_json_only(self):
+        self.assertEqual(set(self.VERSIONED_PREFIXES), set(update.PARAMETER_SITE) - {'AP_Periph'})
+        update.cleanup_versioned_parameters()
+        for key, prefix in self.VERSIONED_PREFIXES.items():
+            docs = self.root / key / 'source' / 'docs'
+            static = self.root / key / 'source' / '_static'
+            self.assertFalse((docs / f'parameters-{prefix}-stable-V4.6.0.rst').exists())
+            self.assertFalse((docs / f'parameters-{prefix}-beta-V4.7.0.rst').exists())
+            self.assertFalse((static / f'parameters-{prefix}.json').exists())
+            self.assertTrue((docs / 'parameters.rst').exists())
+            self.assertTrue((docs / 'common-other.rst').exists())
+            self.assertTrue((docs / f'parameters-{prefix}-dir.rst').is_dir())
+            self.assertTrue((static / 'parameters_versioning_script.inc').exists())
+
+    def test_cleanup_single_site_leaves_other_wikis_untouched(self):
+        update.cleanup_versioned_parameters('antennatracker')
+        self.assertFalse((self.root / 'antennatracker/source/docs/parameters-AntennaTracker-stable-V4.6.0.rst').exists())
+        self.assertFalse((self.root / 'antennatracker/source/_static/parameters-AntennaTracker.json').exists())
+        self.assertTrue((self.root / 'copter/source/docs/parameters-Copter-stable-V4.6.0.rst').exists())
+        self.assertTrue((self.root / 'copter/source/_static/parameters-Copter.json').exists())
+
+    def test_non_versioned_sites_skip_filesystem_work(self):
+        with patch.object(update.os, 'scandir') as scandir_mock, patch.object(update.os, 'remove') as remove_mock:
+            for site in ('AP_Periph', 'dev', 'nonexistent'):
+                update.cleanup_versioned_parameters(site)
+        scandir_mock.assert_not_called()
+        remove_mock.assert_not_called()
+
+    def test_missing_directories_are_ignored(self):
+        with tempfile.TemporaryDirectory() as empty_root:
+            prev = os.getcwd()
+            os.chdir(empty_root)
+            try:
+                update.cleanup_versioned_parameters()
+            finally:
+                os.chdir(prev)
+
+    def test_fetch_versioned_parameters_writes_expected_json_path(self):
+        for key, prefix in (('copter', 'Copter'), ('antennatracker', 'AntennaTracker')):
+            value = update.PARAMETER_SITE[key]
+            src_dir = self.new_params / value
+            src_dir.mkdir(parents=True)
+            (src_dir / f'parameters-{prefix}.json').write_text('{"new": "ok"}', encoding='utf-8')
+            with patch.object(update.os, 'getcwd', return_value=str(self.root)), patch.object(update, 'fetch_and_rename'):
+                update.fetch_versioned_parameters(key)
+
+            docs = self.root / key / 'source' / 'docs'
+            static = self.root / key / 'source' / '_static'
+            self.assertFalse((docs / f'parameters-{prefix}-stable-V4.6.0.rst').exists())
+            self.assertFalse((docs / 'parameters.rst').exists())
+            self.assertEqual((static / f'parameters-{prefix}.json').read_text(encoding='utf-8'), '{"new": "ok"}')
+
+
 class TestSphinxOutput(unittest.TestCase):
     def build(self, conf_extra='', guide='Guide\n=====\n', after_build=''):
         with tempfile.TemporaryDirectory() as tmp:
