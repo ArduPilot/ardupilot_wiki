@@ -603,6 +603,14 @@ async function cacheFirst(request, cacheName, event) {
         plausibleBody(request, response)) {
       await keep(cacheName, request, response);
     }
+    // A server error, as during a publish or on a flaky link, must not
+    // beat a good copy the reader holds; nothing saved, the error stands.
+    if (response && !response.ok && response.type !== 'opaque') {
+      const held = await heldOffline(request);
+      if (held) {
+        return held;
+      }
+    }
     return response;
   } catch (err) {
     return (await heldOffline(request)) || new Response('', { status: 504 });
