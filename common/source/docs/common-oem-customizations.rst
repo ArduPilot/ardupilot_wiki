@@ -50,7 +50,7 @@ This section assumes that the OEM has set up the build environment (:ref:`dev:bu
 
 .. note:: a parameter can be made readonly (ie user cannot change its value) by marking it ``@READONLY`` in the file
 
-.. warning:: The ``defaults.parm`` file should be as small as possible. Some boards only allow 1024 bytes total for this file. Every ASCII byte in the file counts against this limit (except for comment lines). Use integer values where possible. Below is a simple example. Serial port protocols,baud rate,and options defaults can be set directly in the hwdef, as well as NTF_LED_TYPES, and battery monitor defaults, and should be done there instead of a defaults file.
+.. note:: The ``defaults.parm`` file is compressed and stored in ROMFS (``@ROMFS/defaults.parm``), so it is only limited by available free flash space. Many default values such as Serial port protocols, baud rates, and options, as well as ``NTF_LED_TYPES`` and battery monitor defaults, can be set directly in ``hwdef.dat`` and should be done there instead of in ``defaults.parm``. Below is a simple example:
 
     ::
 
