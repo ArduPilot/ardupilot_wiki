@@ -175,6 +175,7 @@ This list of commands was inferred from the command handler in
 - :ref:`MAV_CMD_NAV_LOITER_TURNS <mav_cmd_nav_loiter_turns>`
 - :ref:`MAV_CMD_NAV_LOITER_TIME <mav_cmd_nav_loiter_time>`
 - :ref:`MAV_CMD_NAV_SPLINE_WAYPOINT <mav_cmd_nav_spline_waypoint>`
+- :ref:`MAV_CMD_NAV_ARC_WAYPOINT <mav_cmd_nav_arc_waypoint>`
 - :ref:`MAV_CMD_NAV_GUIDED_ENABLE <mav_cmd_nav_guided_enable>` (NAV_GUIDED only)
 - :ref:`MAV_CMD_NAV_DELAY <mav_cmd_nav_delay>`
 - :ref:`MAV_CMD_NAV_PAYLOAD_PLACE <mav_cmd_nav_payload_place>`
@@ -321,6 +322,7 @@ This list of commands was inferred from the command handler in
 `/Rover/mode_auto.cpp <https://github.com/ArduPilot/ardupilot/blob/master/Rover/mode_auto.cpp>`__.
 
 - :ref:`MAV_CMD_NAV_WAYPOINT <mav_cmd_nav_waypoint>`
+- :ref:`MAV_CMD_NAV_ARC_WAYPOINT <mav_cmd_nav_arc_waypoint>`
 - :ref:`MAV_CMD_NAV_RETURN_TO_LAUNCH <mav_cmd_nav_return_to_launch>`
 - :ref:`MAV_CMD_NAV_LOITER_UNLIM <mav_cmd_nav_loiter_unlim>`
 - :ref:`MAV_CMD_NAV_LOITER_TURNS <mav_cmd_nav_loiter_turns>`
@@ -1840,6 +1842,97 @@ The Mission Planner screenshot shows the path the vehicle will take.
 -  Waypoint #5 is a straight line so the vehicle lines itself up to
    point towards waypoint #5 even before reaching waypoint #4.
 [/site]
+
+
+.. _mav_cmd_nav_arc_waypoint:
+[site wiki="copter,rover"]
+
+MAV_CMD_NAV_ARC_WAYPOINT
+------------------------
+
+Supported by: Copter, Rover (not Plane or Sub).
+
+The vehicle will travel along a circular arc to the target location.
+The command's location (lat, lon, alt) is the exit point of the arc.
+
+.. image:: ../../../images/arc-waypoint-angle.png
+    :target: ../_images/arc-waypoint-angle.png
+
+**Command parameters**
+
+.. raw:: html
+
+   <table border="1" class="docutils">
+   <tbody>
+   <tr>
+   <th>Command Field</th>
+   <th>Mission Planner Field</th>
+   <th>Description</th>
+   </tr>
+   <tr>
+   <td><strong>param1</strong></td>
+   <td>Arc Angle</td>
+   <td>Arc angle in whole degrees. Positive values are clockwise arcs, negative values are counter-clockwise arcs.</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td><strong>param2</strong></td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param3</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr style="color: #c0c0c0">
+   <td>param4</td>
+   <td></td>
+   <td>Empty</td>
+   </tr>
+   <tr>
+   <td><strong>param5</strong></td>
+   <td>Lat</td>
+   <td>Latitude of the arc's exit point</td>
+   </tr>
+   <tr>
+   <td><strong>param6</strong></td>
+   <td>Long</td>
+   <td>Longitude of the arc's exit point</td>
+   </tr>
+   <tr>
+   <td><strong>param7</strong></td>
+   <td>Alt</td>
+   <td>Altitude of the arc's exit point</td>
+   </tr>
+   </tbody>
+   </table>
+
+[/site]
+
+[site wiki="rover" heading="off"]
+
+The arc's radius is determined by the arc angle and the straight line
+distance (the chord) between the previous destination and the exit
+point: ``radius = chord / (2 * abs(sin(arc angle / 2)))``. The arc
+angle range is -359 degrees to +359 degrees; an angle of 0 gives a
+straight leg to the exit point. The chord starts at the previous
+destination if that leg was completed; if the arc is the first leg
+or the previous leg was interrupted, it starts from the vehicle's
+stopping point, which changes the radius.
+
+If the mission is interrupted part way along an arc (for example by
+changing out of AUTO mode) and is then resumed, the vehicle rejoins
+the original arc and travels only the angle remaining. If the
+remaining angle cannot be determined, for example because the
+vehicle was moved off the arc while interrupted, the vehicle
+instead drives straight to the exit point.
+
+Obstacle avoidance does not follow arcs: if avoidance intervenes on an
+arc leg, the remainder of the leg is planned as a straight line to the
+exit point.
+
+[/site]
+
 
 .. _mav_cmd_nav_guided_enable:
 [site wiki="copter,rover,sub"]
