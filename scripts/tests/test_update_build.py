@@ -47,6 +47,48 @@ class TestImageCacheWiring(unittest.TestCase):
                     cache_dir=pathlib.Path(destdir or '.') / 'offline.cache' / 'images')
 
 
+class TestUpdateScript(unittest.TestCase):
+    """update.sh keeps the build host's Python modules in step with requirements.txt."""
+
+    def setUp(self):
+        self.script = (REPO / 'update.sh').read_text(encoding='utf-8')
+        self.lines = self.script.splitlines()
+
+    def install_line(self):
+        found = [line for line in self.lines if 'pip install' in line and 'requirements.txt' in line]
+        self.assertEqual(len(found), 1, 'exactly one requirements install: ' + repr(found))
+        return found[0]
+
+    def test_requirements_are_installed_every_run(self):
+        self.assertIn('pip install', self.install_line())
+
+    def test_install_runs_before_the_theme_is_installed_from_its_checkout(self):
+        # requirements.txt pins the theme; installing it after the checkout
+        # install would replace the server's theme with the pin.
+        at = self.script.index(self.install_line())
+        self.assertLess(at, self.script.index('Updating sphinx_rtd_theme'))
+        self.assertLess(at, self.script.index('python3 -m pip install --user -U .'))
+
+    def test_the_theme_pin_is_filtered_out(self):
+        filtered = [line for line in self.lines if 'sphinx_rtd_theme' in line and 'requirements.txt' in line]
+        self.assertTrue(filtered, 'the theme line must be dropped before installing')
+        self.assertIn('wiki-requirements.txt', self.install_line())
+
+    def test_install_never_upgrades_satisfied_pins(self):
+        line = self.install_line()
+        self.assertNotIn(' -U', line)
+        self.assertNotIn('--upgrade', line)
+
+    def test_install_failure_cannot_abort_the_build(self):
+        # The script runs under set -e; the install must carry its own guard.
+        self.assertIn('set -e', self.script)
+        self.assertIn('||', self.install_line())
+
+    def test_requirements_list_the_delta_writer(self):
+        reqs = (REPO / 'requirements.txt').read_text(encoding='utf-8').splitlines()
+        self.assertIn('zstandard', [line.strip() for line in reqs])
+
+
 class TestBuildPublication(unittest.TestCase):
     def test_child_exit_codes(self):
         for code in (0, 1, 2, 3, -9, -11):
