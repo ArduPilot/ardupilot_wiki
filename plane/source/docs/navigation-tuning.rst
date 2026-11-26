@@ -60,6 +60,17 @@ mission then set :ref:`WP_RADIUS<WP_RADIUS>` to a larger number. A good starting
 to set it equal to the turn radius your aircraft can easily achieve.
 This will normally be the same as your loiter radius :ref:`WP_LOITER_RAD<WP_LOITER_RAD>`.
 
+:ref:`WP_RADIUS<WP_RADIUS>` applies to mission waypoints whose param2
+(acceptance radius) and param3 (leg extension) are both zero. A waypoint with either of them
+set completes somewhere else: see
+:ref:`MAV_CMD_NAV_WAYPOINT<mav_cmd_nav_waypoint>`.
+
+Plane scales :ref:`WP_RADIUS<WP_RADIUS>` by the square of the ratio of true
+to equivalent airspeed (EAS2TAS), so above sea level the turn starts a
+little further from the waypoint than :ref:`WP_RADIUS<WP_RADIUS>`, about
+6% further at 600 meters. The turn starts closer for turns of less than
+90 degrees, and never further out than the L1 distance.
+
 L1 Controller Background & Description
 ======================================
 
@@ -102,7 +113,7 @@ following changes:
 -  The distance from the next waypoint to start the turn onto the next
    track segment was modified to use the L1 length dynamically
    calculated by the algorithm, but constrained to be no greater than
-   :ref:`WP_RADIUS<WP_RADIUS>`. This enabled the user to select whether they would rather
+   :ref:`WP_RADIUS<WP_RADIUS>` scaled by the square of EAS2TAS. This enabled the user to select whether they would rather
    fly through the waypoint and then turn, or turn early and smoothly
    intercept the next track.
 
