@@ -226,12 +226,15 @@ def get_http_session():
     return _http_session
 
 
-def remove_if_exists(filepath):
+def remove_if_exists(filepath) -> bool:
+    """Remove filepath if present and return whether a file was deleted."""
     try:
         os.remove(filepath)
     except OSError as e:
         if e.errno != errno.ENOENT:
-            raise e
+            raise
+        return False
+    return True
 
 
 def fetch_and_rename(fetchurl: str, target_file: str, new_name: str) -> None:
@@ -828,35 +831,47 @@ def is_the_same_file(file1, file2):
     return output_hash(file1) == output_hash(file2)
 
 
-def cleanup_versioned_parameters(site=None):
+_VERSIONED_PARAM_PREFIX = {
+    'antennatracker': 'AntennaTracker',
+}
+
+
+def _versioned_param_prefix(site_key: str) -> str:
+    """Return the build_parameters.py filename prefix for a wiki key."""
+    return _VERSIONED_PARAM_PREFIX.get(site_key.lower(), site_key.title())
+
+
+def cleanup_versioned_parameters(site: Optional[str] = None) -> None:
     """
     It removes all versioned parameters files and JSON files in order to
     prepare the wiki for a new build with the new versioned parameters.
     """
+    if site is None:
+        target_sites = [key for key in PARAMETER_SITE if key != 'AP_Periph']
+    elif site in PARAMETER_SITE and site != 'AP_Periph':
+        target_sites = [site]
+    else:
+        return
 
-    for key, value in PARAMETER_SITE.items():
+    for key in target_sites:
+        prefix = _versioned_param_prefix(key)
 
-        if site == key or site is None:
+        docs_dir = os.path.join('.', key, 'source', 'docs')
+        rst_prefix = f"parameters-{prefix}-"
+        try:
+            with os.scandir(docs_dir) as entries:
+                for entry in entries:
+                    name = entry.name
+                    if not (name.startswith(rst_prefix) and name.endswith('.rst') and entry.is_file()):
+                        continue
+                    if remove_if_exists(entry.path):
+                        debug(f"Erasing rst {entry.path}")
+        except FileNotFoundError:
+            pass
 
-            # Remove old versioned param files
-            if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa: E501
-                old_parameters_mask = "./AntennaTracker/source/docs/parameters-AntennaTracker-"
-            else:
-                old_parameters_mask = f"./{key}/source/docs/parameters-{key.title()}-"
-
-            old_parameters_files = [
-                f for f in glob.glob(f"{old_parameters_mask}*.rst")]
-            for filename in old_parameters_files:
-                debug(f"Erasing rst {filename}")
-                remove_if_exists(filename)
-
-            # Remove old json file
-            if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa: E501
-                target_json_file = './AntennaTracker/source/_static/parameters-AntennaTracker.json'
-            else:
-                target_json_file = f'./{value}/source/_static/parameters-{key.title()}.json'
+        target_json_file = os.path.join('.', key, 'source', '_static', f"parameters-{prefix}.json")
+        if remove_if_exists(target_json_file):
             debug(f"Erasing json {target_json_file}")
-            remove_if_exists(target_json_file)
 
 
 def fetch_versioned_parameters(site=None):
@@ -885,11 +900,9 @@ def fetch_versioned_parameters(site=None):
                 cleanup_versioned_parameters(key)
 
                 # Moves the updated JSON file
-                if 'antennatracker' in key.lower():  # To main the original script approach instead of the build_parameters.py approach.  # noqa: E501
-                    vehicle_json_file = f"{os.getcwd()}/../new_params_mversion/AntennaTracker/parameters-AntennaTracker.json"  # noqa: E501
-                else:
-                    vehicle_json_file = f"{os.getcwd()}/../new_params_mversion/{value}/parameters-{key.title()}.json"
-                new_file = f"{key}/source/_static/{vehicle_json_file[vehicle_json_file.rfind('/') + 1:]}"
+                json_filename = f"parameters-{_versioned_param_prefix(key)}.json"
+                vehicle_json_file = os.path.join(os.getcwd(), '..', 'new_params_mversion', value, json_filename)
+                new_file = os.path.join(key, 'source', '_static', json_filename)
                 try:
                     debug(f"Moving {vehicle_json_file}")
                     # os.rename(vehicle_json_file, new_file)
