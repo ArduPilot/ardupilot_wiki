@@ -128,6 +128,8 @@ Starting SITL
 - The simulator's on-screen display, flight modes, missions and arming checks read MAVLink on UDP 14552, and the EKF
   status on UDP 14557. Your ground station gets MAVProxy's usual outputs.
 - Use instance 0 (``-I0``); SITL sends its servo packets to port 9002 + 10 x instance.
+- If ``json_sitl_port`` was changed, add ``-A "--sim-port-out=<port>"`` with the same port, since SITL sends its
+  servo packets to 9002 otherwise.
 
 The transmitter, gamepad or keyboard connected to the simulator reaches SITL inside the JSON packet (``rc_1`` to
 ``rc_12``), so no RC setup is needed. SITL can be restarted during a flight; the simulator follows the new instance
@@ -151,8 +153,8 @@ each with a **Copy** button.
 
       udpsrc port=5600 ! tsdemux ! h264parse ! avdec_h264 ! videoconvert ! video/x-raw,format=BGRA ! appsink name=outsink sync=false
 
-.. figure:: ../images/koafc-mission-planner-video.png
-   :target: ../_images/koafc-mission-planner-video.png
+.. figure:: ../images/koafc-mission-planner-video.jpg
+   :target: ../_images/koafc-mission-planner-video.jpg
 
    The simulator's camera video in Mission Planner's HUD
 
